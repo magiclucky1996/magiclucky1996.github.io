@@ -6,13 +6,31 @@
   
   <title>public blog of tianxiang</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
+  <meta name="description" content="Part1: Codes implementation(MARL)1. Ubuntu settingInstall oh my zsh12345sudo apt-get install zshchsh -s $(which zsh)sh -c &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;ohmyzsh&#x2F;ohmyzsh&#x2F;master&#x2F;to">
+<meta property="og:type" content="article">
 <meta property="og:title" content="public blog of tianxiang">
-<meta property="og:url" content="http://magiclucky1996.github.io/index.html">
+<meta property="og:url" content="http://magiclucky1996.github.io/2023/04/25/MARL%20implementation/index.html">
 <meta property="og:site_name" content="public blog of tianxiang">
+<meta property="og:description" content="Part1: Codes implementation(MARL)1. Ubuntu settingInstall oh my zsh12345sudo apt-get install zshchsh -s $(which zsh)sh -c &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;ohmyzsh&#x2F;ohmyzsh&#x2F;master&#x2F;to">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/test/image-20230418164141297.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/test/image-20230418163835203.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230420102406349.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230420102508795.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230420102536383.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/test/image-20230418163957262.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/test/image-20230418174000255.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/test/iqld.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/test/ac413.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/test/ac.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230420114007282.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230420111112341.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230420111340901.png">
+<meta property="article:published_time" content="2023-04-25T07:39:27.623Z">
+<meta property="article:modified_time" content="2023-04-25T07:39:27.623Z">
 <meta property="article:author" content="tianxiang">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/test/image-20230418164141297.png">
   
     <link rel="alternate" href="/atom.xml" title="public blog of tianxiang" type="application/atom+xml">
   
@@ -69,96 +87,7 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-incoporate  mappo with sumo" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/04/25/incoporate%20%20mappo%20with%20sumo/" class="article-date">
-  <time class="dt-published" datetime="2023-04-25T07:39:27.623Z" itemprop="datePublished">2023-04-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="incoporate-mappo-with-sumo"><a href="#incoporate-mappo-with-sumo" class="headerlink" title="incoporate  mappo with sumo"></a>incoporate  mappo with sumo</h1><h2 id="1-look-for-existing-mappo-sumo"><a href="#1-look-for-existing-mappo-sumo" class="headerlink" title="1. look for existing mappo + sumo"></a>1. look for existing mappo + sumo</h2><ul>
-<li>reference</li>
-</ul>
-<ol>
-<li>github</li>
-<li>paper</li>
-<li>resource of course era, presentation, tutorial (osint)</li>
-</ol>
-<ul>
-<li>resources found</li>
-</ul>
-<p>github</p>
-<ol>
-<li><p>ppo + sumo <a target="_blank" rel="noopener" href="https://github.com/maxbren/Multi-Agent-Distributed-PPO-Traffc-light-control">https://github.com/maxbren/Multi-Agent-Distributed-PPO-Traffc-light-control</a></p>
-</li>
-<li><p>light mappo  <a target="_blank" rel="noopener" href="https://github.com/magiclucky1996/light_mappo">https://github.com/magiclucky1996/light_mappo</a> 基于这个写一下试试</p>
-</li>
-<li><p>q&#x2F;ac + sumo <a target="_blank" rel="noopener" href="https://github.com/magiclucky1996/deeprl_signal_control">https://github.com/magiclucky1996/deeprl_signal_control</a></p>
-</li>
-<li><p>mappo + mujoco <a target="_blank" rel="noopener" href="https://github.com/chauncygu/Multi-Agent-Constrained-Policy-Optimisation">https://github.com/chauncygu/Multi-Agent-Constrained-Policy-Optimisation</a></p>
-</li>
-<li><p>mappo&#x2F;qmix&#x2F;maddpg + mpe <a target="_blank" rel="noopener" href="https://github.com/Lizhi-sjtu/MARL-code-pytorch">https://github.com/Lizhi-sjtu/MARL-code-pytorch</a></p>
-</li>
-<li><p>ppo + sumo <a target="_blank" rel="noopener" href="https://github.com/YanivHacker/RLTrafficManager">https://github.com/YanivHacker/RLTrafficManager</a></p>
-</li>
-<li><p>noisy mappo+  <a target="_blank" rel="noopener" href="https://github.com/hijkzzz/noisy-mappo">https://github.com/hijkzzz/noisy-mappo</a></p>
-</li>
-</ol>
-<p>papers</p>
-<p><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/abstract/document/9549970/authors#authors">https://ieeexplore.ieee.org/abstract/document/9549970/authors#authors</a> 东北信息学院：提到了rl奖励稀疏的问题，然后他们给rl设计更多的reward 引导它学习。但是你怎么知道什么样的reward能够引导，这不是还是在reward function设计的范围里吗？</p>
-<ul>
-<li>insights<ol>
-<li>sumo设计的问题，如果我们设一个控制周期之后的交通流状态为reward是不是不合理，怎么样去评价智能体schedule的好坏呢，怎么去评价智能体的action改善了交通呢，我是要搞交通呢，还是要搞rl呢，还是要搞啥，，，</li>
-<li>上次会议的要点：1. insight可以给硕士做，但是要具体可行 2. 做一个oncoming 会议的scheduling(rl 多智能体 交通 计算机 人工智能) 3. sumo的模型可以封装好给本科生用 4.</li>
-</ol>
-</li>
-<li>今天的计划（4.24）</li>
-</ul>
-<p>work 到12 点半，吃中饭，吃完中饭一点消化一会儿，回实验室一点半，回来继续work,work到两点多的时候睡午觉，五点跑路，去看看有没有吃的，不行就回家supervalu,晚上回家继续work一会儿，今天的弄完走之前deploy 和 push上去</p>
-<ul>
-<li>how other people implement marl training</li>
-</ul>
-<p>make contraction between these projects</p>
-<p>分解成detailed steps</p>
-<p>1.首先看下mappo的代码和deeprl sumo的代码以及ppo sumo代码（只做有必要做的事情）</p>
-<ol start="2">
-<li><p>做完1大概知道要干嘛，可以看看ppo trpo mappo</p>
-</li>
-<li><p>把每周4上午留作整理时间，所以我必须两天内搞定这个代码整定的事情，然后再用剩下的时间学习ppo trpo mappo，还要学sumo部分的东西，但是得非常快</p>
-</li>
-<li></li>
-<li></li>
-</ol>
-<h2 id="2-make-it-with-materials-found"><a href="#2-make-it-with-materials-found" class="headerlink" title="2. make it with materials found"></a>2. make it with materials found</h2><p>生活的star：</p>
-<p>琴</p>
-<p>传统动画</p>
-<p>breaking</p>
-<p>网安</p>
-<p>戒社交</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://magiclucky1996.github.io/2023/04/25/incoporate%20%20mappo%20with%20sumo/" data-id="clgw24ioh0000yc9f30vq1vyg" data-title="" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-MARL implementation" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-MARL implementation" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/04/25/MARL%20implementation/" class="article-date">
   <time class="dt-published" datetime="2023-04-25T07:39:27.623Z" itemprop="datePublished">2023-04-25</time>
@@ -734,304 +663,28 @@
     </footer>
   </div>
   
-</article>
-
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-insights" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/04/25/insights/" class="article-date">
-  <time class="dt-published" datetime="2023-04-25T07:39:27.623Z" itemprop="datePublished">2023-04-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="insights"><a href="#insights" class="headerlink" title="insights"></a>insights</h1><p><strong>td error 先不更新，把式子放在那里，等到达最后再更新。把已探究出来的列着，等到回合结束再更新。</strong></p>
-<p><strong>argmax为什么不好？为什么actor比argmax更好？为什么ac就比q learning好？</strong></p>
-<p><strong>为什么不能一开始就疯狂探索，100%，反正我可以不用管当前的性能？</strong></p>
-<ul>
-<li>我可以一开始就疯狂探索，然后把状态转移的r放在那里放着，</li>
-<li>gym的rl环境不够准确，我觉得不同的环境千差万别。。没法体现rl算法的效率。这些人也许并没有多高明。</li>
-</ul>
-<p>This approach is called pure exploration and exploitation (PEE) and can be used in some cases where exploration is very costly or where the environment is very simple. However, in most real-world scenarios, PEE is not an optimal approach.</p>
-<p>The problem with PEE is that the agent spends a lot of time exploring and collecting data, but not enough time exploiting that data to improve its policy. This can lead to slow learning and poor performance, especially in complex environments where there are many possible actions and states.</p>
-<p>In contrast, most RL algorithms use a balance between exploration and exploitation, where the agent takes actions that are likely to yield high rewards based on its current policy while also occasionally exploring new actions or states. This allows the agent to learn quickly while still exploring new possibilities, leading to faster learning and better performance.</p>
-<p>Furthermore, in many RL problems, the environment is dynamic and can change over time. In such cases, it is important for the agent to continuously explore and adapt to changes in the environment to maintain optimal performance. This requires a balance between exploration and exploitation, as well as the ability to update the policy based on new data and experiences.</p>
-<p>In summary, while PEE can be a useful approach in some cases, a balanced approach between exploration and exploitation is generally more effective for most RL problems.</p>
-<p><strong>为社么discount factor</strong></p>
-<p>unstable env, noise in reward, </p>
-<p><strong>为什么神经网络代替q表，那部分要用神经网络学习的不能表征的“规律”是什么？</strong></p>
-<p>如果q表很大，就很难搞，为啥，那就建一个大的q表呗</p>
-<p><strong>策略和价值的本质区别是什么，是不是一样的，那个策略更新跟argmax到底是不是一样的</strong></p>
-<p>后面我可以i自己和环境玩，但是先按照教程完整拼一遍，</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://magiclucky1996.github.io/2023/04/25/insights/" data-id="clgw24ion0002yc9f8mcx3iab" data-title="" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-都柏林租房攻略-狠人版" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/04/25/%E9%83%BD%E6%9F%8F%E6%9E%97%E7%A7%9F%E6%88%BF%E6%94%BB%E7%95%A5-%E7%8B%A0%E4%BA%BA%E7%89%88/" class="article-date">
-  <time class="dt-published" datetime="2023-04-25T07:39:27.623Z" itemprop="datePublished">2023-04-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="都柏林租房攻略-狠人版"><a href="#都柏林租房攻略-狠人版" class="headerlink" title="都柏林租房攻略-狠人版"></a>都柏林租房攻略-狠人版</h1><ol>
-<li><p>首先选区</p>
-<p>参考这篇文章：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/112493998">https://zhuanlan.zhihu.com/p/112493998</a></p>
-<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/mapa-dublin-660x479.png" alt="img"></p>
-</li>
-</ol>
-<p>理想居住区：2 4 6 6w 13 14 16 18</p>
-<p>还行的居住区：1 3 5 7 12 15 17 20</p>
-<p>从2 4 6 6w 13 14 16 18 中排除掉交通时间过远的</p>
-<ul>
-<li>打开hosting power <a target="_blank" rel="noopener" href="https://hostingpower.ie/">https://hostingpower.ie/</a></li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230421113427078.png" alt="image-20230421113427078"></p>
-<ul>
-<li>选择area, 输入刚刚筛选出的区域结果</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230421113539429.png" alt="image-20230421113539429"></p>
-<ul>
-<li><p>选择max rent 点击apply</p>
-</li>
-<li><p>得到一系列搜索结果后，选择自己喜欢的房子</p>
-</li>
-<li><p>点进去根据界面提供的关键信息google search 房东的联系方式</p>
-<ul>
-<li>name</li>
-<li>location</li>
-<li>and so on</li>
-<li>检索示范：”name” + ”location“ + site: airbnb.com</li>
-</ul>
-</li>
-<li><p>自行联系房东签订合同等，可以省去hostingpower中介费890欧</p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://magiclucky1996.github.io/2023/04/25/%E9%83%BD%E6%9F%8F%E6%9E%97%E7%A7%9F%E6%88%BF%E6%94%BB%E7%95%A5-%E7%8B%A0%E4%BA%BA%E7%89%88/" data-id="clgw24ioo0003yc9f3oa462wn" data-title="" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-play with gym env" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/04/25/play%20with%20gym%20env/" class="article-date">
-  <time class="dt-published" datetime="2023-04-25T07:39:27.623Z" itemprop="datePublished">2023-04-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="play-with-gym-env"><a href="#play-with-gym-env" class="headerlink" title="play with gym env"></a>play with gym env</h1><h2 id="env1-cart-pole"><a href="#env1-cart-pole" class="headerlink" title="env1: cart pole"></a>env1: cart pole</h2><p>control + pid: <a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44562141/article/details/119700574">https://blog.csdn.net/weixin_44562141/article/details/119700574</a></p>
-<p>document of gym <a target="_blank" rel="noopener" href="https://www.gymlibrary.dev/environments/classic_control/cart_pole/">https://www.gymlibrary.dev/environments/classic_control/cart_pole/</a></p>
-<p>driving test <a target="_blank" rel="noopener" href="http://www.theory-tester.com/questions/358">http://www.theory-tester.com/questions/358</a></p>
-<ul>
-<li>state space:</li>
-</ul>
-<p>position</p>
-<p>velocity</p>
-<p>angle</p>
-<p>angular velocity</p>
-<ul>
-<li><p>first understand problem, then understand reinforcement learning, u must understand the env, then you know why their study is like that, try to be a good teacher</p>
-</li>
-<li><p>for spare time, can play , for working time, only do things creating value to this project.</p>
-<ul>
-<li>first look for mappo implementation, then try doing it by myself</li>
-</ul>
-</li>
-<li><p>if we want to control it with pid,</p>
-</li>
-<li><p>in this env, u are just study “action 要和夹角反着”+ 夹角和几个输入数据的关系，一部分是先验只是可以给的，所以我先原始地学习一下，再把state加工一下加进去，再试试一下把控制的东西加进去，对，我得先有想法，再实验，再读文献，再自己思考，再实验。我希望按照自己的想法来，这样我会沉迷于探索。我希望一直自己保有一些探索的时间，最后发现科研的乐趣。</p>
-</li>
-</ul>
-<h2 id="frozen-lake"><a href="#frozen-lake" class="headerlink" title="frozen lake"></a>frozen lake</h2><p><a target="_blank" rel="noopener" href="https://colab.research.google.com/github/huggingface/deep-rl-class/blob/master/notebooks/unit2/unit2.ipynb#scrollTo=Y1tWn0tycWZ1">https://colab.research.google.com/github/huggingface/deep-rl-class/blob/master/notebooks/unit2/unit2.ipynb#scrollTo=Y1tWn0tycWZ1</a></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">qtable = np.zeros(state_space, action_space)</span><br><span class="line">action = argmax(qtable[state][:])</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Training parameters</span></span><br><span class="line">n_training_episodes = <span class="number">10000</span>  <span class="comment"># Total training episodes</span></span><br><span class="line">learning_rate = <span class="number">0.7</span>          <span class="comment"># Learning rate(这个不是梯度下降的learning rate,是td error的learning rate </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Evaluation parameters</span></span><br><span class="line">n_eval_episodes = <span class="number">100</span>        <span class="comment"># Total number of test episodes</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Environment parameters</span></span><br><span class="line">env_id = <span class="string">&quot;FrozenLake-v1&quot;</span>     <span class="comment"># Name of the environment</span></span><br><span class="line">max_steps = <span class="number">99</span>               <span class="comment"># Max steps per episode（防止回合死循环）</span></span><br><span class="line">gamma = <span class="number">0.95</span>                 <span class="comment"># Discounting rate （value的discounting）</span></span><br><span class="line">eval_seed = []               <span class="comment"># The evaluation seed of the environment</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Exploration parameters （刚开始探索大，后来探索小）</span></span><br><span class="line">max_epsilon = <span class="number">1.0</span>             <span class="comment"># Exploration probability at start</span></span><br><span class="line">min_epsilon = <span class="number">0.05</span>            <span class="comment"># Minimum exploration probability </span></span><br><span class="line">decay_rate = <span class="number">0.0005</span>            <span class="comment"># Exponential decay rate for exploration prob</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="env2-lunar"><a href="#env2-lunar" class="headerlink" title="env2 lunar"></a>env2 lunar</h2><p>安装</p>
-<p>pip install box2d-py</p>
-<h2 id="env3-taxi"><a href="#env3-taxi" class="headerlink" title="env3 taxi"></a>env3 taxi</h2><p><a target="_blank" rel="noopener" href="https://huggingface.co/learn/deep-rl-course/unit3/introduction?fw=pt">https://huggingface.co/learn/deep-rl-course/unit3/introduction?fw=pt</a></p>
-<p>q leearning </p>
-<p> 一句话概括：用r更新q值，轨迹的探索（也许可以根据特性选择走不同的轨迹，在探索的时候有偏好地探索，不是说增加exploit可以增加对有效区域的探索吗，更多的探索高价值动作转换到的轨迹上？，但是你怎么就知道那个东西就是个高价值呢）</p>
-<p><img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit3/Q-learning-2.jpg" alt="Q-learning"></p>
-<p><a target="_blank" rel="noopener" href="https://huggingface.co/learn/deep-rl-course/unit2/q-learning-example?fw=pt">https://huggingface.co/learn/deep-rl-course/unit2/q-learning-example?fw=pt</a></p>
-<p>read this carefully</p>
-<p>what if we don’t gradually improve the exploit?</p>
-<p>u just explore and update the value, 因为如果它确实是最优value，你就可以直接选它，如果不是，你就陷入局部最优解，因此这其实是一个信任度的问题：“对它有多大可能是最优解的信任度”，我可以调整信任度，</p>
-<p>什么情况下我确认在这个s take这个a是最优的，那就是终止状态向后回溯，但是对于状态很多的case呢？</p>
-<p>之前我在玩cartpole时候，我的想法是把控制融合进去，探索</p>
-<p>我想找一个可以可视化q表进化的程序跑一跑</p>
-<p>我想今天把抱脸虫的教程结束掉</p>
-<p>There are several powerful tools available for conducting reinforcement learning experiments. Here are a few popular ones:</p>
-<ol>
-<li>OpenAI Gym: OpenAI Gym is a popular toolkit for developing and comparing reinforcement learning algorithms. It provides a variety of environments, including classic control problems and Atari games.</li>
-<li>TensorFlow Agents: TensorFlow Agents is an open-source library that provides a collection of reinforcement learning algorithms built on top of TensorFlow. It provides a simple API for experimenting with different algorithms and environments.</li>
-<li>PyTorch RL: PyTorch RL is another open-source library that provides</li>
-<li>RL</li>
-<li>Stable Baselines: Stable Baselines is another open-source library that provides a collection of reinforcement learning algorithms. It includes support for a variety of environments and provides a simple API for training and evaluating agents.</li>
-</ol>
-<p>Ultimately, the choice of tool will depend on your specific needs and preferences. It is a good idea to experiment with several tools and choose the one that works best for your particular use case.</p>
-<h1 id="Hyperparameter-tuning-with-Optuna"><a href="#Hyperparameter-tuning-with-Optuna" class="headerlink" title="Hyperparameter tuning with Optuna"></a>Hyperparameter tuning with Optuna</h1><p><a target="_blank" rel="noopener" href="https://colab.research.google.com/github/araffin/tools-for-robotic-rl-icra2022/blob/main/notebooks/optuna_lab.ipynb#scrollTo=hyyN-2qyK_T2">https://colab.research.google.com/github/araffin/tools-for-robotic-rl-icra2022/blob/main/notebooks/optuna_lab.ipynb#scrollTo=hyyN-2qyK_T2</a></p>
-<p>能用库就用库，看看我们真正要做的是什么，其它需要解决的部分用最简单的方法解决，重要的是可视化rl，理解每一步在干嘛，的到一些insights</p>
-<p>我只有两天的时间了，我要用半天的时间把这个教程过掉</p>
-<p>用半天的时间把我想搞明白的事情全部搞明白，或者今天直接在家办工了</p>
-<h1 id="dublin适合远程办公的地点合集"><a href="#dublin适合远程办公的地点合集" class="headerlink" title="dublin适合远程办公的地点合集"></a>dublin适合远程办公的地点合集</h1><p>咖啡店晒晒太阳什么的，不知道，没有那么想在家待着，也不一定要一直去实验室，找个地方待着</p>
-<ol>
-<li>google search： places good for study outside with sunshine in dublin<ol>
-<li><a target="_blank" rel="noopener" href="https://www.fordublinlovers.com/en/best/places-to-study-outdoors-in-dublin">https://www.fordublinlovers.com/en/best/places-to-study-outdoors-in-dublin</a></li>
-<li><a target="_blank" rel="noopener" href="https://livstudent.com/7-study-spots-in-dublin-to-check-out/">https://livstudent.com/7-study-spots-in-dublin-to-check-out/</a></li>
-<li><a target="_blank" rel="noopener" href="https://lovindublin.com/best-of/10-best-places-to-work-or-study-in-when-you-find-yourself-in-dublin-city-centre">https://lovindublin.com/best-of/10-best-places-to-work-or-study-in-when-you-find-yourself-in-dublin-city-centre</a></li>
-<li><a target="_blank" rel="noopener" href="https://universitytimes.ie/2018/04/five-of-the-best-alternative-study-spaces/">https://universitytimes.ie/2018/04/five-of-the-best-alternative-study-spaces/</a></li>
-</ol>
-</li>
-<li>Chatgpt,</li>
-</ol>
-<p>need wifi:</p>
-<ol>
-<li>Dublin City Libraries: Many libraries in Dublin have free Wi-Fi and offer a quiet environment to work in. Check with your local library for opening hours and availability.</li>
-<li>The Bernard Shaw: This pub in Dublin has free Wi-Fi and plenty of tables to work at. It also has a garden area where you can enjoy the sunshine while you work.</li>
-<li>The Fumbally: This cafe has free Wi-Fi and plenty of tables to work at. It’s a popular spot for freelancers and students in Dublin.</li>
-<li>The Digital Hub: This is a co-working space in Dublin that offers Wi-Fi and desk space for a fee. It’s a great option if you need a more professional environment to work in.</li>
-<li>Starbucks: Many Starbucks locations in Dublin offer free Wi-Fi, and they are a popular spot for studying or working remotely.</li>
-<li>Costa Coffee: Similar to Starbucks, many Costa Coffee locations in Dublin also offer free Wi-Fi.</li>
-</ol>
-<p>no need wifi:</p>
-<ol>
-<li><p>Bewley’s Cafe: This cafe has several locations in Dublin and is known for its cozy atmosphere. It’s a great spot to grab a coffee or tea and enjoy a warm drink while people-watching.</p>
-</li>
-<li><p>The Pepper Pot Cafe: This is a quaint cafe located inside the Powerscourt Centre in Dublin. It’s a great spot to sit and relax with a book or chat with friends while enjoying a warm drink and some delicious food.</p>
-</li>
-<li><p>The Bald Barista: This cafe is a popular spot in Dublin for its cozy atmosphere and great coffee. It’s a great place to relax and enjoy some good company.</p>
-</li>
-<li><p>Brother Hubbard: This is another great cafe in Dublin that offers a cozy atmosphere and delicious food. It’s a popular spot for brunch, but you can also visit during the day to relax and unwind.</p>
-</li>
-<li><p>The Cake Cafe: This is a charming cafe located in a converted redbrick building in Dublin. It’s known for its homemade cakes and friendly atmosphere, making it a great spot to sit and chat with friends.</p>
-</li>
-<li><p>小红书</p>
-</li>
-</ol>
-<p>2区星巴克</p>
-<p>central library</p>
-<p>han sung旁边的mind the step</p>
-<p>dun laoghaire图书馆</p>
-<p>blackrock library</p>
-<p>google search library cafe等等</p>
-<ol start="4">
-<li><p>自己想到的</p>
-<p>市中心教堂旁边的library</p>
-<p>tcd学校里面</p>
-<p>家里</p>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://magiclucky1996.github.io/2023/04/25/play%20with%20gym%20env/" data-id="clgw24ioo0004yc9fc4nu6ekv" data-title="" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/04/11/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2023-04-11T11:45:28.964Z" itemprop="datePublished">2023-04-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/2023/04/25/incoporate%20%20mappo%20with%20sumo/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
+          (no title)
+        
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/04/11/hello-world/">Hello World</a>
-    </h1>
   
+    <a href="/2023/04/25/insights/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://magiclucky1996.github.io/2023/04/11/hello-world/" data-id="clgc7f4xc0000jaot0d8thucp" data-title="Hello World" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-
-  
 
 
 </section>

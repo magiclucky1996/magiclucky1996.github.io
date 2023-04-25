@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>public blog of tianxiang</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="play with gym envenv1: cart polecontrol + pid: https:&#x2F;&#x2F;blog.csdn.net&#x2F;weixin_44562141&#x2F;article&#x2F;details&#x2F;119700574 document of gym https:&#x2F;&#x2F;www.gymlibrary.dev&#x2F;environments&#x2F;classic_control&#x2F;cart_pole&#x2F; drivin">
+<meta property="og:type" content="article">
+<meta property="og:title" content="public blog of tianxiang">
+<meta property="og:url" content="http://magiclucky1996.github.io/2023/04/25/play%20with%20gym%20env/index.html">
+<meta property="og:site_name" content="public blog of tianxiang">
+<meta property="og:description" content="play with gym envenv1: cart polecontrol + pid: https:&#x2F;&#x2F;blog.csdn.net&#x2F;weixin_44562141&#x2F;article&#x2F;details&#x2F;119700574 document of gym https:&#x2F;&#x2F;www.gymlibrary.dev&#x2F;environments&#x2F;classic_control&#x2F;cart_pole&#x2F; drivin">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit3/Q-learning-2.jpg">
+<meta property="article:published_time" content="2023-04-25T07:39:27.623Z">
+<meta property="article:modified_time" content="2023-04-25T09:20:43.046Z">
+<meta property="article:author" content="tianxiang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit3/Q-learning-2.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="public blog of tianxiang" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">public blog of tianxiang</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://magiclucky1996.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-play with gym env" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/04/25/play%20with%20gym%20env/" class="article-date">
+  <time class="dt-published" datetime="2023-04-25T07:39:27.623Z" itemprop="datePublished">2023-04-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="play-with-gym-env"><a href="#play-with-gym-env" class="headerlink" title="play with gym env"></a>play with gym env</h1><h2 id="env1-cart-pole"><a href="#env1-cart-pole" class="headerlink" title="env1: cart pole"></a>env1: cart pole</h2><p>control + pid: <a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44562141/article/details/119700574">https://blog.csdn.net/weixin_44562141/article/details/119700574</a></p>
+<p>document of gym <a target="_blank" rel="noopener" href="https://www.gymlibrary.dev/environments/classic_control/cart_pole/">https://www.gymlibrary.dev/environments/classic_control/cart_pole/</a></p>
+<p>driving test <a target="_blank" rel="noopener" href="http://www.theory-tester.com/questions/358">http://www.theory-tester.com/questions/358</a></p>
+<ul>
+<li>state space:</li>
+</ul>
+<p>position</p>
+<p>velocity</p>
+<p>angle</p>
+<p>angular velocity</p>
+<ul>
+<li><p>first understand problem, then understand reinforcement learning, u must understand the env, then you know why their study is like that, try to be a good teacher</p>
+</li>
+<li><p>for spare time, can play , for working time, only do things creating value to this project.</p>
+<ul>
+<li>first look for mappo implementation, then try doing it by myself</li>
+</ul>
+</li>
+<li><p>if we want to control it with pid,</p>
+</li>
+<li><p>in this env, u are just study “action 要和夹角反着”+ 夹角和几个输入数据的关系，一部分是先验只是可以给的，所以我先原始地学习一下，再把state加工一下加进去，再试试一下把控制的东西加进去，对，我得先有想法，再实验，再读文献，再自己思考，再实验。我希望按照自己的想法来，这样我会沉迷于探索。我希望一直自己保有一些探索的时间，最后发现科研的乐趣。</p>
+</li>
+</ul>
+<h2 id="frozen-lake"><a href="#frozen-lake" class="headerlink" title="frozen lake"></a>frozen lake</h2><p><a target="_blank" rel="noopener" href="https://colab.research.google.com/github/huggingface/deep-rl-class/blob/master/notebooks/unit2/unit2.ipynb#scrollTo=Y1tWn0tycWZ1">https://colab.research.google.com/github/huggingface/deep-rl-class/blob/master/notebooks/unit2/unit2.ipynb#scrollTo=Y1tWn0tycWZ1</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">qtable = np.zeros(state_space, action_space)</span><br><span class="line">action = argmax(qtable[state][:])</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Training parameters</span></span><br><span class="line">n_training_episodes = <span class="number">10000</span>  <span class="comment"># Total training episodes</span></span><br><span class="line">learning_rate = <span class="number">0.7</span>          <span class="comment"># Learning rate(这个不是梯度下降的learning rate,是td error的learning rate </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Evaluation parameters</span></span><br><span class="line">n_eval_episodes = <span class="number">100</span>        <span class="comment"># Total number of test episodes</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Environment parameters</span></span><br><span class="line">env_id = <span class="string">&quot;FrozenLake-v1&quot;</span>     <span class="comment"># Name of the environment</span></span><br><span class="line">max_steps = <span class="number">99</span>               <span class="comment"># Max steps per episode（防止回合死循环）</span></span><br><span class="line">gamma = <span class="number">0.95</span>                 <span class="comment"># Discounting rate （value的discounting）</span></span><br><span class="line">eval_seed = []               <span class="comment"># The evaluation seed of the environment</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Exploration parameters （刚开始探索大，后来探索小）</span></span><br><span class="line">max_epsilon = <span class="number">1.0</span>             <span class="comment"># Exploration probability at start</span></span><br><span class="line">min_epsilon = <span class="number">0.05</span>            <span class="comment"># Minimum exploration probability </span></span><br><span class="line">decay_rate = <span class="number">0.0005</span>            <span class="comment"># Exponential decay rate for exploration prob</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="env2-lunar"><a href="#env2-lunar" class="headerlink" title="env2 lunar"></a>env2 lunar</h2><p>安装</p>
+<p>pip install box2d-py</p>
+<h2 id="env3-taxi"><a href="#env3-taxi" class="headerlink" title="env3 taxi"></a>env3 taxi</h2><p><a target="_blank" rel="noopener" href="https://huggingface.co/learn/deep-rl-course/unit3/introduction?fw=pt">https://huggingface.co/learn/deep-rl-course/unit3/introduction?fw=pt</a></p>
+<p>q leearning </p>
+<p> 一句话概括：用r更新q值，轨迹的探索（也许可以根据特性选择走不同的轨迹，在探索的时候有偏好地探索，不是说增加exploit可以增加对有效区域的探索吗，更多的探索高价值动作转换到的轨迹上？，但是你怎么就知道那个东西就是个高价值呢）</p>
+<p><img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit3/Q-learning-2.jpg" alt="Q-learning"></p>
+<p><a target="_blank" rel="noopener" href="https://huggingface.co/learn/deep-rl-course/unit2/q-learning-example?fw=pt">https://huggingface.co/learn/deep-rl-course/unit2/q-learning-example?fw=pt</a></p>
+<p>read this carefully</p>
+<p>what if we don’t gradually improve the exploit?</p>
+<p>u just explore and update the value, 因为如果它确实是最优value，你就可以直接选它，如果不是，你就陷入局部最优解，因此这其实是一个信任度的问题：“对它有多大可能是最优解的信任度”，我可以调整信任度，</p>
+<p>什么情况下我确认在这个s take这个a是最优的，那就是终止状态向后回溯，但是对于状态很多的case呢？</p>
+<p>之前我在玩cartpole时候，我的想法是把控制融合进去，探索</p>
+<p>我想找一个可以可视化q表进化的程序跑一跑</p>
+<p>我想今天把抱脸虫的教程结束掉</p>
+<p>There are several powerful tools available for conducting reinforcement learning experiments. Here are a few popular ones:</p>
+<ol>
+<li>OpenAI Gym: OpenAI Gym is a popular toolkit for developing and comparing reinforcement learning algorithms. It provides a variety of environments, including classic control problems and Atari games.</li>
+<li>TensorFlow Agents: TensorFlow Agents is an open-source library that provides a collection of reinforcement learning algorithms built on top of TensorFlow. It provides a simple API for experimenting with different algorithms and environments.</li>
+<li>PyTorch RL: PyTorch RL is another open-source library that provides</li>
+<li>RL</li>
+<li>Stable Baselines: Stable Baselines is another open-source library that provides a collection of reinforcement learning algorithms. It includes support for a variety of environments and provides a simple API for training and evaluating agents.</li>
+</ol>
+<p>Ultimately, the choice of tool will depend on your specific needs and preferences. It is a good idea to experiment with several tools and choose the one that works best for your particular use case.</p>
+<h1 id="Hyperparameter-tuning-with-Optuna"><a href="#Hyperparameter-tuning-with-Optuna" class="headerlink" title="Hyperparameter tuning with Optuna"></a>Hyperparameter tuning with Optuna</h1><p><a target="_blank" rel="noopener" href="https://colab.research.google.com/github/araffin/tools-for-robotic-rl-icra2022/blob/main/notebooks/optuna_lab.ipynb#scrollTo=hyyN-2qyK_T2">https://colab.research.google.com/github/araffin/tools-for-robotic-rl-icra2022/blob/main/notebooks/optuna_lab.ipynb#scrollTo=hyyN-2qyK_T2</a></p>
+<p>能用库就用库，看看我们真正要做的是什么，其它需要解决的部分用最简单的方法解决，重要的是可视化rl，理解每一步在干嘛，的到一些insights</p>
+<p>我只有两天的时间了，我要用半天的时间把这个教程过掉</p>
+<p>用半天的时间把我想搞明白的事情全部搞明白，或者今天直接在家办工了</p>
+<h1 id="dublin适合远程办公的地点合集"><a href="#dublin适合远程办公的地点合集" class="headerlink" title="dublin适合远程办公的地点合集"></a>dublin适合远程办公的地点合集</h1><p>咖啡店晒晒太阳什么的，不知道，没有那么想在家待着，也不一定要一直去实验室，找个地方待着</p>
+<ol>
+<li>google search： places good for study outside with sunshine in dublin<ol>
+<li><a target="_blank" rel="noopener" href="https://www.fordublinlovers.com/en/best/places-to-study-outdoors-in-dublin">https://www.fordublinlovers.com/en/best/places-to-study-outdoors-in-dublin</a></li>
+<li><a target="_blank" rel="noopener" href="https://livstudent.com/7-study-spots-in-dublin-to-check-out/">https://livstudent.com/7-study-spots-in-dublin-to-check-out/</a></li>
+<li><a target="_blank" rel="noopener" href="https://lovindublin.com/best-of/10-best-places-to-work-or-study-in-when-you-find-yourself-in-dublin-city-centre">https://lovindublin.com/best-of/10-best-places-to-work-or-study-in-when-you-find-yourself-in-dublin-city-centre</a></li>
+<li><a target="_blank" rel="noopener" href="https://universitytimes.ie/2018/04/five-of-the-best-alternative-study-spaces/">https://universitytimes.ie/2018/04/five-of-the-best-alternative-study-spaces/</a></li>
+</ol>
+</li>
+<li>Chatgpt,</li>
+</ol>
+<p>need wifi:</p>
+<ol>
+<li>Dublin City Libraries: Many libraries in Dublin have free Wi-Fi and offer a quiet environment to work in. Check with your local library for opening hours and availability.</li>
+<li>The Bernard Shaw: This pub in Dublin has free Wi-Fi and plenty of tables to work at. It also has a garden area where you can enjoy the sunshine while you work.</li>
+<li>The Fumbally: This cafe has free Wi-Fi and plenty of tables to work at. It’s a popular spot for freelancers and students in Dublin.</li>
+<li>The Digital Hub: This is a co-working space in Dublin that offers Wi-Fi and desk space for a fee. It’s a great option if you need a more professional environment to work in.</li>
+<li>Starbucks: Many Starbucks locations in Dublin offer free Wi-Fi, and they are a popular spot for studying or working remotely.</li>
+<li>Costa Coffee: Similar to Starbucks, many Costa Coffee locations in Dublin also offer free Wi-Fi.</li>
+</ol>
+<p>no need wifi:</p>
+<ol>
+<li><p>Bewley’s Cafe: This cafe has several locations in Dublin and is known for its cozy atmosphere. It’s a great spot to grab a coffee or tea and enjoy a warm drink while people-watching.</p>
+</li>
+<li><p>The Pepper Pot Cafe: This is a quaint cafe located inside the Powerscourt Centre in Dublin. It’s a great spot to sit and relax with a book or chat with friends while enjoying a warm drink and some delicious food.</p>
+</li>
+<li><p>The Bald Barista: This cafe is a popular spot in Dublin for its cozy atmosphere and great coffee. It’s a great place to relax and enjoy some good company.</p>
+</li>
+<li><p>Brother Hubbard: This is another great cafe in Dublin that offers a cozy atmosphere and delicious food. It’s a popular spot for brunch, but you can also visit during the day to relax and unwind.</p>
+</li>
+<li><p>The Cake Cafe: This is a charming cafe located in a converted redbrick building in Dublin. It’s known for its homemade cakes and friendly atmosphere, making it a great spot to sit and chat with friends.</p>
+</li>
+<li><p>小红书</p>
+</li>
+</ol>
+<p>2区星巴克</p>
+<p>central library</p>
+<p>han sung旁边的mind the step</p>
+<p>dun laoghaire图书馆</p>
+<p>blackrock library</p>
+<p>google search library cafe等等</p>
+<ol start="4">
+<li><p>自己想到的</p>
+<p>市中心教堂旁边的library</p>
+<p>tcd学校里面</p>
+<p>家里</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://magiclucky1996.github.io/2023/04/25/play%20with%20gym%20env/" data-id="clgw24ioo0004yc9fc4nu6ekv" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/04/25/%E9%83%BD%E6%9F%8F%E6%9E%97%E7%A7%9F%E6%88%BF%E6%94%BB%E7%95%A5-%E7%8B%A0%E4%BA%BA%E7%89%88/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/04/11/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/04/25/incoporate%20%20mappo%20with%20sumo/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/25/MARL%20implementation/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/25/insights/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/25/%E9%83%BD%E6%9F%8F%E6%9E%97%E7%A7%9F%E6%88%BF%E6%94%BB%E7%95%A5-%E7%8B%A0%E4%BA%BA%E7%89%88/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/25/play%20with%20gym%20env/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 tianxiang<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

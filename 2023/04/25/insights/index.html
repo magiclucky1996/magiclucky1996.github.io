@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>public blog of tianxiang</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="insightstd error 先不更新，把式子放在那里，等到达最后再更新。把已探究出来的列着，等到回合结束再更新。 argmax为什么不好？为什么actor比argmax更好？为什么ac就比q learning好？ 为什么不能一开始就疯狂探索，100%，反正我可以不用管当前的性能？  我可以一开始就疯狂探索，然后把状态转移的r放在那里放着， gym的rl环境不够准确，我觉得不同的环境千差万别。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="public blog of tianxiang">
+<meta property="og:url" content="http://magiclucky1996.github.io/2023/04/25/insights/index.html">
+<meta property="og:site_name" content="public blog of tianxiang">
+<meta property="og:description" content="insightstd error 先不更新，把式子放在那里，等到达最后再更新。把已探究出来的列着，等到回合结束再更新。 argmax为什么不好？为什么actor比argmax更好？为什么ac就比q learning好？ 为什么不能一开始就疯狂探索，100%，反正我可以不用管当前的性能？  我可以一开始就疯狂探索，然后把状态转移的r放在那里放着， gym的rl环境不够准确，我觉得不同的环境千差万别。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-04-25T07:39:27.623Z">
+<meta property="article:modified_time" content="2023-04-25T07:39:27.623Z">
+<meta property="article:author" content="tianxiang">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="public blog of tianxiang" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">public blog of tianxiang</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://magiclucky1996.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-insights" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/04/25/insights/" class="article-date">
+  <time class="dt-published" datetime="2023-04-25T07:39:27.623Z" itemprop="datePublished">2023-04-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="insights"><a href="#insights" class="headerlink" title="insights"></a>insights</h1><p><strong>td error 先不更新，把式子放在那里，等到达最后再更新。把已探究出来的列着，等到回合结束再更新。</strong></p>
+<p><strong>argmax为什么不好？为什么actor比argmax更好？为什么ac就比q learning好？</strong></p>
+<p><strong>为什么不能一开始就疯狂探索，100%，反正我可以不用管当前的性能？</strong></p>
+<ul>
+<li>我可以一开始就疯狂探索，然后把状态转移的r放在那里放着，</li>
+<li>gym的rl环境不够准确，我觉得不同的环境千差万别。。没法体现rl算法的效率。这些人也许并没有多高明。</li>
+</ul>
+<p>This approach is called pure exploration and exploitation (PEE) and can be used in some cases where exploration is very costly or where the environment is very simple. However, in most real-world scenarios, PEE is not an optimal approach.</p>
+<p>The problem with PEE is that the agent spends a lot of time exploring and collecting data, but not enough time exploiting that data to improve its policy. This can lead to slow learning and poor performance, especially in complex environments where there are many possible actions and states.</p>
+<p>In contrast, most RL algorithms use a balance between exploration and exploitation, where the agent takes actions that are likely to yield high rewards based on its current policy while also occasionally exploring new actions or states. This allows the agent to learn quickly while still exploring new possibilities, leading to faster learning and better performance.</p>
+<p>Furthermore, in many RL problems, the environment is dynamic and can change over time. In such cases, it is important for the agent to continuously explore and adapt to changes in the environment to maintain optimal performance. This requires a balance between exploration and exploitation, as well as the ability to update the policy based on new data and experiences.</p>
+<p>In summary, while PEE can be a useful approach in some cases, a balanced approach between exploration and exploitation is generally more effective for most RL problems.</p>
+<p><strong>为社么discount factor</strong></p>
+<p>unstable env, noise in reward, </p>
+<p><strong>为什么神经网络代替q表，那部分要用神经网络学习的不能表征的“规律”是什么？</strong></p>
+<p>如果q表很大，就很难搞，为啥，那就建一个大的q表呗</p>
+<p><strong>策略和价值的本质区别是什么，是不是一样的，那个策略更新跟argmax到底是不是一样的</strong></p>
+<p>后面我可以i自己和环境玩，但是先按照教程完整拼一遍，</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://magiclucky1996.github.io/2023/04/25/insights/" data-id="clgw24ion0002yc9f8mcx3iab" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/04/25/MARL%20implementation/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/04/25/%E9%83%BD%E6%9F%8F%E6%9E%97%E7%A7%9F%E6%88%BF%E6%94%BB%E7%95%A5-%E7%8B%A0%E4%BA%BA%E7%89%88/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/04/25/incoporate%20%20mappo%20with%20sumo/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/25/MARL%20implementation/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/25/insights/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/25/%E9%83%BD%E6%9F%8F%E6%9E%97%E7%A7%9F%E6%88%BF%E6%94%BB%E7%95%A5-%E7%8B%A0%E4%BA%BA%E7%89%88/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/25/play%20with%20gym%20env/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 tianxiang<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
