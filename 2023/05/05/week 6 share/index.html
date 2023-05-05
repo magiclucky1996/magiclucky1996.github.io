@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>week6 | public blog of tianxiang</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="week 6&amp;7 shareAlgorithms-single agent(单智能体算法总结) 算法1： DQN valued based (unstable because the update of strategy is not smooth) poorly understood rainbow is the best implementation version of DQN (h">
+<meta property="og:type" content="article">
+<meta property="og:title" content="week6">
+<meta property="og:url" content="http://magiclucky1996.github.io/2023/05/05/week%206%20share/index.html">
+<meta property="og:site_name" content="public blog of tianxiang">
+<meta property="og:description" content="week 6&amp;7 shareAlgorithms-single agent(单智能体算法总结) 算法1： DQN valued based (unstable because the update of strategy is not smooth) poorly understood rainbow is the best implementation version of DQN (h">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://www.researchgate.net/publication/333197086/figure/fig11/AS:941946201727001@1601588883526/Pseudo-code-of-DQN-with-experience-replay-method-12.png">
+<meta property="og:image" content="https://i.stack.imgur.com/8Jn8l.png">
+<meta property="og:image" content="https://spinningup.openai.com/en/latest/_images/math/262538f3077a7be8ce89066abbab523575132996.svg">
+<meta property="og:image" content="https://spinningup.openai.com/en/latest/_images/math/5811066e89799e65be299ec407846103fcf1f746.svg">
+<meta property="og:image" content="https://spinningup.openai.com/en/latest/_images/math/c01f4994ae4aacf299a6b3ceceedfe0a14d4b874.svg">
+<meta property="og:image" content="https://spinningup.openai.com/en/latest/_images/math/5808864ea60ebc3702704717d9f4c3773c90540d.svg">
+<meta property="og:image" content="https://spinningup.openai.com/en/latest/_images/math/e62a8971472597f4b014c2da064f636ffe365ba3.svg">
+<meta property="og:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230504102441608.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230504094736482.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230504094802502.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230504094818441.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230504094833674.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230504094856363.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230504095430731.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230504095442568.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230504095454177.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230504112741947.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/MARL_cooperation_algo.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230426101337008.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230426101210597.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230426105145352.png">
+<meta property="og:image" content="http://magiclucky1996.github.io/home/sky/.config/Typora/typora-user-images/image-20230426101435439.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230426104602682.png">
+<meta property="og:image" content="http://magiclucky1996.github.io/home/sky/.config/Typora/typora-user-images/image-20230426105534532.png">
+<meta property="og:image" content="http://magiclucky1996.github.io/home/sky/.config/Typora/typora-user-images/image-20230426120749975.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230426120941839.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230426120839455.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230426123355644.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230426134554214.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230426150334001.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230426171844052.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230426171913044.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230426171946200.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230426172016159.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230426172142184.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230426173232834.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230501182944684.png">
+<meta property="article:published_time" content="2023-05-05T09:19:40.000Z">
+<meta property="article:modified_time" content="2023-05-05T13:51:33.105Z">
+<meta property="article:author" content="tianxiang">
+<meta property="article:tag" content="work">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.researchgate.net/publication/333197086/figure/fig11/AS:941946201727001@1601588883526/Pseudo-code-of-DQN-with-experience-replay-method-12.png">
+  
+    <link rel="alternate" href="/atom.xml" title="public blog of tianxiang" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">public blog of tianxiang</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://magiclucky1996.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-week 6 share" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/05/05/week%206%20share/" class="article-date">
+  <time class="dt-published" datetime="2023-05-05T09:19:40.000Z" itemprop="datePublished">2023-05-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      week6
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="week-6-amp-7-share"><a href="#week-6-amp-7-share" class="headerlink" title="week 6&amp;7 share"></a>week 6&amp;7 share</h1><h3 id="Algorithms-single-agent-单智能体算法总结"><a href="#Algorithms-single-agent-单智能体算法总结" class="headerlink" title="Algorithms-single agent(单智能体算法总结)"></a>Algorithms-single agent(单智能体算法总结)</h3><ul>
+<li><strong>算法1： DQN</strong><ul>
+<li>valued based (unstable because the update of strategy is not smooth)</li>
+<li>poorly understood</li>
+<li>rainbow is the best implementation version of DQN (<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1710.02298">https://arxiv.org/abs/1710.02298</a>)</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://www.researchgate.net/publication/333197086/figure/fig11/AS:941946201727001@1601588883526/Pseudo-code-of-DQN-with-experience-replay-method-12.png" alt="Pseudo-code of DQN with experience-replay method [12]"></p>
+<ul>
+<li><strong>算法2： REINFORCE</strong></li>
+</ul>
+<p><img src="https://i.stack.imgur.com/8Jn8l.png" alt="reinforcement learning - Why the $\gamma^t$ is needed here in REINFORCE:  Monte-Carlo Policy-Gradient Control (episodic) for $\pi_{*}$? - Cross  Validated"></p>
+<ul>
+<li><strong>算法3： VPG</strong><ul>
+<li>poor data efficiency</li>
+<li>poor robustness</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://spinningup.openai.com/en/latest/_images/math/262538f3077a7be8ce89066abbab523575132996.svg" alt="Vanilla Policy Gradient — Spinning Up documentation"></p>
+<ul>
+<li><strong>算法4： DDPG</strong><ul>
+<li>sampled from replay buffer</li>
+<li>good data sampling efficiency (why , just because of reuse of data in buffer)</li>
+<li>what does the deterministic refer to?</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://spinningup.openai.com/en/latest/_images/math/5811066e89799e65be299ec407846103fcf1f746.svg" alt="Deep Deterministic Policy Gradient — Spinning Up documentation"></p>
+<ul>
+<li><strong>算法5： SAC</strong><ul>
+<li>max entropy version of ddpg</li>
+<li>entropy help to explore</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://spinningup.openai.com/en/latest/_images/math/c01f4994ae4aacf299a6b3ceceedfe0a14d4b874.svg" alt="Soft Actor-Critic — Spinning Up documentation"></p>
+<ul>
+<li><strong>算法6： TRPO</strong><ul>
+<li>not compatible with frame including noise or parameter sharing (ppo paper)</li>
+<li>a little bit complicated</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://spinningup.openai.com/en/latest/_images/math/5808864ea60ebc3702704717d9f4c3773c90540d.svg" alt="Trust Region Policy Optimization — Spinning Up documentation"></p>
+<ul>
+<li><p><strong>算法7 PPO</strong></p>
+<ul>
+<li><p>data efficiency is not as good as ddpg: why?</p>
+</li>
+<li><p>collect trajectory set, improve value function to be close to utility with multiple gradient descent</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://spinningup.openai.com/en/latest/_images/math/e62a8971472597f4b014c2da064f636ffe365ba3.svg" alt="Proximal Policy Optimization — Spinning Up documentation"></p>
+<h4 id="chart-for-comparison对比表格"><a href="#chart-for-comparison对比表格" class="headerlink" title="chart for comparison对比表格"></a>chart for comparison对比表格</h4><table>
+<thead>
+<tr>
+<th></th>
+<th>value and policy</th>
+<th>improve method</th>
+<th>sampling</th>
+<th>update of model</th>
+<th>facts</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>DQN</td>
+<td>value: <strong>Q network</strong><br />policy: <strong>argmax Q</strong><br />sample: <strong>epsilon_greedy</strong></td>
+<td><strong>Bootstrap</strong>: receive r, improve Q</td>
+<td>sample along <strong>trajectory</strong> with <strong>epsilon_greedy</strong></td>
+<td>one step interact + experience replay</td>
+<td>off-policy(replay buffer)<br />discrete action</td>
+</tr>
+<tr>
+<td>DDPG</td>
+<td>value: <strong>Q network</strong><br />policy: **actor ** <br />sample: <strong>actor</strong></td>
+<td><strong>Bootstrap</strong>: receive r, update Q network , imporve</td>
+<td>sample along trajectory with <strong>actor</strong></td>
+<td>one step interact + experience replay</td>
+<td>off-policy;(replay buffer)<br />continuous action space<br /></td>
+</tr>
+<tr>
+<td>SAC</td>
+<td>value: <strong>Q network</strong><br />policy: <strong>actor</strong><br />sample: <strong>actor</strong></td>
+<td><strong>Boorstrap</strong>: receive r, update Q network, improve <strong>actor</strong></td>
+<td>sample along trajectory with <strong>actor</strong></td>
+<td>one step interact+experience replay</td>
+<td>off-policy(buffer)<br />continuous or discrete action space</td>
+</tr>
+<tr>
+<td>VPG</td>
+<td>value: <strong>Q network</strong><br />policy: <strong>actor</strong><br />sample:<strong>actor</strong></td>
+<td><strong>MC</strong>: collect set of traj, improve <strong>Actor</strong> with PG, then improve <strong>value</strong> network</td>
+<td>sample along trajectory with <strong>actor</strong></td>
+<td>interact for trajs+ update <strong>actor</strong> with PG(advantage by <strong>critic</strong>); update <strong>critic</strong> with MC</td>
+<td><strong>on-policy</strong>;<br />discrete+continuous action(policy network output could be action)<br /><br />easy to trapped in local optima</td>
+</tr>
+<tr>
+<td>TRPO</td>
+<td>value: <strong>MC</strong><br />policy: <strong>actor</strong><br />sample: <strong>actor</strong></td>
+<td><strong>MC</strong>: collect set of traj, improve <strong>Actor</strong> with PG, then improve <strong>value</strong> network</td>
+<td>sample along trajectory with <strong>actor</strong></td>
+<td>interact for trajs+ update <strong>actor</strong> with PG(advantage by <strong>critic</strong>); update <strong>critic</strong> with MC</td>
+<td>on policy</td>
+</tr>
+<tr>
+<td>PPO</td>
+<td>value: <strong>MC</strong><br />policy: <strong>actor</strong><br />sample: <strong>actor</strong></td>
+<td><strong>MC</strong>: collect set of traj, imporve <strong>actor</strong> with PG, then improve <strong>value</strong> network</td>
+<td>sample along trajectory with <strong>actor</strong></td>
+<td>interact for trajs+ update <strong>actor</strong> with PG(advantage by <strong>critic</strong>); update <strong>critic</strong> with MC</td>
+<td>on policy</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="analysis-for-rl-frame-rl框架的分析"><a href="#analysis-for-rl-frame-rl框架的分析" class="headerlink" title="analysis for rl frame(rl框架的分析)"></a>analysis for rl frame(rl框架的分析)</h3><p><strong>Bootstrap</strong>: collect transition , store in the replay buffer, update model every state in the env, <strong>(DQN, DDPG, SAC)</strong>, it’s usually <strong>off-policy, good data efficiency</strong>(data in buffer could be reused), the update of model is more frequent( every step in the env)</p>
+<p><strong>MC</strong>: Collect trajs with current policy, improve <strong>actor</strong> with utility through PG, then improve value with utility <strong>(VPG\ TRPO\PPO)</strong>, it’s usually <strong>on-policy</strong>, <strong>data efficiency</strong> is worse than <strong>ddpg and sac</strong>, update of model is not that frequent, </p>
+<p><strong>solving iid problem</strong>: </p>
+<ul>
+<li>replay buffer: off-policy method, applied for <strong>bootstrap</strong>.</li>
+</ul>
+<p><strong>solving explore problem</strong>: </p>
+<ul>
+<li>epsilon-greedy: applied for value based rl </li>
+<li>max entropy: applied for policy based rl</li>
+</ul>
+<h3 id="Basic-frame（rl的基础框架）"><a href="#Basic-frame（rl的基础框架）" class="headerlink" title="Basic frame（rl的基础框架）"></a>Basic frame（rl的基础框架）</h3><p><strong>Value based</strong> vs <strong>Policy gradient</strong> </p>
+<p>the policy of DQN is <strong>argmax Q</strong>, which is <strong>discrete</strong></p>
+<p>the policy of PG is <strong>actor network</strong>, which is <strong>continuous</strong></p>
+<p><strong>Result</strong>：</p>
+<p>Policy gradient <strong>lose</strong> at sample efficiency:  DQN is more sample efficient</p>
+<p>policy gradient <strong>lose</strong> at stability: gradient of policy could be noisy and high-variance</p>
+<p>Policy gradient <strong>win</strong> at smooth update: model update of PG is more smooth</p>
+<p>policy gradient <strong>win</strong> at complex and continuous problem: env with non-differentiable reward functions and continuous action space</p>
+<p><strong>Policy gradient</strong> VS <strong>Actor critic</strong>:</p>
+<p>the policy update of <strong>PG</strong> is through <strong>bootstrap</strong>: which learn faster </p>
+<p>the policy update of <strong>AC</strong> is through <strong>MC</strong>, which  learn slower</p>
+<p><strong>Result</strong>：</p>
+<p>Actor critic <strong>win</strong> at sample efficiency</p>
+<h3 id="Comparasion（rl算法的对比）"><a href="#Comparasion（rl算法的对比）" class="headerlink" title="Comparasion（rl算法的对比）"></a>Comparasion（rl算法的对比）</h3><table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Reward</th>
+<th>Convergence Speed</th>
+<th>Sample Efficiency</th>
+<th>Robustness</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>DQN</td>
+<td>9</td>
+<td>8</td>
+<td>9</td>
+<td>7</td>
+</tr>
+<tr>
+<td>A3C</td>
+<td>8</td>
+<td>9</td>
+<td>6</td>
+<td>8</td>
+</tr>
+<tr>
+<td>PPO</td>
+<td>7</td>
+<td>7</td>
+<td>8</td>
+<td>6</td>
+</tr>
+<tr>
+<td>TRPO</td>
+<td>7</td>
+<td>6</td>
+<td>7</td>
+<td>9</td>
+</tr>
+<tr>
+<td>AC</td>
+<td>6</td>
+<td>6</td>
+<td>6</td>
+<td>6</td>
+</tr>
+<tr>
+<td>VPG</td>
+<td>7</td>
+<td>5</td>
+<td>7</td>
+<td>7</td>
+</tr>
+<tr>
+<td>DDPG</td>
+<td>8</td>
+<td>7</td>
+<td>9</td>
+<td>8</td>
+</tr>
+<tr>
+<td>SAC</td>
+<td>9</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+</tr>
+</tbody></table>
+<ul>
+<li>comparison between ppo and sac</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230504102441608.png" alt="image-20230504102441608"></p>
+<ul>
+<li><p>comparison between ppo and sac</p>
+</li>
+<li><p>DQN</p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230504094736482.png" alt="image-20230504094736482"></p>
+<ul>
+<li>A3C</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230504094802502.png" alt="image-20230504094802502"></p>
+<ul>
+<li>ppo</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230504094818441.png" alt="image-20230504094818441"></p>
+<ul>
+<li>trpo</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230504094833674.png" alt="image-20230504094833674"></p>
+<ul>
+<li>AC</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230504094856363.png" alt="image-20230504094856363"></p>
+<ul>
+<li>vpg</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230504095430731.png" alt="image-20230504095430731"></p>
+<ul>
+<li>DDPG</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230504095442568.png" alt="image-20230504095442568"></p>
+<ul>
+<li>sac</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230504095454177.png" alt="image-20230504095454177"></p>
+<h2 id="Questions（问题）"><a href="#Questions（问题）" class="headerlink" title="Questions（问题）"></a>Questions（问题）</h2><p><em><strong>Q1: why cannot replay buffer be applied to ppo? why max entropy cannot be applied to ppo?</strong></em></p>
+<ol>
+<li>the policy optimization of ppo rely on current policy, ppo use  a rolling buffer to store the most recent trajectories and samples them</li>
+<li>policy update objective in ppo already includes an entropy term</li>
+</ol>
+<p><em><strong>Q2: what is the influence that whether the reward function is differentiable or not in reinforcement learning?</strong></em></p>
+<p>gradient-based optimization techniques are needed to update the policy and value function based on the observed rewards and states.</p>
+<p><em><strong>Q3:in neural network ,how much does the update of model influence the prediction of next state, if it matters , maybe we just prefer the most important state?</strong></em></p>
+<p>*<strong>Q4. when update Q,  will it be more stable that the action of next Q is chosen based on the probability distribution of action?*</strong></p>
+<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230504112741947.png" alt="image-20230504112741947"></p>
+<p><em><strong>Q5 we use epsilon decay or entropy to explore the env, so what if we  mark the action we choose in a table, and next time choose the action we haven’t choose?</strong></em></p>
+<p><em><strong>Q6. professor Vinny said MC is not same as sample a  set of trajectories</strong></em></p>
+<h2 id="Insights（想法）"><a href="#Insights（想法）" class="headerlink" title="Insights（想法）"></a>Insights（想法）</h2><ul>
+<li>maybe can view sample efficiency, robustness  and convergence from the perspective of machine learning: we want to learn faster and learn from useful information), then maybe absorb some experience from existing papers on gradient descent and machine learning.</li>
+</ul>
+<h1 id="Algorithms-multi-agent（多智能体算法）"><a href="#Algorithms-multi-agent（多智能体算法）" class="headerlink" title="Algorithms-multi agent（多智能体算法）"></a>Algorithms-multi agent（多智能体算法）</h1><p><a target="_blank" rel="noopener" href="https://jianzhnie.github.io/machine-learning-wiki/#/deep-rl/papers/Overview">https://jianzhnie.github.io/machine-learning-wiki/#/deep-rl/papers/Overview</a></p>
+<p>centralized critic network</p>
+<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/MARL_cooperation_algo.png" alt="../_images/MARL_cooperation_algo.png"></p>
+<p>Valued-based MARL</p>
+<p>roma</p>
+<p>Qmix</p>
+<p>Actor-Critic MARL</p>
+<p>maac</p>
+<p>coma</p>
+<p>maddpg</p>
+<p>mappo</p>
+<h1 id="Upcoming-conferences（会议总结）"><a href="#Upcoming-conferences（会议总结）" class="headerlink" title="Upcoming conferences（会议总结）"></a>Upcoming conferences（会议总结）</h1><p><em><strong>later do a complete notion chart: 之后做一个完整的notion表格</strong></em></p>
+<ul>
+<li>machine learning</li>
+</ul>
+<ol>
+<li>Conference on Neural Information Processing Systems (NeurIPS) (A category) <a target="_blank" rel="noopener" href="https://nips.cc/Conferences/2023/CallForPapers">https://nips.cc/Conferences/2023/CallForPapers</a></li>
+<li>International Conference on Machine Learning (ICML) (A category)  <a target="_blank" rel="noopener" href="https://icml.cc/">https://icml.cc/</a></li>
+<li>Conference on Robot Learning (CoRL)  <a target="_blank" rel="noopener" href="https://www.corl2023.org/">https://www.corl2023.org/</a></li>
+<li>IEEE Intelligent Transportation Systems Conference (ITSC) <a target="_blank" rel="noopener" href="https://ieee-itss.org/event/itsc2023/">https://ieee-itss.org/event/itsc2023/</a></li>
+<li>Transportation Research Board Annual Meeting (TRB)  <a target="_blank" rel="noopener" href="https://www.trb.org/AnnualMeeting/AnnualMeeting.aspx">https://www.trb.org/AnnualMeeting/AnnualMeeting.aspx</a></li>
+<li>International Joint Conference on Artificial Intelligence (IJCAI) (A category)  <a target="_blank" rel="noopener" href="https://www.ijcai.org/">https://www.ijcai.org/</a>  IJCAI-PRICAI-24: shanghai: out of date for 2023</li>
+<li>European Conference on Artificial Intelligence (ECAI) <a target="_blank" rel="noopener" href="https://ecai2023.eu/ECAI2023">https://ecai2023.eu/ECAI2023</a></li>
+<li>International Conference on Automated Planning and Scheduling (ICAPS) <a target="_blank" rel="noopener" href="https://icaps23.icaps-conference.org/">https://icaps23.icaps-conference.org/</a> : out of date for 2023</li>
+<li>International Conference on Learning Representations (ICLR)<a target="_blank" rel="noopener" href="https://iclr.cc/">https://iclr.cc/</a> out of date for 2023</li>
+<li>International Conference on Robotics and Automation (ICRA) <a target="_blank" rel="noopener" href="https://www.icra2023.org/">https://www.icra2023.org/</a> out of date for 2023</li>
+<li>International Symposium on Transportation and Traffic Theory (ISTTT) <a target="_blank" rel="noopener" href="https://limos.engin.umich.edu/isttt25/">https://limos.engin.umich.edu/isttt25/</a></li>
+<li>IEEE Conference on Decision and Control (CDC) <a target="_blank" rel="noopener" href="https://cdc2023.ieeecss.org/">https://cdc2023.ieeecss.org/</a> out of date for 2023</li>
+<li>IEEE International Conference on Intelligent Transportation Systems (ITSC) <a target="_blank" rel="noopener" href="https://ieee-itss.org/event/itsc2023/">https://ieee-itss.org/event/itsc2023/</a>  <a target="_blank" rel="noopener" href="https://2023.ieee-itsc.org/">https://2023.ieee-itsc.org/</a> out of date for 2023</li>
+<li>International Conference on Control, Automation and Information Sciences (ICCAIS) <a target="_blank" rel="noopener" href="http://iccais2023.org/">http://iccais2023.org/</a> </li>
+<li>International Conference on Control, Automation, Robotics and Vision (ICARCV) <a target="_blank" rel="noopener" href="https://www.intelligentautomation.network/events-intelligent-automation/agenda-mc?utm_campaign=27031.007_BLUE_GPPC&extTreatId=7576989&gclid=Cj0KCQjw6cKiBhD5ARIsAKXUdyY_SSzgGhuf4T7L6NxsscqfgI6HypsBEBtUoK1KGE28nwelmmOX-oIaAvveEALw_wcB">https://www.intelligentautomation.network/events-intelligent-automation/agenda-mc?utm_campaign=27031.007_BLUE_GPPC&amp;extTreatId=7576989&amp;gclid=Cj0KCQjw6cKiBhD5ARIsAKXUdyY_SSzgGhuf4T7L6NxsscqfgI6HypsBEBtUoK1KGE28nwelmmOX-oIaAvveEALw_wcB</a></li>
+</ol>
+<ul>
+<li>traffic</li>
+</ul>
+<ol>
+<li>World Conference on Transport Research Society (WCTRS) <a target="_blank" rel="noopener" href="http://wctr2023.ca/">http://wctr2023.ca/</a></li>
+<li>International Association of Traffic and Safety Sciences (IATSS)</li>
+<li>IEEE Intelligent Vehicles Symposium (IV) <a target="_blank" rel="noopener" href="https://2023.ieee-iv.org/">https://2023.ieee-iv.org/</a></li>
+<li>Transportation Science and Logistics Society (TSL)</li>
+<li>International Conference on Transport and Health (ICTH)</li>
+<li>International Symposium on Transportation Network Reliability (INSTR) <a target="_blank" rel="noopener" href="https://easychair.org/cfp/instr2023">https://easychair.org/cfp/instr2023</a></li>
+<li>IEEE International Conference on Intelligent Transportation Systems (ITSC)</li>
+<li>European Transport Conference (ETC) <a target="_blank" rel="noopener" href="https://aetransport.org/etc">https://aetransport.org/etc</a></li>
+<li>International Conference on Traffic and Transport Psychology (ICTTP) ICTTP 8 2024 Tel Aviv, Israel.</li>
+<li>ITS World Congress <a target="_blank" rel="noopener" href="https://itsworldcongress.com/">https://itsworldcongress.com/</a> 2024 dubai</li>
+</ol>
+<ul>
+<li>smart city</li>
+</ul>
+<ol>
+<li>IEEE International Smart Cities Conference (ISC2)</li>
+<li>ACM International Conference on Ubiquitous Computing and Communications (UbiComp)</li>
+<li>International Conference on Smart Cities and Green ICT Systems (SMARTGREENS)</li>
+<li>Smart Cities Symposium Prague (SCSP)</li>
+<li>IEEE International Conference on Smart City Innovations (SCI)</li>
+<li>International Workshop on Smart Cities and Urban Analytics (UrbanGIS)</li>
+<li>International Conference on Smart Data and Smart Cities (SDSC)</li>
+<li>Smart City Symposium (SCS)</li>
+<li>International Conference on Sustainable Smart Cities and Territories (SSCt)</li>
+<li>European Conference on Smart Objects, Systems and Technologies (Smart SysTech)</li>
+</ol>
+<ul>
+<li>intelligent connected vehicle</li>
+</ul>
+<ol>
+<li>International Conference on Connected Vehicles and Expo (ICCVE)</li>
+<li>IEEE Vehicular Technology Conference (VTC)</li>
+<li>International Conference on Vehicle Technology and Intelligent Transport Systems (VEHITS)</li>
+<li>IEEE Conference on Control Technology and Applications (CCTA)</li>
+<li>International Conference on Vehicle Engineering and Intelligent Transportation Systems (VEITS)</li>
+<li>IEEE International Conference on Connected and Autonomous Vehicles (ICCAV)</li>
+</ol>
+<h4 id="May"><a href="#May" class="headerlink" title="May"></a>May</h4><p><strong>May 8</strong></p>
+<p>ECAI 2023 <a target="_blank" rel="noopener" href="https://ecai2023.eu/ECAI2023">https://ecai2023.eu/ECAI2023</a></p>
+<p><strong>May 11</strong></p>
+<p>NIPS 2023  <a target="_blank" rel="noopener" href="https://nips.cc/Conferences/2023/CallForPapers">https://nips.cc/Conferences/2023/CallForPapers</a></p>
+<p><strong>May 15</strong></p>
+<p>ITSC 2023 <a target="_blank" rel="noopener" href="https://2023.ieee-itsc.org/">https://2023.ieee-itsc.org/</a></p>
+<h4 id="June"><a href="#June" class="headerlink" title="June"></a>June</h4><p><strong>June  8</strong> </p>
+<p>CoRL 2023 <a target="_blank" rel="noopener" href="https://www.corl2023.org/">https://www.corl2023.org/</a></p>
+<h4 id="July"><a href="#July" class="headerlink" title="July"></a>July</h4><p><strong>July 15</strong></p>
+<p>ICCAIS 2023 <a target="_blank" rel="noopener" href="http://iccais2023.org/">http://iccais2023.org/</a></p>
+<h4 id="August"><a href="#August" class="headerlink" title="August"></a>August</h4><p><strong>August 1</strong></p>
+<p>TRB 2024 <a target="_blank" rel="noopener" href="https://trb.secure-platform.com/a/page/TRBPaperReview#Instructions">https://trb.secure-platform.com/a/page/TRBPaperReview#Instructions</a></p>
+<h4 id="Sepetmber"><a href="#Sepetmber" class="headerlink" title="Sepetmber"></a>Sepetmber</h4><h4 id="October"><a href="#October" class="headerlink" title="October"></a>October</h4><h4 id="November"><a href="#November" class="headerlink" title="November"></a>November</h4><h4 id="December"><a href="#December" class="headerlink" title="December"></a>December</h4><h2 id="note"><a href="#note" class="headerlink" title="note"></a>note</h2><ol>
+<li><h4 id="Trpo-PPO-MAPPO"><a href="#Trpo-PPO-MAPPO" class="headerlink" title="Trpo PPO MAPPO"></a>Trpo PPO MAPPO</h4></li>
+</ol>
+<p>1.1 Trpo</p>
+<p><strong>(1). Approximation</strong></p>
+<ul>
+<li>the cost function</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230426101337008.png" alt="image-20230426101337008"></p>
+<ul>
+<li>the V</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230426101210597.png" alt="image-20230426101210597"></p>
+<ul>
+<li>so it could be approximated by</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230426105145352.png" alt="image-20230426105145352"></p>
+<ul>
+<li><p>therefore J could be transferred to </p>
+<p><img src="/home/sky/.config/Typora/typora-user-images/image-20230426101435439.png" alt="image-20230426101435439"></p>
+</li>
+<li><p>try to find the <strong>theta</strong> which could maximize the <strong>J</strong></p>
+</li>
+<li><p><strong>S</strong> follows the trajectory of steps, but are seen as stochastic sampling from the env</p>
+</li>
+<li><p>A is also sampled by the strategy Pi</p>
+</li>
+<li><p>collect this trajectory by interacting with the env</p>
+</li>
+<li><p>then it would be like this</p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230426104602682.png" alt="image-20230426104602682"></p>
+<h4 id="2-optimization"><a href="#2-optimization" class="headerlink" title="(2). optimization"></a>(2). optimization</h4><ul>
+<li>in trust region, update parameter,</li>
+</ul>
+<p><img src="/home/sky/.config/Typora/typora-user-images/image-20230426105534532.png" alt="image-20230426105534532"></p>
+<p>it’s an optimization problem, we construct the optimization problem, then throw to optimization solver to solve it.</p>
+<h4 id="3-pseudocode"><a href="#3-pseudocode" class="headerlink" title="(3). pseudocode"></a>(3). pseudocode</h4><p><img src="/home/sky/.config/Typora/typora-user-images/image-20230426120749975.png" alt="image-20230426120749975"></p>
+<p>In one cycle, the strategy network is updated each time, and one game is played to obtain a trajectory. However, in maximization, there are multiple inner cycles required by optimization problems , which are usually solved by gradient projection algorithm.</p>
+<ul>
+<li>2 hyperparameters 4 maximization: <ul>
+<li>Step size of gradient descent, </li>
+<li>radius of confidence region</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-2-PPO"><a href="#1-2-PPO" class="headerlink" title="1.2 PPO"></a>1.2 PPO</h3><ul>
+<li>PPO version 1: add constraint into cost function</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230426120941839.png" alt="image-20230426120941839"></p>
+<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230426120839455.png" alt="image-20230426120839455"></p>
+<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230426123355644.png" alt="image-20230426123355644"></p>
+<p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1707.06347">https://arxiv.org/abs/1707.06347</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>cons</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>DQN</td>
+<td>1. fails on simple problems; <br />2. poorly understood</td>
+</tr>
+<tr>
+<td>VPG</td>
+<td>1. poor data efficiency <br />2. poor robustness</td>
+</tr>
+<tr>
+<td>trpo</td>
+<td>1. complicated <br />2. not compatible with noise ( like dropout)+ data sharing</td>
+</tr>
+<tr>
+<td>ppo</td>
+<td>1. good data efficiency<br />2. reliable profermance<br />3. only first -order optimization</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<ol start="2">
+<li><h3 id="pieter-abbeel-rl-course"><a href="#pieter-abbeel-rl-course" class="headerlink" title="pieter abbeel rl course"></a>pieter abbeel rl course</h3></li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=2GwBez0D20A&t=130s">https://www.youtube.com/watch?v=2GwBez0D20A&amp;t=130s</a></p>
+<p>2.1 : MDP</p>
+<p><em><strong>insight: group of robot learn faster: data sharing, more efficient sampling of the env</strong></em></p>
+<ul>
+<li>groups of robots learn faster, they can share date, more efficient sampling of the env, save wall time</li>
+<li>gamma (discount factor) is also designed based on what our goal is, if we want the agent of care more about things happen in closer steps, then …</li>
+<li>if gamma is introduced, state take less  steps to the reward is with higher value, it’s like the “time” of game world. but it should not be same as the future evaluated in our real world.</li>
+<li>update: in grid world,  we swap a time for all the grid , what if we use different way to swap all the states?<ul>
+<li>like along trajectory</li>
+<li>like importance sampling</li>
+</ul>
+</li>
+<li>Discount factor influence convergence: 0: faster 1: longer</li>
+<li>why it converge</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230426134554214.png" alt="image-20230426134554214"></p>
+<h5 id="effect-of-discount-and-noise"><a href="#effect-of-discount-and-noise" class="headerlink" title="effect of discount and noise"></a>effect of discount and noise</h5><p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230426150334001.png" alt="image-20230426150334001"></p>
+<p>(a)</p>
+<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230426171844052.png" alt="image-20230426171844052"></p>
+<p>(b)</p>
+<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230426171913044.png" alt="image-20230426171913044"></p>
+<p>(c)</p>
+<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230426171946200.png" alt="image-20230426171946200"></p>
+<p>(d)</p>
+<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230426172016159.png" alt="image-20230426172016159"></p>
+<ul>
+<li>update for Q*  , as default,  the agent thereafter acting optimally</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230426172142184.png" alt="image-20230426172142184"></p>
+<ul>
+<li>policy evaluation</li>
+</ul>
+<h3 id="Max-entropy"><a href="#Max-entropy" class="headerlink" title="Max entropy"></a>Max entropy</h3><ul>
+<li><p>how do we collect data</p>
+<ul>
+<li>use current policy to collect data	, if policy is deterministic , data collection would not be interesting</li>
+<li>with entropy, policy will be with more variation in how the data is collected</li>
+</ul>
+</li>
+<li><p>entropy</p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230426173232834.png" alt="image-20230426173232834"></p>
+<ul>
+<li><p>a distribution over near-optimal solution</p>
+<ul>
+<li><strong>robust policy</strong>:  the env could change, if it’s distribution instead of deterministic it’s more robust</li>
+<li><strong>robust learning</strong> : we can keep collecting exploratory data during learning</li>
+</ul>
+</li>
+<li><p>collect along learning, or collect with exploration , then off-policy update</p>
+</li>
+<li><p>insights: how about when the best action changed in a state , increase the   possibility of explore and update to former states,( like in my last paper, in board are , increase explore, in narrow area, reduce explore)</p>
+</li>
+<li><p>insights:  after update the value of a state , trace back and update all the former state (read the trace chapter of sutton book)</p>
+</li>
+</ul>
+<h3 id="2-2-Q-learning"><a href="#2-2-Q-learning" class="headerlink" title="2.2 : Q learning"></a>2.2 : Q learning</h3><p><strong>properties</strong></p>
+<ul>
+<li>converge even if act suboptimal (epsilon greedy)</li>
+<li>epsilon decay: if not do decay , latest experience will make you hop around</li>
+<li>epsilon: u need to make it small eventually </li>
+<li>epsilon: cannot decay too fast: cannot update enough</li>
+</ul>
+<p><strong>requirement</strong></p>
+<ul>
+<li>state and actions are visited infinitely often: doesn’t matter how u select actions</li>
+<li>learning rate schedule: <ul>
+<li>reference: <a target="_blank" rel="noopener" href="https://dspace.mit.edu/bitstream/handle/1721.1/7205/AIM-1441.pdf?sequence=2">On the Convergence of Stochastic Iterative Dynamic …</a></li>
+</ul>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230501182944684.png" alt="image-20230501182944684"></p>
+<h3 id="play-with-rl"><a href="#play-with-rl" class="headerlink" title="play with rl"></a>play with rl</h3><ul>
+<li>rl playground</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://rlplaygrounds.com/">https://rlplaygrounds.com/</a></p>
+<ul>
+<li><p>openai gym</p>
+</li>
+<li><p>deep mind control</p>
+</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://github.com/deepmind/dm_control">https://github.com/deepmind/dm_control</a></p>
+<ul>
+<li>Unity ML-Agents (</li>
+</ul>
+<p> <a target="_blank" rel="noopener" href="https://github.com/Unity-Technologies/ml-agents">https://github.com/Unity-Technologies/ml-agents</a> )</p>
+<ul>
+<li>course from neptune</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://neptune.ai/blog/best-reinforcement-learning-tutorials-examples-projects-and-courses">https://neptune.ai/blog/best-reinforcement-learning-tutorials-examples-projects-and-courses</a></p>
+<ul>
+<li>easy game to visualize reinforcement learning</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://towardsdatascience.com/reinforcement-learning-and-visualisation-with-a-simple-game-a1fe725f0509">https://towardsdatascience.com/reinforcement-learning-and-visualisation-with-a-simple-game-a1fe725f0509</a></p>
+<p>when state space is large, the update of qtable will be very slow…</p>
+<h3 id="paper-reading-list"><a href="#paper-reading-list" class="headerlink" title="paper reading list:"></a><em>paper reading list:</em></h3><ul>
+<li><em>playing atari with drl</em> <a target="_blank" rel="noopener" href="https://arxiv.org/abs/1312.5602">https://arxiv.org/abs/1312.5602</a></li>
+<li><em>rainbow</em>  <a target="_blank" rel="noopener" href="https://arxiv.org/abs/1710.02298">https://arxiv.org/abs/1710.02298</a></li>
+<li><em>ppo</em> <a target="_blank" rel="noopener" href="https://arxiv.org/abs/1707.06347">https://arxiv.org/abs/1707.06347</a></li>
+<li><em>mappo</em> <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2103.01955">https://arxiv.org/abs/2103.01955</a></li>
+<li><em>maven</em> <a target="_blank" rel="noopener" href="https://arxiv.org/abs/1910.07483">https://arxiv.org/abs/1910.07483</a></li>
+<li>qmix <a target="_blank" rel="noopener" href="https://arxiv.org/abs/1803.11485">https://arxiv.org/abs/1803.11485</a></li>
+<li>maddpg <a target="_blank" rel="noopener" href="https://arxiv.org/abs/1706.02275">https://arxiv.org/abs/1706.02275</a></li>
+<li>coma <a target="_blank" rel="noopener" href="https://arxiv.org/abs/1705.08926">https://arxiv.org/abs/1705.08926</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://magiclucky1996.github.io/2023/05/05/week%206%20share/" data-id="clham94tk0001h1ot9v43b4jy" data-title="week6" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/work/" rel="tag">work</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/05/05/rl_envs_and_modeling/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          rl_play
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/05/05/tcd%20facility%20research/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">research of tcd facility</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/life/" rel="tag">life</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work/" rel="tag">work</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/life/" style="font-size: 10px;">life</a> <a href="/tags/work/" style="font-size: 20px;">work</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">May 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/05/05/dublin_remote_work/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/05/05/%E9%83%BD%E6%9F%8F%E6%9E%97%E7%A7%9F%E6%88%BF%E6%94%BB%E7%95%A5-%E7%8B%A0%E4%BA%BA%E7%89%88/">都柏林租房攻略</a>
+          </li>
+        
+          <li>
+            <a href="/2023/05/05/rl_envs_and_modeling/">rl_play</a>
+          </li>
+        
+          <li>
+            <a href="/2023/05/05/week%206%20share/">week6</a>
+          </li>
+        
+          <li>
+            <a href="/2023/05/05/tcd%20facility%20research/">research of tcd facility</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 tianxiang<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -4,18 +4,19 @@
   <meta charset="utf-8">
   
   
-  <title>public blog of tianxiang</title>
+  <title>week8&amp;9 | public blog of tianxiang</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="incoporate  mappo with sumo1. look for existing mappo + sumo reference   github paper resource of course era, presentation, tutorial (osint)   resources found  github  ppo + sumo https:&#x2F;&#x2F;github.com&#x2F;ma">
+  <meta name="description" content="week 8goal of the weekreading rl papers, marl papers, sutton rlbook2020 Questions: why q table replaced by NN, what is the discipline to represent? difference b fully explore 和 epsilon greedy why acto">
 <meta property="og:type" content="article">
-<meta property="og:title" content="public blog of tianxiang">
-<meta property="og:url" content="http://magiclucky1996.github.io/2023/04/25/incoporate%20%20mappo%20with%20sumo/index.html">
+<meta property="og:title" content="week8&amp;9">
+<meta property="og:url" content="http://magiclucky1996.github.io/2023/05/05/week%208/index.html">
 <meta property="og:site_name" content="public blog of tianxiang">
-<meta property="og:description" content="incoporate  mappo with sumo1. look for existing mappo + sumo reference   github paper resource of course era, presentation, tutorial (osint)   resources found  github  ppo + sumo https:&#x2F;&#x2F;github.com&#x2F;ma">
+<meta property="og:description" content="week 8goal of the weekreading rl papers, marl papers, sutton rlbook2020 Questions: why q table replaced by NN, what is the discipline to represent? difference b fully explore 和 epsilon greedy why acto">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-04-25T07:39:27.623Z">
-<meta property="article:modified_time" content="2023-04-25T07:39:27.623Z">
+<meta property="article:published_time" content="2023-05-05T09:19:40.000Z">
+<meta property="article:modified_time" content="2023-05-05T13:51:33.106Z">
 <meta property="article:author" content="tianxiang">
+<meta property="article:tag" content="work">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="public blog of tianxiang" type="application/atom+xml">
@@ -73,19 +74,45 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-incoporate  mappo with sumo" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-week 8" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/04/25/incoporate%20%20mappo%20with%20sumo/" class="article-date">
-  <time class="dt-published" datetime="2023-04-25T07:39:27.623Z" itemprop="datePublished">2023-04-25</time>
+    <a href="/2023/05/05/week%208/" class="article-date">
+  <time class="dt-published" datetime="2023-05-05T09:19:40.000Z" itemprop="datePublished">2023-05-05</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      week8&amp;9
+    </h1>
+  
+
+      </header>
+    
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="incoporate-mappo-with-sumo"><a href="#incoporate-mappo-with-sumo" class="headerlink" title="incoporate  mappo with sumo"></a>incoporate  mappo with sumo</h1><h2 id="1-look-for-existing-mappo-sumo"><a href="#1-look-for-existing-mappo-sumo" class="headerlink" title="1. look for existing mappo + sumo"></a>1. look for existing mappo + sumo</h2><ul>
+        <h1 id="week-8"><a href="#week-8" class="headerlink" title="week 8"></a>week 8</h1><h3 id="goal-of-the-week"><a href="#goal-of-the-week" class="headerlink" title="goal of the week"></a>goal of the week</h3><p>reading rl papers, marl papers, sutton rlbook2020</p>
+<h3 id="Questions"><a href="#Questions" class="headerlink" title="Questions:"></a>Questions:</h3><ol>
+<li>why q table replaced by NN, what is the discipline to represent?</li>
+<li>difference b</li>
+<li>fully explore 和 epsilon greedy</li>
+<li>why actor better than argmax</li>
+<li></li>
+</ol>
+<h3 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h3><ul>
+<li>fully explore</li>
+</ul>
+<p>This approach is called pure exploration and exploitation (PEE) and can be used in some cases where exploration is very costly or where the environment is very simple. However, in most real-world scenarios, PEE is not an optimal approach.</p>
+<p>The problem with PEE is that the agent spends a lot of time exploring and collecting data, but not enough time exploiting that data to improve its policy. This can lead to slow learning and poor performance, especially in complex environments where there are many possible actions and states.</p>
+<p>In contrast, most RL algorithms use a balance between exploration and exploitation, where the agent takes actions that are likely to yield high rewards based on its current policy while also occasionally exploring new actions or states. This allows the agent to learn quickly while still exploring new possibilities, leading to faster learning and better performance.</p>
+<p>Furthermore, in many RL problems, the environment is dynamic and can change over time. In such cases, it is important for the agent to continuously explore and adapt to changes in the environment to maintain optimal performance. This requires a balance between exploration and exploitation, as well as the ability to update the policy based on new data and experiences.</p>
+<p>In summary, while PEE can be a useful approach in some cases, a balanced approach between exploration and exploitation is generally more effective for most RL problems.</p>
+<h1 id="incoporate-mappo-with-sumo"><a href="#incoporate-mappo-with-sumo" class="headerlink" title="incoporate  mappo with sumo"></a>incoporate  mappo with sumo</h1><h2 id="1-look-for-existing-mappo-sumo"><a href="#1-look-for-existing-mappo-sumo" class="headerlink" title="1. look for existing mappo + sumo"></a>1. look for existing mappo + sumo</h2><ul>
 <li>reference</li>
 </ul>
 <ol>
@@ -117,7 +144,7 @@
 <p><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/abstract/document/9549970/authors#authors">https://ieeexplore.ieee.org/abstract/document/9549970/authors#authors</a> 东北信息学院：提到了rl奖励稀疏的问题，然后他们给rl设计更多的reward 引导它学习。但是你怎么知道什么样的reward能够引导，这不是还是在reward function设计的范围里吗？</p>
 <ul>
 <li>insights<ol>
-<li>sumo设计的问题，如果我们设一个控制周期之后的交通流状态为reward是不是不合理，怎么样去评价智能体schedule的好坏呢，怎么去评价智能体的action改善了交通呢，我是要搞交通呢，还是要搞rl呢，还是要搞啥，，，</li>
+<li>sumo设计的问题，如果我们设一个控制周期之后的交通流状态为reward是不是不合理，怎么样去评价智能体schedule的好坏呢，怎么去评价智能体的action改善了交通呢，我是要搞交通呢，还是要搞rl呢，还是要搞啥，</li>
 <li>上次会议的要点：1. insight可以给硕士做，但是要具体可行 2. 做一个oncoming 会议的scheduling(rl 多智能体 交通 计算机 人工智能) 3. sumo的模型可以封装好给本科生用 4.</li>
 </ol>
 </li>
@@ -139,38 +166,40 @@
 <li></li>
 </ol>
 <h2 id="2-make-it-with-materials-found"><a href="#2-make-it-with-materials-found" class="headerlink" title="2. make it with materials found"></a>2. make it with materials found</h2><p>生活的star：</p>
-<p>琴</p>
-<p>传统动画</p>
+<p>piano</p>
+<p>上海美术厂</p>
 <p>breaking</p>
-<p>网安</p>
-<p>戒社交</p>
+<p>penetration testing</p>
+<p>avoid social media</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://magiclucky1996.github.io/2023/04/25/incoporate%20%20mappo%20with%20sumo/" data-id="clgw24ioh0000yc9f30vq1vyg" data-title="" class="article-share-link">Share</a>
+      <a data-url="http://magiclucky1996.github.io/2023/05/05/week%208/" data-id="clham94tm0004h1ot2tk2g0wv" data-title="week8&amp;9" class="article-share-link">Share</a>
       
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/work/" rel="tag">work</a></li></ul>
+
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2023/04/25/dublin%E9%80%82%E5%90%88%E8%BF%9C%E7%A8%8B%E5%8A%9E%E5%85%AC%E7%9A%84%E5%9C%B0%E7%82%B9%E5%90%88%E9%9B%86/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2023/05/05/tcd%20facility%20research/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          (no title)
+          research of tcd facility
         
       </div>
     </a>
   
   
-    <a href="/2023/04/25/MARL%20implementation/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2023/05/05/week4&5/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title"></div>
+      <div class="article-nav-title">week4&amp;5</div>
     </a>
   
 </nav>
@@ -187,15 +216,29 @@
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/life/" rel="tag">life</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work/" rel="tag">work</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/life/" style="font-size: 10px;">life</a> <a href="/tags/work/" style="font-size: 20px;">work</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">May 2023</a></li></ul>
     </div>
   </div>
 
@@ -208,23 +251,23 @@
       <ul>
         
           <li>
-            <a href="/2023/04/25/dublin%E9%80%82%E5%90%88%E8%BF%9C%E7%A8%8B%E5%8A%9E%E5%85%AC%E7%9A%84%E5%9C%B0%E7%82%B9%E5%90%88%E9%9B%86/">(no title)</a>
+            <a href="/2023/05/05/dublin_remote_work/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2023/04/25/incoporate%20%20mappo%20with%20sumo/">(no title)</a>
+            <a href="/2023/05/05/%E9%83%BD%E6%9F%8F%E6%9E%97%E7%A7%9F%E6%88%BF%E6%94%BB%E7%95%A5-%E7%8B%A0%E4%BA%BA%E7%89%88/">都柏林租房攻略</a>
           </li>
         
           <li>
-            <a href="/2023/04/25/MARL%20implementation/">(no title)</a>
+            <a href="/2023/05/05/rl_envs_and_modeling/">rl_play</a>
           </li>
         
           <li>
-            <a href="/2023/04/25/insights/">(no title)</a>
+            <a href="/2023/05/05/week%206%20share/">week6</a>
           </li>
         
           <li>
-            <a href="/2023/04/25/%E9%83%BD%E6%9F%8F%E6%9E%97%E7%A7%9F%E6%88%BF%E6%94%BB%E7%95%A5-%E7%8B%A0%E4%BA%BA%E7%89%88/">(no title)</a>
+            <a href="/2023/05/05/tcd%20facility%20research/">research of tcd facility</a>
           </li>
         
       </ul>
