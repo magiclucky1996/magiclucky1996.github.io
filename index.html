@@ -71,6 +71,693 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-try hack me- penetration tester" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/05/15/try%20hack%20me-%20penetration%20tester/" class="article-date">
+  <time class="dt-published" datetime="2023-05-15T09:39:35.632Z" itemprop="datePublished">2023-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="try-hack-me-penetration-tester"><a href="#try-hack-me-penetration-tester" class="headerlink" title="try hack me- penetration tester"></a>try hack me- penetration tester</h1><h2 id="introduction-t-cyber-security"><a href="#introduction-t-cyber-security" class="headerlink" title="introduction t cyber security"></a>introduction t cyber security</h2><ul>
+<li>offensive security<ul>
+<li>find hidden page and hack the bank</li>
+<li>breaking into system, exploit bug, find loopholes</li>
+</ul>
+</li>
+</ul>
+<h2 id="walk-an-application"><a href="#walk-an-application" class="headerlink" title="walk an application"></a>walk an application</h2><ul>
+<li>Short breakdown<ul>
+<li>view source</li>
+<li>Network</li>
+<li>Inspector: <ul>
+<li>view the blocks</li>
+</ul>
+</li>
+<li>debugger<ul>
+<li>control JS</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>explore the web<ul>
+<li>view web sites frame</li>
+</ul>
+</li>
+<li>page source<ul>
+<li>most are made of <strong>frame</strong></li>
+</ul>
+</li>
+<li>inspector<ul>
+<li>view the css style and change<ul>
+<li>Display: block. -&gt; display: none</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>debugger<ul>
+<li>using break point to stop the running of the js</li>
+</ul>
+</li>
+<li>Network</li>
+</ul>
+<h2 id="content-discovery"><a href="#content-discovery" class="headerlink" title="content discovery"></a>content discovery</h2><ul>
+<li><p><strong>Robots.txt</strong></p>
+</li>
+<li><p><strong>Favicon</strong></p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://wiki.owasp.org/index.php/OWASP_favicon_database">https://wiki.owasp.org/index.php/OWASP_favicon_database</a></p>
+</li>
+<li><p>look up the hash value of favicon</p>
+</li>
+<li><p>find the frame</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Sitemap.xml</strong></p>
+<ul>
+<li>list of files the owner wish to be listed on search engine</li>
+</ul>
+</li>
+<li><p><strong>http headers</strong></p>
+<ul>
+<li>Contains information like: <ul>
+<li><ol>
+<li>server software</li>
+<li>Programming language</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>visit by terminal: curl “ip address” -v</li>
+</ul>
+</li>
+<li><p><strong>framework stack</strong></p>
+<ul>
+<li>View the frame from the source information, </li>
+<li>find some drawback from the frame documentation</li>
+</ul>
+</li>
+<li><p><strong>google hacking</strong></p>
+<ul>
+<li>Site:tryhackme.com</li>
+<li>Inurl: admin</li>
+<li>filetype</li>
+<li>Entitle: admin</li>
+</ul>
+</li>
+<li><p><strong>Wappalyzer</strong></p>
+<ul>
+<li>Analyze the frame that this page use</li>
+<li>has google extension</li>
+</ul>
+</li>
+<li><p><strong>wayback machine</strong></p>
+</li>
+<li><p>github</p>
+<ul>
+<li>look for <strong>company names</strong> or <strong>website names</strong> to  locate repositories of target</li>
+</ul>
+</li>
+<li><p><strong>S3 Buckets</strong></p>
+<ul>
+<li>Cloud, sometims forget to set private</li>
+<li>http(s):&#x2F;&#x2F;<strong>{name}.</strong><a target="_blank" rel="noopener" href="http://s3.amazonaws.com/"><strong>s3.amazonaws.com</strong></a></li>
+<li>where to find the url:<ul>
+<li>Web source</li>
+<li>github repo</li>
+<li>Animated generate<ul>
+<li><strong>{name}</strong>-assets, <strong>{name}</strong>-www, <strong>{name}</strong>-public, <strong>{name}</strong>-private</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Automated Discovery</strong></p>
+<ul>
+<li>Tools to automated<ul>
+<li>ffuf</li>
+<li>dirb</li>
+<li>Robuster</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>conclusion</p>
+<ul>
+<li>步骤是可复用的，直接用脚本自动化就可以，</li>
+</ul>
+</li>
+</ul>
+<h3 id="Subdomain-enumeate"><a href="#Subdomain-enumeate" class="headerlink" title="Subdomain enumeate"></a>Subdomain enumeate</h3><ul>
+<li>Ssl&#x2F;tsl<ul>
+<li>find sub domain by ssl service look up<ul>
+<li><a target="_blank" rel="noopener" href="http://crt.sh/">http://crt.sh/</a></li>
+<li><a target="_blank" rel="noopener" href="https://ui.ctsearch.entrust.com/ui/ctsearchui">https://ui.ctsearch.entrust.com/ui/ctsearchui</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>google<ul>
+<li><strong>-site:<a target="_blank" rel="noopener" href="http://www.tryhackme.com/">www.tryhackme.com</a> site:*.tryhackme.com</strong></li>
+</ul>
+</li>
+<li>DNS brute force（子域爆破）</li>
+<li>autamated tool<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/aboul3la/Sublist3r">https://github.com/aboul3la/Sublist3r</a></li>
+</ul>
+</li>
+<li>Virtual host(爆破host name，替换)<ul>
+<li>enumerate for host names on a server</li>
+<li>when server host multiple webs on same ip, host name is used to identify</li>
+</ul>
+</li>
+</ul>
+<h3 id="authentication-bypass"><a href="#authentication-bypass" class="headerlink" title="authentication bypass"></a>authentication bypass</h3><ul>
+<li>User name enumerate<ul>
+<li>test which user name exists</li>
+</ul>
+</li>
+<li>Brute force</li>
+<li>logic flaw</li>
+<li>Cookie tampering<ul>
+<li>Cookie  会进行编码</li>
+</ul>
+</li>
+</ul>
+<h3 id="idor"><a href="#idor" class="headerlink" title="idor"></a>idor</h3><ul>
+<li>detect<ul>
+<li>create two accounts, swap the id between them</li>
+</ul>
+</li>
+<li>parameter may not be address<ul>
+<li>AJAX</li>
+<li>JS</li>
+</ul>
+</li>
+<li>an unreferenced parameter that may have been of some use</li>
+<li><strong>&#x2F;user&#x2F;details?user_id&#x3D;123</strong></li>
+<li>practical<ul>
+<li>network 看到从api通过userid请求数据</li>
+<li>更改链接传参中的userid来获取数据</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://magiclucky1996.github.io/2023/05/15/try%20hack%20me-%20penetration%20tester/" data-id="clhonv51l0001t9ot5ts63toz" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-workshop pre1: survey on traffic" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/05/15/workshop%20pre1:%20survey%20on%20traffic/" class="article-date">
+  <time class="dt-published" datetime="2023-05-15T09:39:35.623Z" itemprop="datePublished">2023-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="what-to-do-today"><a href="#what-to-do-today" class="headerlink" title="what to do today:"></a>what to do today:</h3><p>make decisions for what to do and do it .</p>
+<ol>
+<li><p>make the pre for next week</p>
+</li>
+<li><p>finish the student work (no i wish)</p>
+</li>
+<li><p>finish reading for rl and marl(god)</p>
+</li>
+<li><p>buy shoes and belt and maybe towel</p>
+</li>
+</ol>
+<h3 id="specific-direction"><a href="#specific-direction" class="headerlink" title="specific direction"></a>specific direction</h3><p>direction 1 : hierarchical traffic control</p>
+<p>direction 2 : online learning</p>
+<h3 id="survey-for-traffic-control"><a href="#survey-for-traffic-control" class="headerlink" title="survey for traffic control"></a>survey for traffic control</h3><ul>
+<li><p>ask chatgpt to give the survey on traffic control</p>
+<ul>
+<li><p>way of control</p>
+<ul>
+<li>traditional: off-line: get a offline strategy, and implement it </li>
+<li>dynamic: adjust based on real-time data</li>
+</ul>
+</li>
+<li><p>systems in industry</p>
+<ul>
+<li>australia: SCATS</li>
+<li>england: SCOOT</li>
+<li>america: RHODES</li>
+<li>italy: SPOT&#x2F;UTOPIA</li>
+<li>China: NUTCS SMOOTH</li>
+</ul>
+</li>
+<li><p>systems currently used </p>
+<ul>
+<li><p>ireland: SCATS</p>
+</li>
+<li><p>singapore: UTC (SCOOT algorithm)</p>
+</li>
+<li><p>Japan: TCIS (ALINEA（Adaptive Line Enhancement Algorithm）algorithm)</p>
+</li>
+<li><p>England: scoot MOVA UTC</p>
+</li>
+<li><p>Germany: centralized control : Zentrale Verkehrsleittechnik”（ZVL）</p>
+<ul>
+<li><p>scale: coordinate the whole country and cities</p>
+</li>
+<li><p>method:</p>
+</li>
+<li><p>resource</p>
+<ul>
+<li><p>Websites of traffic management companies:</p>
+</li>
+<li><p>Siemens Mobility: h</p>
+</li>
+<li><p>ttps:&#x2F;&#x2F;<a target="_blank" rel="noopener" href="http://www.siemens-mobility.com/de/de/themen/verkehrstechnik/verkehrsmanagement/">www.siemens-mobility.com/de/de/themen/verkehrstechnik/verkehrsmanagement/</a></p>
+</li>
+<li><p>Swarco Traffic Systems: <a target="_blank" rel="noopener" href="https://www.swarco.com/de/Verkehrssysteme/Verkehrsmanagement">https://www.swarco.com/de/Verkehrssysteme/Verkehrsmanagement</a></p>
+</li>
+<li><p>Imtech Traffic &amp; Infra: <a target="_blank" rel="noopener" href="https://www.imtechtraffic.com/de/">https://www.imtechtraffic.com/de/</a></p>
+</li>
+</ul>
+<ol>
+<li>Government websites:</li>
+</ol>
+<ul>
+<li>Federal Ministry of Transport and Digital Infrastructure (BMVI): <a target="_blank" rel="noopener" href="https://www.bmvi.de/SharedDocs/DE/Home.html">https://www.bmvi.de/SharedDocs/DE/Home.html</a></li>
+<li>State transportation agencies (examples):<ul>
+<li>Hessen Mobil: <a target="_blank" rel="noopener" href="https://www.mobil.hessen.de/">https://www.mobil.hessen.de/</a></li>
+<li>Landesbetrieb Straßenbau NRW: <a target="_blank" rel="noopener" href="https://www.strassen.nrw.de/">https://www.strassen.nrw.de/</a></li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>Research databases:</li>
+</ol>
+<ul>
+<li>Google Scholar: <a target="_blank" rel="noopener" href="https://scholar.google.com/">https://scholar.google.com/</a></li>
+<li>IEEE Xplore: <a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/Xplore/home.jsp">https://ieeexplore.ieee.org/Xplore/home.jsp</a></li>
+</ul>
+<ol>
+<li>Professional associations:</li>
+</ol>
+<ul>
+<li>German Association for Traffic and Transportation (DVWG): <a target="_blank" rel="noopener" href="https://www.dvwg.de/">https://www.dvwg.de/</a></li>
+<li>German Road and Transportation Research Association (FGSV): <a target="_blank" rel="noopener" href="https://www.fgsv.de/">https://www.fgsv.de/</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>US: scats, scoot, ATMS (Advanced Traffic Management System) and TSP (Transit Signal Priority).</p>
+</li>
+<li><p>China: NUTCS SMOOTH iurban I-sense</p>
+</li>
+</ul>
+</li>
+<li><p>frames and algorithms in currently used system</p>
+<ul>
+<li><p><strong>SCOOT</strong>	</p>
+<ul>
+<li><p><strong>“reserach on the transyt and scoot methods of signal coordination”: key ideas of transyt and scoot</strong></p>
+<ul>
+<li><p>Dennis I. Robertson, 1986</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=dfefb6e8b96b19ecb7693619fc92530e0a95e7a2">https://citeseerx.ist.psu.edu/document?repid=rep1&amp;type=pdf&amp;doi=dfefb6e8b96b19ecb7693619fc92530e0a95e7a2</a></p>
+</li>
+<li><p>genius of rrl invented combination method of coordinating signals</p>
+<ul>
+<li>reference: glasgow experiment in area traffic control</li>
+<li>traffic model estimated average queue at all stop line </li>
+<li>sum of queues are the optimization goal,</li>
+</ul>
+</li>
+<li><p>for optimization , <strong>goal</strong> should be clear, and <strong>queue</strong> as goal is good </p>
+<ul>
+<li>sum of queues</li>
+<li>if u optimize sum of queue, delay also tend to be lower</li>
+<li>optimization goal also take stop times<ul>
+<li>waste energy; cause danger</li>
+<li>weight factor balance <strong>queue</strong> and <strong>stops</strong><ul>
+<li>when queue is optimized, stops are also optimized, when stops are taken valued, agent tend to prolong cycle times</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>many engineers maximize bandwidth in time-distance graph, but bandwidth is not good when</strong></p>
+<ul>
+<li>not possible to calculate financial term</li>
+<li>when congestion , bandwidth  concept starts to break down<br>because the growth of queues disrupts<br>the bands<ul>
+<li>bandwidth:  maximum flow rate that can be achieved while maintaining a reasonable speed and avoiding congestion.</li>
+</ul>
+</li>
+<li>signal coordination on a fixed time plan<ul>
+<li><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230514185002902.png" alt="image-20230514185002902"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Transyt</p>
+<ul>
+<li>have real-time problem to use real-time data</li>
+</ul>
+</li>
+<li><p><strong>scoot principle</strong></p>
+<ul>
+<li>measure CFP</li>
+<li>online traffic model</li>
+<li><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230514191147690.png" alt="image-20230514191147690"></li>
+<li>incremental optimization<ul>
+<li>elastic coordination<ul>
+<li>before phase change, three options:<ul>
+<li><ol>
+<li>advance  change for 4 seconds</li>
+<li>retard change for 4 seconds</li>
+<li>unchanged</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>optimizing networks of traffic signals in real time- the scoot method</strong>: how scoot evloves</p>
+<ul>
+<li>Dennis I. Robertson, 1991</li>
+<li><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=69966&tag=1">https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=69966&amp;tag=1</a></li>
+<li><h2 id="firstly-utc-system-time-distance-graph-ideal-green-wave-in-the-time-distance-diagram-it-is-hard-to-estimate-the-queues-with-TD-then-there-starts-to-be-transyt-transyt-developed-by-TRRL-prediction-assume-traffic-platoons-travel-at-a-known-speed-with-some-dispersion-一定分布下定速行驶-queue-discharge-full-rate-during-green-time-一定速率驶出路口-one-year-to-get-a-plan-for-offline-solution-princeple-of-scoot-mearsure-cfp-in-real-time-update-online-model-of-queue-incremental-optimization-of-signals-information-of-traffic-control-mode-in-toronto-https-www-toronto-ca-services-payments-streets-parking-transportation-traffic-management-traffic-signals-street-signs-traffic-signals-in-toronto-mode-of-control-TRL-software-https-trlsoftware-com-products-traffic-control-scoot-traffic-simulation-software-VISSIM-S-Paramics-sumo-aimsun-transmodeler-road-sumulation-ARCADY、PICADY-和-OSCADY"><a href="#firstly-utc-system-time-distance-graph-ideal-green-wave-in-the-time-distance-diagram-it-is-hard-to-estimate-the-queues-with-TD-then-there-starts-to-be-transyt-transyt-developed-by-TRRL-prediction-assume-traffic-platoons-travel-at-a-known-speed-with-some-dispersion-一定分布下定速行驶-queue-discharge-full-rate-during-green-time-一定速率驶出路口-one-year-to-get-a-plan-for-offline-solution-princeple-of-scoot-mearsure-cfp-in-real-time-update-online-model-of-queue-incremental-optimization-of-signals-information-of-traffic-control-mode-in-toronto-https-www-toronto-ca-services-payments-streets-parking-transportation-traffic-management-traffic-signals-street-signs-traffic-signals-in-toronto-mode-of-control-TRL-software-https-trlsoftware-com-products-traffic-control-scoot-traffic-simulation-software-VISSIM-S-Paramics-sumo-aimsun-transmodeler-road-sumulation-ARCADY、PICADY-和-OSCADY" class="headerlink" title="firstly : utc system,- time distance graph- - ideal green wave: in the time,distance diagram, it is hard to estimate the queues with TD, then there starts to be transyt- transyt:  - developed by TRRL  - prediction: assume traffic platoons travel at a known speed with some dispersion(一定分布下定速行驶), queue discharge full rate during green time(一定速率驶出路口)  - one year to get a plan for offline solution- princeple of scoot  - mearsure cfp in real time  -  update online model of queue  - incremental optimization of signals- information of traffic control mode in toronto  - https://www.toronto.ca/services-payments/streets-parking-transportation/traffic-management/traffic-signals-street-signs/traffic-signals-in-toronto/mode-of-control/- TRL software  - https://trlsoftware.com/products/traffic-control/scoot/  - traffic simulation software : VISSIM , S-Paramics, sumo, aimsun, transmodeler  - road sumulation: ARCADY、PICADY 和 OSCADY"></a>firstly : utc system,<br>- time distance graph<br>- <img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230514162227682.png" alt="image-20230514162227682"><br>- ideal green wave: in the time,distance diagram, it is hard to estimate the queues with TD, then there starts to be <strong>transyt</strong><br>- <strong>transyt</strong>:<br>  - developed by TRRL<br>  - prediction: assume traffic platoons travel at a known speed with some dispersion(一定分布下定速行驶), queue discharge full rate during green time(一定速率驶出路口)<br>  - one year to get a plan for offline solution<br>- princeple of scoot<br>  - mearsure cfp in real time<br>  -  update online model of queue<br>  - incremental optimization of signals<br>- information of traffic control mode in toronto<br>  - <a target="_blank" rel="noopener" href="https://www.toronto.ca/services-payments/streets-parking-transportation/traffic-management/traffic-signals-street-signs/traffic-signals-in-toronto/mode-of-control/">https://www.toronto.ca/services-payments/streets-parking-transportation/traffic-management/traffic-signals-street-signs/traffic-signals-in-toronto/mode-of-control/</a><br>- TRL software<br>  - <a target="_blank" rel="noopener" href="https://trlsoftware.com/products/traffic-control/scoot/">https://trlsoftware.com/products/traffic-control/scoot/</a><br>  - traffic simulation software : VISSIM , S-Paramics, sumo, aimsun, transmodeler<br>  - road sumulation: <strong>ARCADY、PICADY 和 OSCADY</strong></h2></li>
+</ul>
+</li>
+<li><p>ALINEA</p>
+<ul>
+<li>predictive and control</li>
+</ul>
+</li>
+<li><p><strong>SCATS</strong></p>
+</li>
+<li><p>RHODES</p>
+</li>
+<li><p>SPOT&#x2F;UTOPIA</p>
+</li>
+</ul>
+</li>
+<li><p>conclusion for algorithms used </p>
+<ul>
+<li>optimization method: OPAC, prodyn: ()</li>
+<li>fuzzy control(approximate the strategy)</li>
+<li>revolution method (search in strategy space)</li>
+<li>reinforcement learning</li>
+</ul>
+</li>
+<li><p>imagine the easiest way: simple traffic flow , like the water,</p>
+</li>
+</ul>
+</li>
+<li><p>ask chatgpt to give the survey on traffic control with rl</p>
+</li>
+<li><p>ask chatgpt to recommend surveys on traffic control</p>
+</li>
+<li><p>ask chatgpt to recommend surveys on traffic control with rl</p>
+</li>
+</ul>
+<h3 id="the-structure-of-my-pre-first-gather-information-later-make-the-graph"><a href="#the-structure-of-my-pre-first-gather-information-later-make-the-graph" class="headerlink" title="the structure of my pre, first gather information, later make the graph"></a>the structure of my pre, first gather information, later make the graph</h3><ol>
+<li>what problems there are : <ol>
+<li>given urban traffic, control the traffic by intersection control</li>
+<li></li>
+</ol>
+</li>
+<li>what has been done for each problem</li>
+<li>in which way they fix each problem:</li>
+<li>what has not been done</li>
+<li>what we could do:</li>
+</ol>
+<h3 id="rl-system-for-urban-traffic"><a href="#rl-system-for-urban-traffic" class="headerlink" title="rl system for urban traffic"></a>rl system for urban traffic</h3><ul>
+<li><h2 id="preask-chatgpt-“Multi-agent-reinforcement-learning-for-traffic-signal-control”-by-Wiering-et-al-This-paper-proposes-a-multi-agent-reinforcement-learning-approach-for-traffic-signal-control-which-has-been-shown-to-outperform-traditional-signal-control-methods-in-large-scale-simulations-https-ieeexplore-ieee-org-document-6958095-survey-reference-5"><a href="#preask-chatgpt-“Multi-agent-reinforcement-learning-for-traffic-signal-control”-by-Wiering-et-al-This-paper-proposes-a-multi-agent-reinforcement-learning-approach-for-traffic-signal-control-which-has-been-shown-to-outperform-traditional-signal-control-methods-in-large-scale-simulations-https-ieeexplore-ieee-org-document-6958095-survey-reference-5" class="headerlink" title="preask chatgpt- “Multi-agent reinforcement learning for traffic signal control” by Wiering et al. This paper proposes a multi-agent reinforcement learning approach for traffic signal control, which has been shown to outperform traditional signal control methods in large-scale simulations.  - https://ieeexplore.ieee.org/document/6958095  - survey: reference 5"></a>preask chatgpt<br>- “Multi-agent reinforcement learning for traffic signal control” by Wiering et al. This paper proposes a multi-agent reinforcement learning approach for traffic signal control, which has been shown to outperform traditional signal control methods in large-scale simulations.<br>  - <a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/6958095">https://ieeexplore.ieee.org/document/6958095</a><br>  - survey: reference 5</h2><ul>
+<li>“Deep reinforcement learning for traffic signal control” by El-Tantawy et al. This paper proposes a deep reinforcement learning approach for traffic signal control that uses a convolutional neural network to represent the state of the traffic network.</li>
+<li>“A survey of reinforcement learning applications in traffic signal control” by Li et al. This paper provides a comprehensive survey of the various reinforcement learning techniques that have been applied to traffic signal control, along with their strengths and limitations.</li>
+<li>“Distributed reinforcement learning for adaptive traffic signal control” by Ma et al. This paper proposes a distributed reinforcement learning approach for traffic signal control that allows for coordination between traffic signals at different intersections.</li>
+<li>“Machine learning for traffic signal control: A review” by Ma et al. This paper provides a review of the various machine learning techniques that have been applied to traffic signal control, including supervised learning, unsupervised learning, and reinforcement learning.</li>
+</ul>
+</li>
+<li><p>as far as  i can remember</p>
+<ul>
+<li>thousand of junctions</li>
+<li>tianshu chu</li>
+<li>my master thesis: some classical papers</li>
+</ul>
+</li>
+</ul>
+<p><strong>what is the easiest relationship between the traffic phase of intersctions</strong></p>
+<ul>
+<li>give a influence on future queue of next intersection , and because there are two options , so the decision-making is either benefical or harmful, difference would be how much it is , or it is actually zero.</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://magiclucky1996.github.io/2023/05/15/workshop%20pre1:%20survey%20on%20traffic/" data-id="clhonv51l0002t9ot0isfam5t" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-how to make face fat" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/05/15/how%20to%20make%20face%20fat/" class="article-date">
+  <time class="dt-published" datetime="2023-05-15T09:39:35.622Z" itemprop="datePublished">2023-05-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="how-to-make-face-fat"><a href="#how-to-make-face-fat" class="headerlink" title="how to make face fat"></a>how to make face fat</h2><ol>
+<li><h4 id="chatgpt"><a href="#chatgpt" class="headerlink" title="chatgpt"></a>chatgpt</h4></li>
+</ol>
+<ul>
+<li>增加整体的体重：</li>
+<li>多摄入卡路里：坚果，牛奶，鱼</li>
+<li>涂东西在脸上：蜂蜜，油脂（买的涂脸的）</li>
+<li>多睡觉（每天十点睡觉，加中午午睡）</li>
+<li>多喝水（每天就喝tap water就行，但是要多喝水</li>
+</ul>
+<h4 id="2-google"><a href="#2-google" class="headerlink" title="2 .google"></a>2 .google</h4><p><a target="_blank" rel="noopener" href="https://www.medicalnewstoday.com/articles/326265">https://www.medicalnewstoday.com/articles/326265</a></p>
+<ul>
+<li>face exercise：怎么做</li>
+<li></li>
+</ul>
+<p>conclusion</p>
+<p><strong>吃高热量食物（坚果，牛奶，鱼），喝水，吃苹果</strong>：每天都坚持</p>
+<p><strong>涂霜（洗脸毛巾）</strong>：每天都坚持</p>
+<p><strong>睡觉</strong>： 晚上十点睡，中午午睡：每天都坚持</p>
+<p><strong>做脸部运动</strong>：每天都坚持</p>
+<p>​	</p>
+<ul>
+<li>抿起双唇并微笑时，抬起<a target="_blank" rel="noopener" href="https://www.healthline.com/health/pursed-lip-breathing">脸颊</a>肌肉。然后，将每只手的手指放在嘴的两侧，并通过将手指向上滑动到脸颊顶部来抬起脸颊。保持姿势 20 秒。</li>
+<li>闭上你的嘴，让你的脸颊充满尽可能多的空气。保持该姿势 45 秒，然后慢慢将空气吹出。</li>
+<li>将嘴巴张开成“O”形，嘴唇放在牙齿上，微笑着。然后将每只手的手指放在相应脸颊的顶部，轻轻抬起和放下您的脸颊，持续 30 秒。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://magiclucky1996.github.io/2023/05/15/how%20to%20make%20face%20fat/" data-id="clhonv51j0000t9otabq155c4" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-道" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/05/10/%E9%81%93/" class="article-date">
+  <time class="dt-published" datetime="2023-05-10T19:06:59.000Z" itemprop="datePublished">2023-05-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/05/10/%E9%81%93/">道</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p><strong>保持work的clean</strong></p>
+<ul>
+<li>做一些简单clean的东西</li>
+<li>clean地进行保存，<ul>
+<li>日后可以简便地找到和复用</li>
+</ul>
+</li>
+<li>用最简单，clean的方式</li>
+</ul>
+</li>
+<li><p><strong>保持输出</strong></p>
+<ul>
+<li>找到一种clean的way进行输出</li>
+<li>否则很多时候等于没有存在过</li>
+</ul>
+</li>
+<li><p><strong>好的东西想想怎么记录</strong></p>
+<ul>
+<li>放在自己电脑本地的私人博客，然后推到github私人仓库</li>
+<li>最后从里面摘出公共的游记，然后我就可以把我的单反带着。</li>
+<li>这样看上去比较clean,实际数据还需要一个大硬盘或者云来备份。</li>
+</ul>
+</li>
+<li><p><strong>每天不同时刻Energy 状态不同，基于work对energy需求的多少进行schedule</strong></p>
+</li>
+<li><p><strong>在工作和科研中，只做必须做的，不做别人已经做过了的，不做可以付费请别人做的</strong></p>
+</li>
+<li><p><strong>戒断生活刺激源，</strong></p>
+<ul>
+<li>周末出门探索，</li>
+<li>平时 街道晃悠， 网安，breaking ， piano ，游泳桑拿冥想</li>
+</ul>
+</li>
+<li><p><strong>Goal</strong>：</p>
+<ul>
+<li><strong>成为格得一样的巫师</strong><ul>
+<li>在柔克岛专心学艺，结交一生的良师和友人</li>
+<li>航向内极海，历历万乡</li>
+</ul>
+</li>
+<li><strong>remote job</strong>, <ul>
+<li>回大理北京生活，陪爸妈江南小院子</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>金钱</strong></p>
+<ul>
+<li>该花的钱花了就是，不要过分计较，重要的是把该做的事情都做好</li>
+</ul>
+</li>
+<li><p><strong>一个人有一个人的状态，和他人是另外的状态</strong></p>
+<ul>
+<li>一个人： be cool：网安，breaking, piano, 攀岩，探索，</li>
+<li>两个人，感受友谊和关怀：<ul>
+<li>尝试些一些新的东西，去一些一个人不敢尝试的店铺，路边的奇奇怪怪的店，</li>
+<li>一些大海游泳，冥想，露营探险，一起看电影，听歌</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Relationship</strong></p>
+<ul>
+<li>人生伴侣</li>
+<li>简单的互相感受快乐的关系</li>
+<li>不要traditional互相担负的关系</li>
+</ul>
+</li>
+<li><p><strong>感到内在很空的时候</strong>：获得内心peace</p>
+<ul>
+<li><p>吃好喝好睡好，有氧，获得好的精神状态</p>
+</li>
+<li><p>往罐子里塞东西，避免通过寻求刺激来获得正反馈</p>
+</li>
+<li><p>peace：深呼吸，带着垫子去海边冥想，瑜伽，海中浸泡，open mind, peace, 避免刺激</p>
+</li>
+<li><p>不能指望伴侣解决自己的空：伴侣只能是共享快乐，我不希望让对方负担。</p>
+</li>
+</ul>
+</li>
+<li><p>- </p>
+</li>
+<li><p><strong>我是谁，人生要干嘛</strong>，<strong>我不帅气，近视，脚还不好</strong></p>
+<ul>
+<li><strong>being a kid, a boy is enough for me</strong> : <strong>just being nice to others and smile :)</strong></li>
+<li>你是酷酷仔</li>
+<li>管他人生要干嘛，想那么多p</li>
+<li>酷就完事了，怎么酷怎么来，怎么做自己怎么来，</li>
+<li></li>
+</ul>
+</li>
+<li><p><strong>相信并持续追寻，最终会得到想要的</strong></p>
+</li>
+<li><p>追寻的过程中：</p>
+<ul>
+<li><p><strong>减少决策到行动的延迟</strong></p>
+<ul>
+<li><p>先决定是a还是b</p>
+</li>
+<li><p>决定了就立刻去做</p>
+</li>
+</ul>
+</li>
+<li><p><strong>理解 “道”，运用“道”</strong></p>
+<ul>
+<li>很多时候事物只是在那个环境下的作用结果，了解人的动机，优化和决策</li>
+<li>基于所理解的道，相信一切都是有可能的，屏蔽世俗看法，用内心去行动</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>给芳和rie写邮件share</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://magiclucky1996.github.io/2023/05/10/%E9%81%93/" data-id="clhonv51o0003t9ot33516luq" data-title="道" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-dublin_remote_work" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/05/05/dublin_remote_work/" class="article-date">
@@ -173,7 +860,7 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="dublin-可做的事情"><a href="#dublin-可做的事情" class="headerlink" title="dublin 可做的事情"></a>dublin 可做的事情</h1><h3 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h3><ul>
+        <h1 id="dublin-可做的事情"><a href="#dublin-可做的事情" class="headerlink" title="dublin 可做的事情"></a>dublin 可做的事情</h1><h1 id="爱尔兰可做的事情"><a href="#爱尔兰可做的事情" class="headerlink" title="爱尔兰可做的事情"></a>爱尔兰可做的事情</h1><h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ul>
 <li>love dublin：<a target="_blank" rel="noopener" href="https://lovindublin.com/">https://lovindublin.com/</a></li>
 <li>totally dublin <a target="_blank" rel="noopener" href="https://www.totallydublin.ie/">https://www.totallydublin.ie/</a></li>
 <li>visitdublin  <a target="_blank" rel="noopener" href="https://www.visitdublin.com/">https://www.visitdublin.com/</a></li>
@@ -191,21 +878,33 @@
 </li>
 <li><p>meetup+couchsurfing 找活动</p>
 </li>
+<li><p>一个探险露营，城市探索，坐火车去没去过的地方</p>
+</li>
 </ul>
-<h3 id="地点"><a href="#地点" class="headerlink" title="地点"></a>地点</h3><ul>
+<h3 id="地点"><a href="#地点" class="headerlink" title="地点"></a>地点</h3><p><strong>谷歌地球提前侦察+熟人询问</strong></p>
+<ul>
 <li><p>公园： 凤凰公园 + herbert 公园</p>
 </li>
 <li><p>山： dublin山 + 威克洛山</p>
 </li>
 <li><p>海滩：bray + howth</p>
 </li>
-<li></li>
+<li><p>向北： sutton ,malahide, greystones, bray 小丘</p>
+</li>
 </ul>
 <h3 id="组织"><a href="#组织" class="headerlink" title="组织"></a>组织</h3><ul>
 <li>教堂：church city center</li>
-<li>飞盘社团+棒球社团+meetup社团</li>
+<li>学校：飞盘社团+棒球社团+meetup社团</li>
+<li>学校： chinese group</li>
 </ul>
-<h1 id="tcd-facility-research"><a href="#tcd-facility-research" class="headerlink" title="tcd facility research"></a>tcd facility research</h1><h3 id="reference-1"><a href="#reference-1" class="headerlink" title="reference"></a>reference</h3><ul>
+<h3 id="旅行"><a href="#旅行" class="headerlink" title="旅行"></a>旅行</h3><ul>
+<li>奥地利</li>
+<li>挪威</li>
+<li>冰岛</li>
+<li>法国南部村庄</li>
+<li>英国德国无感，直接北欧，法国南部，不着急，土耳其surgery</li>
+</ul>
+<h1 id="Tcd-facility-research"><a href="#Tcd-facility-research" class="headerlink" title="Tcd facility research"></a>Tcd facility research</h1><h3 id="Reference-1"><a href="#Reference-1" class="headerlink" title="Reference"></a>Reference</h3><ul>
 <li>tcd  <a target="_blank" rel="noopener" href="https://www.tcd.ie/">https://www.tcd.ie/</a></li>
 <li>library <a target="_blank" rel="noopener" href="https://www.tcd.ie/library/">https://www.tcd.ie/library/</a></li>
 <li>clubs and Societies <a target="_blank" rel="noopener" href="https://www.tcd.ie/students/clubs-societies/index.php">https://www.tcd.ie/students/clubs-societies/index.php</a></li>
@@ -377,7 +1076,66 @@
 <h2 id="lunarLand"><a href="#lunarLand" class="headerlink" title="lunarLand"></a>lunarLand</h2><p>安装</p>
 <p>pip install box2d-py</p>
 <h2 id="taxi"><a href="#taxi" class="headerlink" title="taxi"></a>taxi</h2><p><a target="_blank" rel="noopener" href="https://huggingface.co/learn/deep-rl-course/unit3/introduction?fw=pt">https://huggingface.co/learn/deep-rl-course/unit3/introduction?fw=pt</a></p>
-<h2 id="github-ball-game"><a href="#github-ball-game" class="headerlink" title="github ball game"></a>github ball game</h2><h2 id="hugging-face-tutorial"><a href="#hugging-face-tutorial" class="headerlink" title="hugging face tutorial"></a>hugging face tutorial</h2>
+<h2 id="github-ball-game"><a href="#github-ball-game" class="headerlink" title="github ball game"></a>github ball game</h2><h2 id="hugging-face-tutorial"><a href="#hugging-face-tutorial" class="headerlink" title="hugging face tutorial"></a>hugging face tutorial</h2><h1 id="incoporate-mappo-with-sumo"><a href="#incoporate-mappo-with-sumo" class="headerlink" title="incoporate  mappo with sumo"></a>incoporate  mappo with sumo</h1><h2 id="1-look-for-existing-mappo-sumo"><a href="#1-look-for-existing-mappo-sumo" class="headerlink" title="1. look for existing mappo + sumo"></a>1. look for existing mappo + sumo</h2><ul>
+<li>reference</li>
+</ul>
+<ol>
+<li>github</li>
+<li>paper</li>
+<li>resource of course era, presentation, tutorial (osint)</li>
+</ol>
+<ul>
+<li>resources found</li>
+</ul>
+<p>github</p>
+<ol>
+<li><p>ppo + sumo <a target="_blank" rel="noopener" href="https://github.com/maxbren/Multi-Agent-Distributed-PPO-Traffc-light-control">https://github.com/maxbren/Multi-Agent-Distributed-PPO-Traffc-light-control</a></p>
+</li>
+<li><p>light mappo  <a target="_blank" rel="noopener" href="https://github.com/magiclucky1996/light_mappo">https://github.com/magiclucky1996/light_mappo</a> 基于这个写一下试试</p>
+</li>
+<li><p>q&#x2F;ac + sumo <a target="_blank" rel="noopener" href="https://github.com/magiclucky1996/deeprl_signal_control">https://github.com/magiclucky1996/deeprl_signal_control</a></p>
+</li>
+<li><p>mappo + mujoco <a target="_blank" rel="noopener" href="https://github.com/chauncygu/Multi-Agent-Constrained-Policy-Optimisation">https://github.com/chauncygu/Multi-Agent-Constrained-Policy-Optimisation</a></p>
+</li>
+<li><p>mappo&#x2F;qmix&#x2F;maddpg + mpe <a target="_blank" rel="noopener" href="https://github.com/Lizhi-sjtu/MARL-code-pytorch">https://github.com/Lizhi-sjtu/MARL-code-pytorch</a></p>
+</li>
+<li><p>ppo + sumo <a target="_blank" rel="noopener" href="https://github.com/YanivHacker/RLTrafficManager">https://github.com/YanivHacker/RLTrafficManager</a></p>
+</li>
+<li><p>noisy mappo+  <a target="_blank" rel="noopener" href="https://github.com/hijkzzz/noisy-mappo">https://github.com/hijkzzz/noisy-mappo</a></p>
+</li>
+</ol>
+<p>papers</p>
+<p><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/abstract/document/9549970/authors#authors">https://ieeexplore.ieee.org/abstract/document/9549970/authors#authors</a> 东北信息学院：提到了rl奖励稀疏的问题，然后他们给rl设计更多的reward 引导它学习。但是你怎么知道什么样的reward能够引导，这不是还是在reward function设计的范围里吗？</p>
+<ul>
+<li>insights<ol>
+<li>sumo设计的问题，如果我们设一个控制周期之后的交通流状态为reward是不是不合理，怎么样去评价智能体schedule的好坏呢，怎么去评价智能体的action改善了交通呢，我是要搞交通呢，还是要搞rl呢，还是要搞啥，</li>
+<li>上次会议的要点：1. insight可以给硕士做，但是要具体可行 2. 做一个oncoming 会议的scheduling(rl 多智能体 交通 计算机 人工智能) 3. sumo的模型可以封装好给本科生用 4.</li>
+</ol>
+</li>
+<li>今天的计划（4.24）</li>
+</ul>
+<p>work 到12 点半，吃中饭，吃完中饭一点消化一会儿，回实验室一点半，回来继续work,work到两点多的时候睡午觉，五点跑路，去看看有没有吃的，不行就回家supervalu,晚上回家继续work一会儿，今天的弄完走之前deploy 和 push上去</p>
+<ul>
+<li>how other people implement marl training</li>
+</ul>
+<p>make contraction between these projects</p>
+<p>分解成detailed steps</p>
+<p>1.首先看下mappo的代码和deeprl sumo的代码以及ppo sumo代码（只做有必要做的事情）</p>
+<ol start="2">
+<li><p>做完1大概知道要干嘛，可以看看ppo trpo mappo</p>
+</li>
+<li><p>把每周4上午留作整理时间，所以我必须两天内搞定这个代码整定的事情，然后再用剩下的时间学习ppo trpo mappo，还要学sumo部分的东西，但是得非常快</p>
+</li>
+<li></li>
+<li></li>
+</ol>
+<p>生活的star：</p>
+<p>piano</p>
+<p>上海美术厂</p>
+<p>breaking</p>
+<p>penetration testing</p>
+<p>avoid social media</p>
+
       
     </div>
     <footer class="article-footer">
@@ -1020,23 +1778,168 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="week-8"><a href="#week-8" class="headerlink" title="week 8"></a>week 8</h1><h3 id="goal-of-the-week"><a href="#goal-of-the-week" class="headerlink" title="goal of the week"></a>goal of the week</h3><p>reading rl papers, marl papers, sutton rlbook2020</p>
-<h3 id="Questions"><a href="#Questions" class="headerlink" title="Questions:"></a>Questions:</h3><ol>
-<li>why q table replaced by NN, what is the discipline to represent?</li>
-<li>difference b</li>
-<li>fully explore 和 epsilon greedy</li>
-<li>why actor better than argmax</li>
-<li></li>
+        <h1 id="week-8-amp-9"><a href="#week-8-amp-9" class="headerlink" title="week 8&amp;9"></a>week 8&amp;9</h1><h3 id="Goal-这周的目标"><a href="#Goal-这周的目标" class="headerlink" title="Goal(这周的目标)"></a>Goal(这周的目标)</h3><ul>
+<li><p>rl核心</p>
+<ul>
+<li><strong>基于梯度下降的内核</strong></li>
+<li><strong>q表怎么扫，环境中什么轨迹，怎么采样，怎么更新</strong></li>
+<li><strong>神经网络本身特性带来的一些东西</strong></li>
+<li><strong>神经网络的作用就是状态和动作空间太大，那我们给他缩小，最后我们用缩小的q表去采取动作（generalize function）</strong><ul>
+<li>generalize func的性能没有NN好</li>
+</ul>
+</li>
+<li>而pg只是基于价值大小提高动作概率，只是argmax的一种连续版本</li>
+</ul>
+</li>
+<li><p>群体学习的解决方式（我的目的不是发论文，而是探索，mastering）</p>
+</li>
+<li><p>随机性的问题，也就是探索的问题，探索环境状态的问题</p>
+</li>
+<li><p>playing atari中的提到的神经网络的优点</p>
+</li>
+<li><p>huggingface中提到的深度神经网络的优点</p>
+<ul>
+<li>q表在大型空间中无效（为啥，可以缩小，模糊神经网络）</li>
+</ul>
+</li>
+<li><p>rlbook中提到神经网络的优点</p>
+</li>
+<li><p>把搜索方法应用到对mdp空间的探索中，比如树搜索，比如rrt，比如采样方法</p>
+<ul>
+<li>我们基于简单的mdp找出最佳的探索方法，再应用到复杂的，无法画出关系图的mdp中</li>
+<li><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230508115549166.png" alt="image-20230508115549166"></li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th>星期一</th>
+<th>星期二</th>
+<th>星期三</th>
+<th>星期四</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">抱脸虫教程（往后放，先解决问题）</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">在env测试不同算法进行对比</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">做一个图对比各种采样的策略：softmax，epsilon greedy，fully explore</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">做一个图对比各种对模型的更新</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">对比使用神经网路和不使用神经网络（缩小的q表，q也可以根据价值选取动作概率，，所以为什么使用神经网络）</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="Q1：-why-neural-network？"><a href="#Q1：-why-neural-network？" class="headerlink" title="Q1： why neural network？"></a>Q1： why neural network？</h3><h6 id="q-table-could-be-approximate-actor-could-be-like-argmax"><a href="#q-table-could-be-approximate-actor-could-be-like-argmax" class="headerlink" title="q table could be approximate, actor could be like argmax"></a>q table could be approximate, actor could be like argmax</h6><ul>
+<li><h2 id="rlbook-Generalize-problems-has-already-been-studied-generalization-when-a-single-state-is-updated-the-change-generalizes-from-that-state-to-a↵ect-the-values-of-many-other-states-supervised-learning-from-examples-including-artiﬁcial-neural-networks-decision-trees-and-various-kinds-of-multivariate-regression-not-all-function-approximation-methods-well-suited-for-rl-If-online-needed-to-learn-efficiently-from-incrementally-acquired-data-target-is-nonstationery（policy-is-not-stationery-td-is-not-stationery）"><a href="#rlbook-Generalize-problems-has-already-been-studied-generalization-when-a-single-state-is-updated-the-change-generalizes-from-that-state-to-a↵ect-the-values-of-many-other-states-supervised-learning-from-examples-including-artiﬁcial-neural-networks-decision-trees-and-various-kinds-of-multivariate-regression-not-all-function-approximation-methods-well-suited-for-rl-If-online-needed-to-learn-efficiently-from-incrementally-acquired-data-target-is-nonstationery（policy-is-not-stationery-td-is-not-stationery）" class="headerlink" title="rlbook- Generalize problems has already been studied- generalization: when a single state is updated, the change generalizes from that state to a↵ect the values of many other states- supervised learning from examples, including artiﬁcial neural networks, decision trees, and various kinds of multivariate regression- not all function approximation methods well suited for rl  - If online, needed to learn efficiently from incrementally acquired data  - target is nonstationery（policy is not stationery, td is not stationery）"></a>rlbook<br>- Generalize problems has already been studied<br>- generalization: when a single state is updated, the change generalizes from that state to a↵ect the values of many other states<br>- supervised learning from examples, including artiﬁcial neural networks, decision trees, and various kinds of multivariate regression<br>- not all function approximation methods well suited for rl<br>  - If online, needed to learn efficiently from incrementally acquired data<br>  - target is nonstationery（policy is not stationery, td is not stationery）</h2></li>
+<li><p>DQN paper</p>
+</li>
+<li><p>chatgpt</p>
+</li>
+<li><p>nn could represent more complex relationships: so it’s more complex than just 在q 表中取近似值</p>
+</li>
+</ul>
+<h3 id="Q2-the-explore-of-state-action-space"><a href="#Q2-the-explore-of-state-action-space" class="headerlink" title="Q2: the explore of  state-action space:"></a>Q2: the explore of  state-action space:</h3><h6 id="why-actor-used-to-sample-softmax-epsilon-greedy-fully-explore-contraction-between-them"><a href="#why-actor-used-to-sample-softmax-epsilon-greedy-fully-explore-contraction-between-them" class="headerlink" title="why actor used to sample(softmax, epsilon greedy, fully explore), contraction between them"></a>why actor used to sample(softmax, epsilon greedy, fully explore), contraction between them</h6><h3 id="Q3-the-explore-of-state-action-space"><a href="#Q3-the-explore-of-state-action-space" class="headerlink" title="Q3: the explore of  state-action space:"></a>Q3: the explore of  state-action space:</h3><h6 id="Can-search-methods-be-applied-like-A-RRT"><a href="#Can-search-methods-be-applied-like-A-RRT" class="headerlink" title="Can search methods be applied? like A*, RRT"></a>Can search methods be applied? like A*, RRT</h6><h4 id="Q4-the-explore-of-state-action-space"><a href="#Q4-the-explore-of-state-action-space" class="headerlink" title="Q4: the explore of state-action space:"></a>Q4: the explore of state-action space:</h4><h6 id="how-to-scan-the-q-table"><a href="#how-to-scan-the-q-table" class="headerlink" title="how to scan the q table?"></a>how to scan the q table?</h6><h3 id="Questions"><a href="#Questions" class="headerlink" title="Questions:"></a>Questions:</h3><ol>
+<li><p>why q table replaced by NN, what is the discipline to represent? （q表换成q神经网络的意义是什么）</p>
+</li>
+<li><p>difference b<br>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
+</li>
+<li><p>fully explore 和 epsilon greedy</p>
+</li>
+<li><h1 id="why-actor-better-than-argmax"><a href="#why-actor-better-than-argmax" class="headerlink" title="why actor better than argmax"></a>why actor better than argmax</h1></li>
+<li><p>fully explore 和 epsilon greedy（一开始完全探索）</p>
+</li>
+<li><p>why actor better than argmax（actor网络和argmax1的区别是什么）</p>
+</li>
+<li><p>神经网络本身的特性会带来哪些东西，神经网络的优点是什么</p>
+</li>
+<li><p>q learning能否动作是概率分布，为什么不行?</p>
+<ol>
+<li>可以，使用softmax作为探索的策略，<strong>和epsilon greedy的区别</strong>：会按照q值选取动作，不能保证对动作空间的充分探索</li>
+<li>在探索时，选取最优动作，和选取没选取过动作的区别：</li>
+<li><strong>探索的衡量指标</strong>：做一个图对比各种采样的策略</li>
 </ol>
+</li>
+</ol>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>9c004c5 (modify week 8)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 <h3 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h3><ul>
-<li>fully explore</li>
+<li>fully explore（完全探索）</li>
 </ul>
 <p>This approach is called pure exploration and exploitation (PEE) and can be used in some cases where exploration is very costly or where the environment is very simple. However, in most real-world scenarios, PEE is not an optimal approach.</p>
 <p>The problem with PEE is that the agent spends a lot of time exploring and collecting data, but not enough time exploiting that data to improve its policy. This can lead to slow learning and poor performance, especially in complex environments where there are many possible actions and states.</p>
 <p>In contrast, most RL algorithms use a balance between exploration and exploitation, where the agent takes actions that are likely to yield high rewards based on its current policy while also occasionally exploring new actions or states. This allows the agent to learn quickly while still exploring new possibilities, leading to faster learning and better performance.</p>
 <p>Furthermore, in many RL problems, the environment is dynamic and can change over time. In such cases, it is important for the agent to continuously explore and adapt to changes in the environment to maintain optimal performance. This requires a balance between exploration and exploitation, as well as the ability to update the policy based on new data and experiences.</p>
 <p>In summary, while PEE can be a useful approach in some cases, a balanced approach between exploration and exploitation is generally more effective for most RL problems.</p>
-<h1 id="incoporate-mappo-with-sumo"><a href="#incoporate-mappo-with-sumo" class="headerlink" title="incoporate  mappo with sumo"></a>incoporate  mappo with sumo</h1><h2 id="1-look-for-existing-mappo-sumo"><a href="#1-look-for-existing-mappo-sumo" class="headerlink" title="1. look for existing mappo + sumo"></a>1. look for existing mappo + sumo</h2><ul>
+<p>我用fully explore探索，然后得到的数据存在buffer里，然后用我的策略进行学习，差策略探测到的数据和提升后的策略探索到的数据的区别是什么，数据是一个transition（s a r s ）好的策略往往会偏向于采取好的动作，转移到好的动作</p>
+<ul>
+<li>好的策略会选好的动作，到好的效率上，efficiency会很高，比如我一直用随机策略采样，然后用</li>
+<li>坏的策略会选坏的动作，到不好的轨迹上，</li>
+</ul>
+<p>所以现在两个最核心的问题：</p>
+<ol>
+<li>Fully 随机策略就只是影响轨迹，进而影响采样效率吗</li>
+<li>看看rlbook里资格迹的概念</li>
+<li>看看里面q表怎么扫的</li>
+<li>基于q的方法和基于policy的方法本质是一样的，都是value iteration，通过r来提升value，最后通过value去驱动actor，其实本质仍然是用r去驱动一切，核心就在于r怎么去提升策略，即每个状态做什么动作，如何用r去帮助这个状态做什么动作，本质就是看看哪个动作得到的r多，一种是累积r，一种是最终r，现实世界可能都是最终r，但是这样很难学习，所以我们一般先给累积r，然后最后通过最终r去实现，，，</li>
+</ol>
+<p>所以在这个状态选哪个好呢，一种是sample一下，一种是sample到尽头，sample到一下，sample到一步的r，那我必须bootstrap，来得到当前状态选取某个动作的value，也可以sample轨迹，几个轨迹平均一下，看看动作的value，都是计算动作的价值，如果是连续动作空间怎么办呢，，，，那其实两个在参数上相近的（s，a）对应的价值可能差的很大</p>
+<h1 id="lt-lt-lt-lt-lt-lt-lt-HEAD-Incoporate-mappo-with-sumo"><a href="#lt-lt-lt-lt-lt-lt-lt-HEAD-Incoporate-mappo-with-sumo" class="headerlink" title="&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD# Incoporate  mappo with sumo"></a>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD<br># Incoporate  mappo with sumo</h1><blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>9c004c5 (modify week 8)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="incoporate-mappo-with-sumo（代码部分：在sumo中实验信号灯控制）"><a href="#incoporate-mappo-with-sumo（代码部分：在sumo中实验信号灯控制）" class="headerlink" title="incoporate  mappo with sumo（代码部分：在sumo中实验信号灯控制）"></a>incoporate  mappo with sumo（代码部分：在sumo中实验信号灯控制）</h2><h3 id="1-look-for-existing-mappo-sumo"><a href="#1-look-for-existing-mappo-sumo" class="headerlink" title="1. look for existing mappo + sumo"></a>1. look for existing mappo + sumo</h3><ul>
 <li>reference</li>
 </ul>
 <ol>
@@ -1089,12 +1992,37 @@
 <li></li>
 <li></li>
 </ol>
-<h2 id="2-make-it-with-materials-found"><a href="#2-make-it-with-materials-found" class="headerlink" title="2. make it with materials found"></a>2. make it with materials found</h2><p>生活的star：</p>
+<p><strong>reading of the rlbook</strong></p>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
+<p>how does dopamine give people motivation?</p>
+<p>if prediction is different from truth, we will have positive feedback or negative feedback?</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
+<h3 id="2-make-it-with-materials-found"><a href="#2-make-it-with-materials-found" class="headerlink" title="2. make it with materials found"></a>2. make it with materials found</h3><blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>9c004c5 (modify week 8)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<p><strong>生活的star：</strong></p>
 <p>piano</p>
 <p>上海美术厂</p>
 <p>breaking</p>
 <p>penetration testing</p>
 <p>avoid social media</p>
+<h2 id="note"><a href="#note" class="headerlink" title="note"></a>note</h2><h3 id="抱脸虫教程"><a href="#抱脸虫教程" class="headerlink" title="抱脸虫教程"></a>抱脸虫教程</h3><p><a target="_blank" rel="noopener" href="https://huggingface.co/learn/deep-rl-course/unit1/exp-exp-tradeoff?fw=pt">https://huggingface.co/learn/deep-rl-course/unit1/exp-exp-tradeoff?fw=pt</a></p>
+<ul>
+<li>explore&#x2F;exploit权衡：本质是什么：如果exploit，就会一直选择目前的最优解，但是目前的最优解怎么得来，初始化的时候怎么选择，，所以用epsilong decay的epsilon greedy</li>
+<li>如果我一开始完全探索，像value表格一样，如何扫过去（也就是如何更新q值），看看rl book，</li>
+</ul>
 
       
     </div>
@@ -1113,584 +2041,12 @@
 
 
   
-    <article id="post-week4&amp;5" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/05/05/week4&5/" class="article-date">
-  <time class="dt-published" datetime="2023-05-05T09:19:40.000Z" itemprop="datePublished">2023-05-05</time>
-</a>
+
+
+  <nav id="page-nav">
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/05/05/week4&5/">week4&amp;5</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="week-4-amp-5"><a href="#week-4-amp-5" class="headerlink" title="week 4&amp;5"></a>week 4&amp;5</h1><h2 id="1-Ubuntu-setting-安装ubuntu系统"><a href="#1-Ubuntu-setting-安装ubuntu系统" class="headerlink" title="1. Ubuntu setting(安装ubuntu系统)"></a>1. Ubuntu setting(安装ubuntu系统)</h2><h3 id="Install-oh-my-zsh"><a href="#Install-oh-my-zsh" class="headerlink" title="Install oh my zsh"></a>Install oh my zsh</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install zsh</span><br><span class="line">chsh -s $(<span class="built_in">which</span> zsh)</span><br><span class="line">sh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)</span>&quot;</span></span><br><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="setting-of-input-method-of-ubuntu"><a href="#setting-of-input-method-of-ubuntu" class="headerlink" title="setting of input method of ubuntu"></a>setting of input method of ubuntu</h3><p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/418042828">https://www.zhihu.com/question/418042828</a></p>
-<h3 id="Install-nvidia-driver（安装英伟达驱动）"><a href="#Install-nvidia-driver（安装英伟达驱动）" class="headerlink" title="Install nvidia driver（安装英伟达驱动）"></a>Install nvidia driver（安装英伟达驱动）</h3><p>driver version : <code>470.63.01</code>.</p>
-<p>CUDA version: CUDA Toolkit 11.4. （the highest version that 470 can support, if want to install newest version of CUDA(11.8), need to install higher version of driver( open the software update of ubuntu system)）</p>
-<p>If project is written with <strong>TensorFlow 1</strong>, which not support by your CUDA and NVIDIA driver, options:</p>
-<ol>
-<li><p><strong>Downgrade your NVIDIA driver and CUDA Toolkit</strong> versions to be compatible with TensorFlow </p>
-<ol>
-<li><ol>
-<li>You can follow the installation instructions for TensorFlow 1.15.4 with GPU support, which requires CUDA Toolkit 10.0 or 10.1 and NVIDIA driver version 418.x or higher.</li>
-</ol>
-</li>
-</ol>
-</li>
-<li><p>Use a <strong>virtual environment or container</strong> with the specific versions of CUDA Toolkit, NVIDIA driver, and TensorFlow 1 that your project requires. You can create a new virtual environment or container with the appropriate dependencies using tools like virtualenv or Docker.</p>
-</li>
-<li><p><strong>Upgrade your project to use TensorFlow 2.x</strong>. Although there are some differences between TensorFlow 1 and TensorFlow 2, many of the core concepts and functionalities are similar, so the migration process may not be too difficult. You can use TensorFlow’s migration guide to help you with the process.</p>
-</li>
-</ol>
-<p>for me, what is helpful is :</p>
-<ol>
-<li><strong>update the code</strong> to tf2 version</li>
-<li>run code with <strong>old version tf1 and use cpu</strong></li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:graphics-drivers/ppa</span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt install nvidia-driver-&lt;VERSION&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="meet-problem-with-unfigured-nvidia-driver-遇到驱动的问题"><a href="#meet-problem-with-unfigured-nvidia-driver-遇到驱动的问题" class="headerlink" title="meet problem with unfigured nvidia driver(遇到驱动的问题)"></a>meet problem with unfigured nvidia driver(遇到驱动的问题)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">sudo apt-get remove --purge nvidia-dkms-470 nvidia-driver-470</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="still-doesn’t-work（继续遇到驱动问题）"><a href="#still-doesn’t-work（继续遇到驱动问题）" class="headerlink" title="still doesn’t work（继续遇到驱动问题）"></a>still doesn’t work（继续遇到驱动问题）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">dpkg -l | grep -i nvidia</span><br><span class="line">sudo apt-get remove --purge <span class="string">&#x27;^nvidia-.*&#x27;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="Problem：-gpu-driver-gt-install-nvidia-driver470（驱动安装问题）"><a href="#Problem：-gpu-driver-gt-install-nvidia-driver470（驱动安装问题）" class="headerlink" title="Problem： gpu driver -&gt; install nvidia driver470（驱动安装问题）"></a>Problem： gpu driver -&gt; install nvidia driver470（驱动安装问题）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">dpkg: error processing package nvidia-driver-470 (--configure):</span><br><span class="line"> dependency problems - leaving unconfigured</span><br><span class="line">No apport report written because the error message indicates its a followup error from a previous failure.</span><br><span class="line">                                                                                            Processing triggers <span class="keyword">for</span> desktop-file-utils (0.26-1ubuntu3) ...</span><br><span class="line">Processing triggers <span class="keyword">for</span> gnome-menus (3.36.0-1ubuntu3) ...</span><br><span class="line">Processing triggers <span class="keyword">for</span> libc-bin (2.35-0ubuntu3) ...</span><br><span class="line">Processing triggers <span class="keyword">for</span> man-db (2.10.2-1) ...</span><br><span class="line">Processing triggers <span class="keyword">for</span> mailcap (3.70+nmu1ubuntu1) ...</span><br><span class="line">Processing triggers <span class="keyword">for</span> initramfs-tools (0.140ubuntu13.1) ...</span><br><span class="line">update-initramfs: Generating /boot/initrd.img-5.19.0-38-generic</span><br><span class="line">Errors were encountered <span class="keyword">while</span> processing:</span><br><span class="line"> nvidia-dkms-470</span><br><span class="line"> nvidia-driver-470</span><br><span class="line">E: Sub-process /usr/bin/dpkg returned an error code (1)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>solution: set in the software and update of ubuntu and reboot</strong></li>
-</ul>
-<h3 id="Uninstall-old-Cuda（卸载旧的cuda）"><a href="#Uninstall-old-Cuda（卸载旧的cuda）" class="headerlink" title="Uninstall old Cuda（卸载旧的cuda）"></a>Uninstall old Cuda（卸载旧的cuda）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/local/cuda/bin</span><br><span class="line">./cuda-uninstaller</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h3 id="Install-Cuda11-4（安装cuda11-4）"><a href="#Install-Cuda11-4（安装cuda11-4）" class="headerlink" title="Install Cuda11.4（安装cuda11.4）"></a>Install Cuda11.4（安装cuda11.4）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget https://developer.download.nvidia.com/compute/cuda/11.4.3/local_installers/cuda_11.4.3_470.82.01_linux.run</span><br><span class="line"><span class="comment">## test the install of cuda</span></span><br><span class="line">nvcc --version</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="Install-cudnn（安装cudnn）"><a href="#Install-cudnn（安装cudnn）" class="headerlink" title="Install cudnn（安装cudnn）"></a>Install cudnn（安装cudnn）</h3><ul>
-<li><a target="_blank" rel="noopener" href="https://developer.nvidia.com/cudnn">https://developer.nvidia.com/cudnn</a></li>
-</ul>
-<p>test the install of cudnn</p>
-<hr>
-<h2 id="2-MARL-env-setting（设定MARL环境）"><a href="#2-MARL-env-setting（设定MARL环境）" class="headerlink" title="2. MARL env setting（设定MARL环境）"></a>2. MARL env setting（设定MARL环境）</h2><h3 id="1-install-StarCraft-II-env（安装星级争霸）"><a href="#1-install-StarCraft-II-env（安装星级争霸）" class="headerlink" title="1. install StarCraft II env（安装星级争霸）"></a>1. install StarCraft II env（安装星级争霸）</h3><h4 id="Reference（参考）"><a href="#Reference（参考）" class="headerlink" title="Reference（参考）"></a>Reference（参考）</h4><ul>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/magiclucky1996/on-policy">https://github.com/magiclucky1996/on-policy</a></p>
-<ul>
-<li><code>unzip SC2.4.10.zip</code></li>
-<li><code>echo &quot;export SC2PATH=~/StarCraftII/&quot; &gt; ~/.bashrc</code></li>
-<li>download SMAC Maps, and move it to <code>~/StarCraftII/Maps/</code>.</li>
-<li>To use a stableid, copy <code>stableid.json</code> from <a target="_blank" rel="noopener" href="https://github.com/Blizzard/s2client-proto.git">https://github.com/Blizzard/s2client-proto.git</a> to <code>~/StarCraftII/</code>.</li>
-</ul>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/oxwhirl/smac">https://github.com/oxwhirl/smac</a></p>
-<ul>
-<li>Please use the Blizzard’s <a target="_blank" rel="noopener" href="https://github.com/Blizzard/s2client-proto#downloads">repository</a> to download the Linux version of StarCraft II. By default, the game is expected to be in <code>~/StarCraftII/</code> directory. This can be changed by setting the environment variable <code>SC2PATH</code>.</li>
-</ul>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/oxwhirl/pymarl/blob/master/install_sc2.sh">https://github.com/oxwhirl/pymarl/blob/master/install_sc2.sh</a></p>
-</li>
-</ul>
-<h4 id="Detailed-steps（具体步骤）"><a href="#Detailed-steps（具体步骤）" class="headerlink" title="Detailed steps（具体步骤）"></a>Detailed steps（具体步骤）</h4><ul>
-<li>follow the instruction of shell script below</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># download and install starcraft ii</span><br><span class="line"></span><br><span class="line">wget http://blzdistsc2-a.akamaihd.net/Linux/SC2.4.10.zip</span><br><span class="line">unzip -P iagreetotheeula SC2.4.10.zip</span><br><span class="line"></span><br><span class="line"># download smac map</span><br><span class="line"></span><br><span class="line">MAP_DIR=&quot;$SC2PATH/Maps/&quot;</span><br><span class="line">wget https://github.com/oxwhirl/smac/releases/download/v0.1-beta1/SMAC_Maps.zip</span><br><span class="line">unzip SMAC_Maps.zip</span><br><span class="line">mv SMAC_Maps $MAP_DIR</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="Problem1-wandb-init（wandb报错）"><a href="#Problem1-wandb-init（wandb报错）" class="headerlink" title="Problem1  wandb.init（wandb报错）"></a>Problem1  wandb.init（wandb报错）</h4><pre><code>run = wandb.init(config=all_args,
-                 project=all_args.env_name,
-                 entity=all_args.user_name,
-                 notes=socket.gethostname(),
-                 name=str(all_args.algorithm_name) + &quot;_&quot; +
-                      str(all_args.experiment_name) +
-                      &quot;_seed&quot; + str(all_args.seed),
-                 group=all_args.map_name,
-                 dir=str(run_dir),
-                 job_type=&quot;training&quot;,
-                 reinit=True)
-</code></pre>
-<ul>
-<li><p>these attributes</p>
-<ul>
-<li><p>project</p>
-</li>
-<li><p>env_name</p>
-</li>
-<li><p>entity</p>
-</li>
-<li><p>user_name</p>
-</li>
-<li><p>notes</p>
-</li>
-<li><p>name</p>
-</li>
-<li><p>gourp</p>
-</li>
-<li><p>dir</p>
-</li>
-</ul>
-</li>
-</ul>
-<h5 id="solution（解决方案）"><a href="#solution（解决方案）" class="headerlink" title="solution（解决方案）"></a>solution（解决方案）</h5><ol>
-<li><p>wandb permission denied: modify the wandb.init </p>
-</li>
-<li><p>python 10 is not compatible: switch to python 3.6 (comply with origin env as much as possible)</p>
-</li>
-<li><p>finsh the implementation of four marl project and get some figures.</p>
-<ol>
-<li>understand detail of each project</li>
-</ol>
-</li>
-<li><p>finish my explorement of fundamental rl algorithms</p>
-</li>
-</ol>
-<hr>
-<h1 id="Reading（资料阅读）"><a href="#Reading（资料阅读）" class="headerlink" title="Reading（资料阅读）"></a>Reading（资料阅读）</h1><h4 id="Reference（参考）-1"><a href="#Reference（参考）-1" class="headerlink" title="Reference（参考）"></a>Reference（参考）</h4><ul>
-<li><strong>spinning up（openai spinning up 项目）</strong></li>
-</ul>
-<p><a target="_blank" rel="noopener" href="https://spinningup.openai.com/en/latest/spinningup/rl_intro2.html">https://spinningup.openai.com/en/latest/spinningup/rl_intro2.html</a> (there some recommendation of  reading here)</p>
-<p><a target="_blank" rel="noopener" href="https://spinningup.openai.com/en/latest/spinningup/keypapers.html?highlight=rainbow">https://spinningup.openai.com/en/latest/spinningup/keypapers.html?highlight=rainbow</a> (key papers of rl)</p>
-<p><a target="_blank" rel="noopener" href="https://spinningup.openai.com/en/latest/spinningup/keypapers.html?highlight=rainbow#model-free-rl">https://spinningup.openai.com/en/latest/spinningup/keypapers.html?highlight=rainbow#model-free-rl</a></p>
-<ul>
-<li><strong>github paper collection（github 多智能体论文合集）</strong></li>
-</ul>
-<p><a target="_blank" rel="noopener" href="https://github.com/LantaoYu/MARL-Papers">https://github.com/LantaoYu/MARL-Papers</a></p>
-<h2 id="Papers（论文阅读）"><a href="#Papers（论文阅读）" class="headerlink" title="Papers（论文阅读）"></a>Papers（论文阅读）</h2><h3 id="1-Playing-Atari-with-Deep-Reinforcement-Learning"><a href="#1-Playing-Atari-with-Deep-Reinforcement-Learning" class="headerlink" title="1. Playing Atari with Deep Reinforcement Learning"></a>1. Playing Atari with Deep Reinforcement Learning</h3><p><em>deepmind, 2013</em></p>
-<p>why the data is needed to be iid, what does it mean with iid</p>
-<p>(为什么需要样本是独立的，独立同分布到底是什么意思)</p>
-<h3 id="2-Benchmarking-Multi-Agent-Deep-Reinforcement-Learning-Algorithms-in-Cooperative-Tasks"><a href="#2-Benchmarking-Multi-Agent-Deep-Reinforcement-Learning-Algorithms-in-Cooperative-Tasks" class="headerlink" title="2. Benchmarking Multi-Agent Deep Reinforcement Learning Algorithms in Cooperative Tasks"></a>2. Benchmarking Multi-Agent Deep Reinforcement Learning Algorithms in Cooperative Tasks</h3><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2006.07869">https://arxiv.org/abs/2006.07869</a></p>
-<p><em>June 2020  ; Georgios Papoudakis ； Phd student, ；School of Informatics ； university of Edinburgh,</em></p>
-<ul>
-<li>experiment results serving as reference</li>
-<li>insights regarding the effectiveness of different learning approaches</li>
-<li>open-source algorithm codebase</li>
-<li>open-source two rl envs</li>
-</ul>
-<h5 id="reading"><a href="#reading" class="headerlink" title="reading"></a>reading</h5><ul>
-<li><p>algotithms</p>
-<ul>
-<li>independent<ul>
-<li>iql</li>
-<li>ia2c</li>
-<li>ippo</li>
-</ul>
-</li>
-<li>ctde<ul>
-<li>ma ddpg</li>
-<li>coma</li>
-<li>ma ac</li>
-<li>ma ppo</li>
-</ul>
-</li>
-<li>value decompose<ul>
-<li>vdn</li>
-<li>qmix</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>envs</p>
-<ul>
-<li>Repeated Matrix Games</li>
-<li>Multi-Agent Particle Environment(MPE)</li>
-<li>StarCraft Multi-Agent Challenge</li>
-<li>Level-Based Foraging(LBF)</li>
-<li>Multi-Robot Warehouse</li>
-</ul>
-</li>
-</ul>
-<h3 id="insights（思考）"><a href="#insights（思考）" class="headerlink" title="insights（思考）"></a>insights（思考）</h3><ul>
-<li><p><em>不同类型的game有不同的特点</em> ：the character of different game is different.</p>
-</li>
-<li><p><em>不同问题对合作的需求不同，需要对问题机理进行分析</em>:the need from different problem to joint action is different, need the analysis of the principle of problem.</p>
-</li>
-<li><p><em><strong>算法时间</strong></em>：<em><strong>模型大小，更新频率，步长</strong></em>都会影响，需要弄清楚。</p>
-<ul>
-<li>如果限制随机性，那么算法效果能否完全复现，</li>
-<li><em>环境探索能否不随机，按特定的规律进行探索？</em></li>
-</ul>
-</li>
-<li><p><em><strong>google</strong></em><em><strong>chase and hide env</strong></em></p>
-</li>
-<li><p><em>封装一些库自己用</em></p>
-</li>
-<li><p><em>多智能体share模型参数很难学习， 可以不同输入下看模型的输出用来协助决策</em></p>
-</li>
-</ul>
-<h3 id="3-Rainbow-Combining-Improvements-in-Deep-Reinforcement-Learning"><a href="#3-Rainbow-Combining-Improvements-in-Deep-Reinforcement-Learning" class="headerlink" title="3. Rainbow: Combining Improvements in Deep Reinforcement Learning"></a>3. Rainbow: Combining Improvements in Deep Reinforcement Learning</h3><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1710.02298">https://arxiv.org/abs/1710.02298</a></p>
-<p><em>Oct 2017</em></p>
-<p><em>Matteo Hessel</em></p>
-<p><em>Deepmind</em></p>
-<h3 id="4-The-Surprising-Effectiveness-of-PPO-in-Cooperative-Multi-Agent-Games"><a href="#4-The-Surprising-Effectiveness-of-PPO-in-Cooperative-Multi-Agent-Games" class="headerlink" title="4. The Surprising Effectiveness of PPO in Cooperative Multi-Agent Games"></a>4. The Surprising Effectiveness of PPO in Cooperative Multi-Agent Games</h3><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2103.01955">https://arxiv.org/abs/2103.01955</a></p>
-<p><em>Nov 2022</em></p>
-<p><em>chao yu</em></p>
-<h2 id="Books（书籍阅读）"><a href="#Books（书籍阅读）" class="headerlink" title="Books（书籍阅读）"></a>Books（书籍阅读）</h2><h3 id="1-RLbook-by-sutton"><a href="#1-RLbook-by-sutton" class="headerlink" title="1. RLbook by sutton\\"></a>1. RLbook by sutton\\</h3><h2 id="Videos（视频学习）"><a href="#Videos（视频学习）" class="headerlink" title="Videos（视频学习）"></a>Videos（视频学习）</h2><h3 id="1-Multi-Agent-Reinforcement-Learning-Part-I"><a href="#1-Multi-Agent-Reinforcement-Learning-Part-I" class="headerlink" title="1. Multi-Agent Reinforcement Learning (Part I)"></a>1. Multi-Agent Reinforcement Learning (Part I)</h3><p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=RCu-nU4_TQM">https://www.youtube.com/watch?v=RCu-nU4_TQM</a></p>
-<blockquote>
-<p>simon institute; chi jin, princeton</p>
-</blockquote>
-<h3 id="2-Shusen-wang"><a href="#2-Shusen-wang" class="headerlink" title="2. Shusen wang"></a>2. Shusen wang</h3><h2 id="Questions（疑问）"><a href="#Questions（疑问）" class="headerlink" title="Questions（疑问）"></a>Questions（疑问）</h2><h3 id="1-why-data-needs-to-be-IId-（为什么数据需要独立同分布）"><a href="#1-why-data-needs-to-be-IId-（为什么数据需要独立同分布）" class="headerlink" title="1. why data needs to be IId?（为什么数据需要独立同分布）"></a>1. why data needs to be IId?（为什么数据需要独立同分布）</h3><blockquote>
-<p>可以参考分布式机器学习的一些东西，（我一直在做分布式，分布式机器学习，分布式存储）</p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=STxtRucv_zo&t=1504s">https://www.youtube.com/watch?v=STxtRucv_zo&amp;t=1504s</a></p>
-<p>1&#x2F; 具有相同的概率分布：分布没有波动</p>
-<p>2&#x2F; 相互独立：了解一个变量的值不会提供另外一个变量的信息</p>
-<h5 id="Example-1-edit"><a href="#Example-1-edit" class="headerlink" title="Example 1[edit]"></a>Example 1[<a target="_blank" rel="noopener" href="https://en.wikipedia.org/w/index.php?title=Independent_and_identically_distributed_random_variables&action=edit&section=8">edit</a>]</h5><p>A sequence of outcomes of spins of a fair or unfair <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Roulette">roulette</a> wheel is i.i.d. One implication of this is that if the roulette ball lands on “red”, for example, 20 times in a row, the next spin is no more or less likely to be “black” than on any other spin (see the <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Gambler's_fallacy">Gambler’s fallacy</a>).</p>
-<p>A sequence of fair or loaded dice rolls is i.i.d.</p>
-<p>A sequence of fair or unfair coin flips is i.i.d.</p>
-<p>In <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Signal_processing">signal processing</a> and <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Image_processing">image processing</a> the notion of transformation to i.i.d. implies two specifications, the “i.d.”part and the “i.” part:</p>
-<p>(i.d.) the signal level must be balanced on the time axis;</p>
-<p>(i.) the signal spectrum must be flattened, i.e. transformed by filtering (such as <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Deconvolution">deconvolution</a>) to a <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/White_noise">white noise</a> signal (i.e. a signal where all frequencies are equally present).</p>
-<h5 id="Example-2-edit"><a href="#Example-2-edit" class="headerlink" title="Example 2[edit]"></a>Example 2[<a target="_blank" rel="noopener" href="https://en.wikipedia.org/w/index.php?title=Independent_and_identically_distributed_random_variables&action=edit&section=9">edit</a>]</h5><p>Toss a coin 10 times and record how many times does the coin lands on head.</p>
-<ol>
-<li>Independent – each outcome of landing will not affect the other outcome, which means the 10 results are independent from each other.</li>
-<li>Identically Distributed – if the coin is a homogeneous material, each time the probability for head is 0.5, which means the probability is identical for each time.</li>
-</ol>
-<h5 id="Example-3-edit"><a href="#Example-3-edit" class="headerlink" title="Example 3[edit]"></a>Example 3[<a target="_blank" rel="noopener" href="https://en.wikipedia.org/w/index.php?title=Independent_and_identically_distributed_random_variables&action=edit&section=10">edit</a>]</h5><p>Roll a dice 10 times and record how many time the result is 1.</p>
-<ol>
-<li>Independent – each outcome of the dice will not affect the next one, which means the 10 results are independent from each other.</li>
-<li>Identically Distributed – if the dice is a homogeneous material, each time the probability for the number 1 is 1&#x2F;6, which means the probability is identical for each time.</li>
-</ol>
-<h5 id="Example-4-edit"><a href="#Example-4-edit" class="headerlink" title="Example 4[edit]"></a>Example 4[<a target="_blank" rel="noopener" href="https://en.wikipedia.org/w/index.php?title=Independent_and_identically_distributed_random_variables&action=edit&section=11">edit</a>]</h5><p>Choose a card from a standard deck of cards containing 52 cards, then place the card back in the deck. Repeat it for 52 times. Record the number of King appears</p>
-<ol>
-<li>Independent – each outcome of the card will not affect the next one, which means the 52 results are independent from each other.</li>
-<li>Identically Distributed – after drawing one card from it, each time the probability for King is 4&#x2F;52, which means the probability is identical for each time.</li>
-</ol>
-<h3 id="2-why-machine-learning-need-IID-（为什么机器学习需要数据独立同分布）"><a href="#2-why-machine-learning-need-IID-（为什么机器学习需要数据独立同分布）" class="headerlink" title="2. why machine learning need IID?（为什么机器学习需要数据独立同分布）"></a>2. why machine learning need IID?（为什么机器学习需要数据独立同分布）</h3><p>Machine learning uses currently acquired massive quantities of data to deliver faster, more accurate results.[<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Independent_and_identically_distributed_random_variables#cite_note-7">7]</a> Therefore, we need to use historical data with overall representativeness. If the data obtained is not representative of the overall situation, then the rules will be summarized badly or wrongly.</p>
-<p>Through i.i.d. hypothesis, the number of individual cases in the training sample can be greatly reduced.</p>
-<p>This assumption makes maximization very easy to calculate mathematically. Observing the assumption of independent and identical distribution in mathematics simplifies the calculation of the likelihood function in optimization problems. Because of the assumption of independence, the likelihood function can be written like this</p>
-<p>In order to maximize the probability of the observed event, take the log function and maximize the parameter <em>θ</em>. </p>
-<p>The computer is very efficient to calculate multiple additions, but it is not efficient to calculate the multiplication. This simplification is the core reason for the increase in computational efficiency. And this Log transformation is also in the process of maximizing, turning many exponential functions into linear functions.</p>
-<p>For two reasons, this hypothesis is easy to use the central limit theorem in practical applications.</p>
-<ol>
-<li>Even if the sample comes from a more complex non-Gaussian distribution, it can also approximate well. Because it can be simplified from the central limit theorem to Gaussian distribution. For a large number of observable samples, “the sum of many random variables will have an approximately normal distribution”.</li>
-<li>The second reason is that the accuracy of the model depends on the simplicity and representative power of the model unit, as well as the data quality. Because the simplicity of the unit makes it easy to interpret and scale, and the representative power + scale out of the unit improves the model accuracy. Like in a deep neural network, each neuron is very simple but has strong representative power, layer by layer to represent more complex features to improve model accuracy.</li>
-</ol>
-<p>some user has photo full of animals, some user has photo full of views</p>
-<p>iid：</p>
-<p>Independent and identically distributed: the data is uniform, randomly disrupted, and the statistics of each node are similar (mean, variance)</p>
-<p>If the data is disrupted, shuffle, the data becomes independent and identically distributed, which is equivalent to a node, a distribution within a set</p>
-<p>The statistical nature of each mobile phone user’s data is different. Some people like to take pictures of landscapes, while others like to take selfies.</p>
-<p>My understanding: to prevent crooked data science? Go up the hill evenly, don’t click left and right?</p>
-<h3 id="3-why-Experience-replay（为什么使用经验回放）"><a href="#3-why-Experience-replay（为什么使用经验回放）" class="headerlink" title="3. why Experience replay（为什么使用经验回放）"></a>3. why Experience replay（为什么使用经验回放）</h3><blockquote>
-<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=rhslMPmj7SY&list=RDCMUC9qKcEgXHPFP2-ywYoA-E0Q&index=6">https://www.youtube.com/watch?v=rhslMPmj7SY&amp;list=RDCMUC9qKcEgXHPFP2-ywYoA-E0Q&amp;index=6</a></p>
-</blockquote>
-<h3 id="4-the-reuse-of-experience-in-experience-replay（为什么在experience-replay-中重复使用经验）"><a href="#4-the-reuse-of-experience-in-experience-replay（为什么在experience-replay-中重复使用经验）" class="headerlink" title="4. the reuse of experience in experience replay（为什么在experience replay 中重复使用经验）"></a>4. the reuse of experience in experience replay（为什么在experience replay 中重复使用经验）</h3><p>first thing: how is transition used?</p>
-<p>each experience is a sampling of the real world,</p>
-<p>if we want to reuse it , why not </p>
-<h3 id="5-what-is-sampling-efficiency-in-rl-（强化学习的sample-efficiency代表什么）"><a href="#5-what-is-sampling-efficiency-in-rl-（强化学习的sample-efficiency代表什么）" class="headerlink" title="5. what is sampling efficiency in rl? （强化学习的sample efficiency代表什么）"></a>5. what is sampling efficiency in rl? （强化学习的sample efficiency代表什么）</h3><p>what is meaning of sampling efficiency：</p>
-<p>sampling efficiency：</p>
-<p>unbalance load, the amount of some user’s data is large, others are small so that some node has iterated hundreds of time, some just one time</p>
-<h3 id="6-Q-learning-take-Td-error-as-loss-func-how-about-AC-and-PG-（policy-based梯度下降的loss-函数是什么）"><a href="#6-Q-learning-take-Td-error-as-loss-func-how-about-AC-and-PG-（policy-based梯度下降的loss-函数是什么）" class="headerlink" title="6. Q-learning take Td-error  as loss func, how about AC and PG? （policy based梯度下降的loss 函数是什么）"></a>6. Q-learning take Td-error  as loss func, how about AC and PG? （policy based梯度下降的loss 函数是什么）</h3><ul>
-<li><strong>this is the leaning of td</strong></li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/test/image-20230418164141297.png" alt="image-20230418164141297"></p>
-<ul>
-<li><strong>Policy Gradient</strong>（<em><strong>基于策略的方法</strong></em>）</li>
-</ul>
-<p>Policy gradient：Instead of minimizing TD error, it maximizes V, maximizes V, directly calculates the derivative of the model parameters on A, and then performs gradient ascent to update the model parameters to maximize V,</p>
-<ul>
-<li>the update of policy in <em>Policy Gradient</em>*</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/test/image-20230418163835203.png" alt="image-20230418163835203"></p>
-<ul>
-<li>while the v is equal to :</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230420102406349.png" alt="image-20230420102406349"></p>
-<ul>
-<li>then calculate the derivative</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230420102508795.png" alt="image-20230420102508795"></p>
-<ul>
-<li>use chain rule to calculate form 2</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230420102536383.png" alt="image-20230420102536383"></p>
-<ul>
-<li>so the result is :</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/test/image-20230418163957262.png" alt="image-20230418163957262"></p>
-<ul>
-<li><p>for form 1 : at each state, summation over all actions, could also be replaced with MC </p>
-</li>
-<li><p>for form 2: Hard to calculate expectation, use MC instead</p>
-</li>
-<li><p><strong>overview of the algorithm</strong><em><strong>（算法总览）</strong></em></p>
-</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/test/image-20230418174000255.png" alt="image-20230418174000255"></p>
-<p><strong>questions</strong>（<em><strong>问题</strong></em>）</p>
-<ul>
-<li><h3 id="Question1-if-use-form-1-how-to-scan-over-all-actions"><a href="#Question1-if-use-form-1-how-to-scan-over-all-actions" class="headerlink" title="Question1: if use form 1: how to scan over all actions?"></a>Question1: if use form 1: how to scan over all actions?</h3></li>
-<li><h3 id="Question2-if-use-form-2-how-to-guarantee-adequate-sampling"><a href="#Question2-if-use-form-2-how-to-guarantee-adequate-sampling" class="headerlink" title="Question2: if use form 2: how to guarantee adequate sampling?"></a>Question2: if use form 2: how to guarantee adequate sampling?</h3></li>
-</ul>
-<h3 id="6-how-about-sampling-multiple-actions-and-update-the-model-at-the-same-state-like-we-do-enough-sampling-at-the-same-state-in-multi-armed-bandit-（在一个状态重复试错学习）"><a href="#6-how-about-sampling-multiple-actions-and-update-the-model-at-the-same-state-like-we-do-enough-sampling-at-the-same-state-in-multi-armed-bandit-（在一个状态重复试错学习）" class="headerlink" title="6. how about sampling multiple actions and update the model at the same state?(like we do enough sampling at the same state in multi-armed bandit （在一个状态重复试错学习）"></a>6. how about sampling multiple actions and update the model at the same state?(like we do enough sampling at the same state in multi-armed bandit （在一个状态重复试错学习）</h3><p>because of the independence of data?</p>
-<p>we know that related data and data with same distribution is harmful  </p>
-<h3 id="7-how-to-Design-traffic-control-problem（多智能体信号灯控制，如何合作）"><a href="#7-how-to-Design-traffic-control-problem（多智能体信号灯控制，如何合作）" class="headerlink" title="7. how to  Design traffic control problem（多智能体信号灯控制，如何合作）"></a>7. how to  Design traffic control problem（多智能体信号灯控制，如何合作）</h3><p>fully-observed:</p>
-<ol>
-<li><em><strong>the action of other agents</strong></em> <ol>
-<li>how to utilize the action of other agent</li>
-</ol>
-</li>
-<li><em><strong>the strategy of other agents</strong></em> </li>
-<li>how to utilized the strategy of other agents: prediction</li>
-<li><em><strong>the state of other agents</strong></em></li>
-</ol>
-<p>the design of global reward function</p>
-<p>the design of action in different levels of traffic</p>
-<p>the source of random: random form the strategy; random from the state transferring of the env</p>
-<hr>
-<h1 id="projects-强化学习项目"><a href="#projects-强化学习项目" class="headerlink" title="projects(强化学习项目)"></a>projects(强化学习项目)</h1><h2 id="Project1-Mappo-official-implementation（mappo官方实现）"><a href="#Project1-Mappo-official-implementation（mappo官方实现）" class="headerlink" title="Project1: Mappo official implementation（mappo官方实现）"></a>Project1: Mappo official implementation（mappo官方实现）</h2><p><a target="_blank" rel="noopener" href="https://github.com/magiclucky1996/on-policy">https://github.com/magiclucky1996/on-policy</a></p>
-<h4 id="paper-reading"><a href="#paper-reading" class="headerlink" title="paper reading"></a>paper reading</h4><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2103.01955">https://arxiv.org/abs/2103.01955</a></p>
-<h4 id="bugs-when-running"><a href="#bugs-when-running" class="headerlink" title="bugs when running"></a>bugs when running</h4><ul>
-<li>RuntimeError: CUDA error: CUBLAS_STATUS_EXECUTION_FAILED when calling <code>cublasSgemm( handle, opa, opb, m, n, k, &amp;alpha, a, lda, b, ldb, &amp;beta, c, ldc)</code></li>
-</ul>
-<h3 id="running"><a href="#running" class="headerlink" title="running"></a>running</h3><ul>
-<li>first running</li>
-</ul>
-<hr>
-<h2 id="Project2-light-mappo（mappo的轻量级实现）"><a href="#Project2-light-mappo（mappo的轻量级实现）" class="headerlink" title="Project2: light mappo（mappo的轻量级实现）"></a>Project2: light mappo（mappo的轻量级实现）</h2><p><a target="_blank" rel="noopener" href="https://github.com/magiclucky1996/light_mappo">https://github.com/magiclucky1996/light_mappo</a></p>
-<h3 id="Project-3-Marl-sumo（基于多智能体强化学习的信号灯控制）"><a href="#Project-3-Marl-sumo（基于多智能体强化学习的信号灯控制）" class="headerlink" title="Project 3: Marl-sumo（基于多智能体强化学习的信号灯控制）"></a>Project 3: Marl-sumo（基于多智能体强化学习的信号灯控制）</h3><p><a target="_blank" rel="noopener" href="https://github.com/magiclucky1996/deeprl_signal_control">https://github.com/magiclucky1996/deeprl_signal_control</a></p>
-<h4 id="install-sumo（安装sumo）"><a href="#install-sumo（安装sumo）" class="headerlink" title="install sumo（安装sumo）"></a>install sumo（安装sumo）</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:sumo/stable</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install sumo sumo-tools sumo-doc</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h4 id="Problem1-with-sumo-cannot-find-local-schema（问题1：sumo-找不到本地文件）"><a href="#Problem1-with-sumo-cannot-find-local-schema（问题1：sumo-找不到本地文件）" class="headerlink" title="Problem1: with sumo cannot find local schema（问题1：sumo 找不到本地文件）"></a>Problem1: with sumo cannot find local schema（问题1：sumo 找不到本地文件）</h4><ul>
-<li>warning</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Warning: Cannot <span class="built_in">read</span> <span class="built_in">local</span> schema <span class="string">&#x27;/usr/share/sumo/bin/data/xsd/additional_file.xsd&#x27;</span>, will try website lookup.</span><br><span class="line">Warning: Cannot <span class="built_in">read</span> <span class="built_in">local</span> schema <span class="string">&#x27;/usr/share/sumo/bin/data/xsd/routes_file.xsd&#x27;</span>, will try website lookup.</span><br><span class="line">Warning: Cannot <span class="built_in">read</span> <span class="built_in">local</span> schema <span class="string">&#x27;/usr/share/sumo/bin/data/xsd/net_file.xsd&#x27;</span>, will try website lookup.</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><em><strong>solution（解决方法：更改sumo版本）</strong></em></li>
-</ul>
-<p>change sumo version:turn to sumo 1.16, </p>
-<h4 id="Problem2-not-using-gpu（问题2：-gpu未使用）"><a href="#Problem2-not-using-gpu（问题2：-gpu未使用）" class="headerlink" title="Problem2: not using gpu（问题2： gpu未使用）"></a>Problem2: not using gpu（问题2： gpu未使用）</h4><ul>
-<li>solution</li>
-</ul>
-<p>reinstall all the staff related to gpu</p>
-<p>after install driver, cuda, if they are set the right env variable?: this may cause not working, so now im running with cpu, i show reinstall and do a test.</p>
-<h4 id="Problem-3-Code-is-written-in-tensorflow-1-but-gpu-only-support-tensorflow-2-（问题3：代码基于tf1）"><a href="#Problem-3-Code-is-written-in-tensorflow-1-but-gpu-only-support-tensorflow-2-（问题3：代码基于tf1）" class="headerlink" title="Problem 3:  Code is written in tensorflow 1 but gpu only support tensorflow  2 （问题3：代码基于tf1）"></a>Problem 3:  Code is written in tensorflow 1 but gpu only support tensorflow  2 （问题3：代码基于tf1）</h4><ol>
-<li><em><strong>modify the code （对代码进行手动升级）</strong></em></li>
-</ol>
-<p>Replace all <code>import tensorflow as tf</code> statements with <code>import tensorflow.compat.v1 as tf</code> followed by <code>tf.disable_v2_behavior()</code>.</p>
-<p>Replace all deprecated TensorFlow 1.x syntax with TensorFlow 2.x syntax. This includes changes to <code>tf.Session()</code> to <code>tf.compat.v1.Session()</code>, <code>tf.global_variables_initializer()</code> to <code>tf.compat.v1.global_variables_initializer()</code>, and so on.</p>
-<p>Replace <code>tf.contrib</code> modules with equivalent modules in <code>tf.keras</code> or other TensorFlow 2.x modules. For example, <code>tf.contrib.layers</code> can be replaced with <code>tf.keras.layers</code>.</p>
-<ol start="2">
-<li><em><strong>migrate following the official instruction（使用官方脚本对代码进行升级）</strong></em></li>
-</ol>
-<p><a target="_blank" rel="noopener" href="https://www.tensorflow.org/guide/migrate">https://www.tensorflow.org/guide/migrate</a></p>
-<ol start="3">
-<li><em><strong>use tensorflow 1 and run with cpu(用tf1, 然后用cpu跑)</strong></em></li>
-</ol>
-<h4 id="Problem4-set-the-growth-of-gpu（问题4：-限制gpu内存增长）"><a href="#Problem4-set-the-growth-of-gpu（问题4：-限制gpu内存增长）" class="headerlink" title="Problem4: set the growth of gpu（问题4： 限制gpu内存增长）"></a>Problem4: set the growth of gpu（问题4： 限制gpu内存增长）</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">config = tf.ConfigProto()</span><br><span class="line">config.gpu_options.allow_growth=<span class="literal">True</span></span><br><span class="line">sess = tf.Session(config=config)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-<h3 id="MARL-SUMO-Modeling-信号灯控制问题的马尔克夫决策过程建模"><a href="#MARL-SUMO-Modeling-信号灯控制问题的马尔克夫决策过程建模" class="headerlink" title="MARL-SUMO Modeling(信号灯控制问题的马尔克夫决策过程建模)"></a>MARL-SUMO Modeling(信号灯控制问题的马尔克夫决策过程建模)</h3><h4 id="Problem-definition（问题定义）"><a href="#Problem-definition（问题定义）" class="headerlink" title="Problem definition（问题定义）"></a>Problem definition（问题定义）</h4><h4 id="Markov-decision-process-modeling（mdp建模）"><a href="#Markov-decision-process-modeling（mdp建模）" class="headerlink" title="Markov decision process modeling（mdp建模）"></a>Markov decision process modeling（mdp建模）</h4><h4 id="System-informations（硬件信息）"><a href="#System-informations（硬件信息）" class="headerlink" title="System informations（硬件信息）"></a>System informations（硬件信息）</h4><figure class="highlight as"><figcaption><span>sdf</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">system: ubuntu <span class="number">22.04</span> LTS</span><br><span class="line">python: <span class="number">3.8</span></span><br><span class="line">gpu: gtx <span class="number">3060</span> laptop version</span><br><span class="line">cuda: <span class="number">11.3</span></span><br><span class="line">cudnn: version correspongding to cuda version</span><br><span class="line">SUMO: <span class="number">1.16</span></span><br><span class="line">tensorflow: tensorflow-gpu <span class="number">1.14</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="bugs-and-problems（遇到的bug和问题）"><a href="#bugs-and-problems（遇到的bug和问题）" class="headerlink" title="bugs and problems（遇到的bug和问题）"></a>bugs and problems（遇到的bug和问题）</h4><h2 id="Training-record（训练结果统计）"><a href="#Training-record（训练结果统计）" class="headerlink" title="Training record（训练结果统计）"></a>Training record（训练结果统计）</h2><h5 id="Q-leaning-with-16-intersections（16路口-Qlearning）"><a href="#Q-leaning-with-16-intersections（16路口-Qlearning）" class="headerlink" title="Q-leaning with 16 intersections（16路口-Qlearning）"></a>Q-leaning with 16 intersections（16路口-Qlearning）</h5><ol>
-<li>0413 morning</li>
-</ol>
-<ul>
-<li>hyperparameter</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">gamma = 0.99</span><br><span class="line">lr_init = 1e-4</span><br><span class="line">lr_decay = constant</span><br><span class="line">epsilon_init = 1.0</span><br><span class="line">epsilon_min = 0.01</span><br><span class="line">epsilon_decay = linear</span><br><span class="line">epsilon_ratio = 0.5</span><br><span class="line">num_fc = 128</span><br><span class="line">num_h = 64</span><br><span class="line">batch_size = 20</span><br><span class="line">buffer_size = 1000</span><br><span class="line">reward_norm = 3000.0</span><br><span class="line">reward_clip = 2.0</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>experiment time:  13h</p>
-</li>
-<li><p>experiment result:</p>
-</li>
-</ul>
-<h5 id=""><a href="#" class="headerlink" title=""></a><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/test/iqld.png" alt="iqld"></h5><ol>
-<li>0413 morning</li>
-</ol>
-<ul>
-<li><p>hyperparater</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">[MODEL_CONFIG]</span><br><span class="line">rmsp_alpha = 0.99</span><br><span class="line">rmsp_epsilon = 1e-5</span><br><span class="line">max_grad_norm = 40</span><br><span class="line">gamma = 0.99</span><br><span class="line">lr_init = 5e-4</span><br><span class="line">lr_decay = constant</span><br><span class="line">entropy_coef_init = 0.01</span><br><span class="line">entropy_coef_min = 0.01</span><br><span class="line">entropy_decay = constant</span><br><span class="line">entropy_ratio = 0.5</span><br><span class="line">value_coef = 0.5</span><br><span class="line">num_fw = 128</span><br><span class="line">num_ft = 32</span><br><span class="line">num_lstm = 64</span><br><span class="line">num_fp = 64</span><br><span class="line">batch_size = 120</span><br><span class="line">reward_norm = 2000.0</span><br><span class="line">reward_clip = 2.0</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>result</p>
-<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/test/ac413.png" alt="ac413"></p>
-</li>
-<li><p>sac run before</p>
-<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/test/ac.png" alt="ac"></p>
-</li>
-</ul>
-<h2 id="Project-4-General-marl-项目4：-多智能体算法实现"><a href="#Project-4-General-marl-项目4：-多智能体算法实现" class="headerlink" title="Project 4: General marl(项目4： 多智能体算法实现)"></a>Project 4: General marl(项目4： 多智能体算法实现)</h2><p><a target="_blank" rel="noopener" href="https://github.com/magiclucky1996/MARL-code-pytorch">https://github.com/magiclucky1996/MARL-code-pytorch</a></p>
-<h1 id="what’s-next-（下一步计划）"><a href="#what’s-next-（下一步计划）" class="headerlink" title="what’s next?（下一步计划）"></a>what’s next?（下一步计划）</h1><h4 id="1-what’s-next-Incorporate-Mappo-into-sumo-simulation（mappo加到交通信号灯控制）"><a href="#1-what’s-next-Incorporate-Mappo-into-sumo-simulation（mappo加到交通信号灯控制）" class="headerlink" title="1. what’s next? Incorporate Mappo into sumo simulation（mappo加到交通信号灯控制）"></a>1. what’s next? Incorporate Mappo into sumo simulation（mappo加到交通信号灯控制）</h4><ul>
-<li>actually this is similar to what we do two years ago, combine sac with sumo simulation</li>
-<li>but this time, dive deeper into problem definition, modeling, network , rl learning algorithm part.</li>
-</ul>
-<h3 id="2-what’s-next-go-through-rl-basics（了解rl的基础）"><a href="#2-what’s-next-go-through-rl-basics（了解rl的基础）" class="headerlink" title="2. what’s next? go through rl basics（了解rl的基础）"></a>2. what’s next? go through rl basics（了解rl的基础）</h3><h4 id="3-what’s-next-go-through-markov-modeling（了解马尔克夫建模的知识）"><a href="#3-what’s-next-go-through-markov-modeling（了解马尔克夫建模的知识）" class="headerlink" title="3. what’s next? go through markov modeling（了解马尔克夫建模的知识）"></a>3. what’s next? go through markov modeling（了解马尔克夫建模的知识）</h4><h4 id="4-what’s-next-go-through-urban-traffic-modeling-and-control（了解城市交通建模）"><a href="#4-what’s-next-go-through-urban-traffic-modeling-and-control（了解城市交通建模）" class="headerlink" title="4. what’s next? go through urban traffic modeling and control（了解城市交通建模）"></a>4. what’s next? go through urban traffic modeling and control（了解城市交通建模）</h4><p><em><strong>insights</strong></em></p>
-<ol>
-<li><em><strong>if the initialization of env is random, so the first state is random for every episode, will this improve sample efficiency</strong></em>?<em>(环境初始化，初始化状态是不一样的，如果随机初始化，是否增加采样效率？)</em></li>
-<li>***what if a state is repeated for agent to do trail and error? like in a game restart from the failed node, and maybe we remember this state and initialize there in the next episode?*<em>如果可以像游戏一样反复在一个节点重来，比如我记住复杂的那个地方，然后下个回合从那里初始化，就像打游戏，在一个关反复重开（比如在交通信号灯问题里，，一个状态的试错学习，多试几次，）</em></li>
-</ol>
-<hr>
-<h2 id="Part6-Additional-information（附加信息）"><a href="#Part6-Additional-information（附加信息）" class="headerlink" title="Part6 : Additional information（附加信息）"></a>Part6 : Additional information（附加信息）</h2><h2 id="1-Deploy-blog-with-hexo-typora-github-and-picgo（基于hexo进行博客搭建）"><a href="#1-Deploy-blog-with-hexo-typora-github-and-picgo（基于hexo进行博客搭建）" class="headerlink" title="1. Deploy blog with hexo, typora,github and picgo（基于hexo进行博客搭建）"></a>1. Deploy blog with hexo, typora,github and picgo（基于hexo进行博客搭建）</h2><ul>
-<li>install nodejs</li>
-<li>install hexo</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>create a blog</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init my-blog</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>change to this blog</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> my-blog	</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>install dependence</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>install hexo deployer</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer --save</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>modify the _config.yml</li>
-</ul>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">url:</span> <span class="string">https://&lt;your</span> <span class="string">github</span> <span class="string">user</span> <span class="string">name&gt;.github.io/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">git@github.com:username/username.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>link local git with github so that you can push local file to github</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t ed25519 -C <span class="string">&quot;your_email@example.com&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cat</span> ~/.ssh/id_ed25519.pub</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>copy this pub key to your github account: settings -&gt; ssh and gpg keys</li>
-<li>write your blogs in format of .md and add it to …&#x2F;hexo&#x2F;my-blog&#x2F;source&#x2F;_posts</li>
-<li>use hexo generate to generate html files</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>use hexo server to view locally</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>use hexo deploy to deploy to github</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h3 id="2-Version-control-for-blog-source-with-multiple-devices-by-git-and-github（多个终端对博客内容进行版本控制）"><a href="#2-Version-control-for-blog-source-with-multiple-devices-by-git-and-github（多个终端对博客内容进行版本控制）" class="headerlink" title="2. Version control for blog source with multiple devices by git and github（多个终端对博客内容进行版本控制）"></a>2. Version control for blog source with multiple devices by git and github（多个终端对博客内容进行版本控制）</h3><ul>
-<li>on one computer</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/hexo/my-blog/source/_posts</span><br><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;first commit on linux&quot;</span></span><br><span class="line">git remote add origin &lt;<span class="built_in">link</span> of github repo&gt;</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>on another computer</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/hexo/my-blog/source</span><br><span class="line">git <span class="built_in">clone</span> &lt;<span class="built_in">link</span> of github repo&gt;</span><br><span class="line">git pull origin main <span class="comment"># pull from remote repo</span></span><br><span class="line">git push -u origin main <span class="comment"># pull to the remote repo</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="3-Image-uploader-Picgo-and-typora（图床设置）"><a href="#3-Image-uploader-Picgo-and-typora（图床设置）" class="headerlink" title="3. Image uploader: Picgo and typora（图床设置）"></a>3. Image uploader: Picgo and typora（图床设置）</h3><h5 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h5><ul>
-<li><p><a target="_blank" rel="noopener" href="https://support.typora.io/Upload-Image/">https://support.typora.io/Upload-Image/</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://picgo.github.io/PicGo-Core-Doc/zh/guide/config.html#%E9%BB%98%E8%AE%A4%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">https://picgo.github.io/PicGo-Core-Doc/zh/guide/config.html#%E9%BB%98%E8%AE%A4%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6</a></p>
-</li>
-</ul>
-<h5 id="Detailed-steps"><a href="#Detailed-steps" class="headerlink" title="Detailed steps"></a>Detailed steps</h5><ul>
-<li>in typora<ul>
-<li>click file -&gt; preference -&gt; image: choose download to install picgo-core</li>
-</ul>
-</li>
-<li><code>picgo set uploader</code></li>
-<li><code>picgo use uploader</code></li>
-<li>you can set automatically upload photo in typora -&gt; preference -&gt; image</li>
-<li>it’s done! enjoy!</li>
-</ul>
-<h3 id="insights"><a href="#insights" class="headerlink" title="insights"></a><em><strong>insights</strong></em></h3><ol>
-<li><em><strong>we don’t need to run it by ourselves if the graph run by others is enough for our need.(别人跑过的算法我不跑</strong>)</em>**</li>
-</ol>
-<p><em><strong>2. if have a goal or a question to figure, it will motivate u , so seperate it into some detailed small questions, and motivate urself, so there will be postive feedback from exploring.(如果以疑问驱动，或者把要做的事情分解成具体的步骤，变成办公，效率会高很多)</strong></em></p>
-<h2 id="MARL-modeling（信号灯建模）"><a href="#MARL-modeling（信号灯建模）" class="headerlink" title="MARL modeling（信号灯建模）"></a>MARL modeling（信号灯建模）</h2><h2 id="traffic-control-ma2c"><a href="#traffic-control-ma2c" class="headerlink" title="traffic control + ma2c"></a>traffic control + ma2c</h2><ul>
-<li>problem definition		（问题定义）</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230420114007282.png" alt="image-20230420114007282"></p>
-<ul>
-<li><strong>state space（状态空间）</strong></li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230420111112341.png" alt="image-20230420111112341"></p>
-<ul>
-<li><h2 id="action-space（动作空间）-phase-switch"><a href="#action-space（动作空间）-phase-switch" class="headerlink" title="action space（动作空间）- phase switch"></a><strong>action space（动作空间）</strong><br>- phase switch</h2><ul>
-<li><p>phase duration</p>
-<ul>
-<li>make decision for how long the phase last</li>
-</ul>
-</li>
-<li><p>phase itself</p>
-<ul>
-<li>fixed control period</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><strong>reward function （奖励函数）</strong></p>
-</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/magiclucky1996/picgo/main/image-20230420111340901.png" alt="image-20230420111340901"></p>
-<ul>
-<li><strong>training algorithm</strong>(<strong>训练算法</strong>)</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://magiclucky1996.github.io/2023/05/05/week4&5/" data-id="clham94tn000dh1ot4tl81lai" data-title="week4&amp;5" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/work/" rel="tag">work</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+  </nav>
 
 </section>
         
@@ -1735,23 +2091,23 @@
       <ul>
         
           <li>
+            <a href="/2023/05/15/try%20hack%20me-%20penetration%20tester/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/05/15/workshop%20pre1:%20survey%20on%20traffic/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/05/15/how%20to%20make%20face%20fat/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/05/10/%E9%81%93/">道</a>
+          </li>
+        
+          <li>
             <a href="/2023/05/05/dublin_remote_work/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2023/05/05/dublin%E5%8F%AF%E5%81%9A%E7%9A%84%E4%BA%8B%E6%83%85/">dublin可做的事情+ tcd设施调研</a>
-          </li>
-        
-          <li>
-            <a href="/2023/05/05/%E9%83%BD%E6%9F%8F%E6%9E%97%E7%A7%9F%E6%88%BF%E6%94%BB%E7%95%A5-%E7%8B%A0%E4%BA%BA%E7%89%88/">都柏林租房攻略</a>
-          </li>
-        
-          <li>
-            <a href="/2023/05/05/rl_envs_and_modeling/">rl_play</a>
-          </li>
-        
-          <li>
-            <a href="/2023/05/05/week%206%20share/">week6</a>
           </li>
         
       </ul>

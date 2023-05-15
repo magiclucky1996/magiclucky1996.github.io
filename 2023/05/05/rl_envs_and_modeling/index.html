@@ -14,7 +14,7 @@
 <meta property="og:description" content="play with gym envcart polecontrol + pid: https:&#x2F;&#x2F;blog.csdn.net&#x2F;weixin_44562141&#x2F;article&#x2F;details&#x2F;119700574 document of gym https:&#x2F;&#x2F;www.gymlibrary.dev&#x2F;environments&#x2F;classic_control&#x2F;cart_pole&#x2F; driving test">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-05-05T09:19:40.000Z">
-<meta property="article:modified_time" content="2023-05-05T14:10:08.047Z">
+<meta property="article:modified_time" content="2023-05-11T08:58:53.560Z">
 <meta property="article:author" content="tianxiang">
 <meta property="article:tag" content="work">
 <meta name="twitter:card" content="summary">
@@ -131,7 +131,66 @@
 <h2 id="lunarLand"><a href="#lunarLand" class="headerlink" title="lunarLand"></a>lunarLand</h2><p>安装</p>
 <p>pip install box2d-py</p>
 <h2 id="taxi"><a href="#taxi" class="headerlink" title="taxi"></a>taxi</h2><p><a target="_blank" rel="noopener" href="https://huggingface.co/learn/deep-rl-course/unit3/introduction?fw=pt">https://huggingface.co/learn/deep-rl-course/unit3/introduction?fw=pt</a></p>
-<h2 id="github-ball-game"><a href="#github-ball-game" class="headerlink" title="github ball game"></a>github ball game</h2><h2 id="hugging-face-tutorial"><a href="#hugging-face-tutorial" class="headerlink" title="hugging face tutorial"></a>hugging face tutorial</h2>
+<h2 id="github-ball-game"><a href="#github-ball-game" class="headerlink" title="github ball game"></a>github ball game</h2><h2 id="hugging-face-tutorial"><a href="#hugging-face-tutorial" class="headerlink" title="hugging face tutorial"></a>hugging face tutorial</h2><h1 id="incoporate-mappo-with-sumo"><a href="#incoporate-mappo-with-sumo" class="headerlink" title="incoporate  mappo with sumo"></a>incoporate  mappo with sumo</h1><h2 id="1-look-for-existing-mappo-sumo"><a href="#1-look-for-existing-mappo-sumo" class="headerlink" title="1. look for existing mappo + sumo"></a>1. look for existing mappo + sumo</h2><ul>
+<li>reference</li>
+</ul>
+<ol>
+<li>github</li>
+<li>paper</li>
+<li>resource of course era, presentation, tutorial (osint)</li>
+</ol>
+<ul>
+<li>resources found</li>
+</ul>
+<p>github</p>
+<ol>
+<li><p>ppo + sumo <a target="_blank" rel="noopener" href="https://github.com/maxbren/Multi-Agent-Distributed-PPO-Traffc-light-control">https://github.com/maxbren/Multi-Agent-Distributed-PPO-Traffc-light-control</a></p>
+</li>
+<li><p>light mappo  <a target="_blank" rel="noopener" href="https://github.com/magiclucky1996/light_mappo">https://github.com/magiclucky1996/light_mappo</a> 基于这个写一下试试</p>
+</li>
+<li><p>q&#x2F;ac + sumo <a target="_blank" rel="noopener" href="https://github.com/magiclucky1996/deeprl_signal_control">https://github.com/magiclucky1996/deeprl_signal_control</a></p>
+</li>
+<li><p>mappo + mujoco <a target="_blank" rel="noopener" href="https://github.com/chauncygu/Multi-Agent-Constrained-Policy-Optimisation">https://github.com/chauncygu/Multi-Agent-Constrained-Policy-Optimisation</a></p>
+</li>
+<li><p>mappo&#x2F;qmix&#x2F;maddpg + mpe <a target="_blank" rel="noopener" href="https://github.com/Lizhi-sjtu/MARL-code-pytorch">https://github.com/Lizhi-sjtu/MARL-code-pytorch</a></p>
+</li>
+<li><p>ppo + sumo <a target="_blank" rel="noopener" href="https://github.com/YanivHacker/RLTrafficManager">https://github.com/YanivHacker/RLTrafficManager</a></p>
+</li>
+<li><p>noisy mappo+  <a target="_blank" rel="noopener" href="https://github.com/hijkzzz/noisy-mappo">https://github.com/hijkzzz/noisy-mappo</a></p>
+</li>
+</ol>
+<p>papers</p>
+<p><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/abstract/document/9549970/authors#authors">https://ieeexplore.ieee.org/abstract/document/9549970/authors#authors</a> 东北信息学院：提到了rl奖励稀疏的问题，然后他们给rl设计更多的reward 引导它学习。但是你怎么知道什么样的reward能够引导，这不是还是在reward function设计的范围里吗？</p>
+<ul>
+<li>insights<ol>
+<li>sumo设计的问题，如果我们设一个控制周期之后的交通流状态为reward是不是不合理，怎么样去评价智能体schedule的好坏呢，怎么去评价智能体的action改善了交通呢，我是要搞交通呢，还是要搞rl呢，还是要搞啥，</li>
+<li>上次会议的要点：1. insight可以给硕士做，但是要具体可行 2. 做一个oncoming 会议的scheduling(rl 多智能体 交通 计算机 人工智能) 3. sumo的模型可以封装好给本科生用 4.</li>
+</ol>
+</li>
+<li>今天的计划（4.24）</li>
+</ul>
+<p>work 到12 点半，吃中饭，吃完中饭一点消化一会儿，回实验室一点半，回来继续work,work到两点多的时候睡午觉，五点跑路，去看看有没有吃的，不行就回家supervalu,晚上回家继续work一会儿，今天的弄完走之前deploy 和 push上去</p>
+<ul>
+<li>how other people implement marl training</li>
+</ul>
+<p>make contraction between these projects</p>
+<p>分解成detailed steps</p>
+<p>1.首先看下mappo的代码和deeprl sumo的代码以及ppo sumo代码（只做有必要做的事情）</p>
+<ol start="2">
+<li><p>做完1大概知道要干嘛，可以看看ppo trpo mappo</p>
+</li>
+<li><p>把每周4上午留作整理时间，所以我必须两天内搞定这个代码整定的事情，然后再用剩下的时间学习ppo trpo mappo，还要学sumo部分的东西，但是得非常快</p>
+</li>
+<li></li>
+<li></li>
+</ol>
+<p>生活的star：</p>
+<p>piano</p>
+<p>上海美术厂</p>
+<p>breaking</p>
+<p>penetration testing</p>
+<p>avoid social media</p>
+
       
     </div>
     <footer class="article-footer">
@@ -211,23 +270,23 @@
       <ul>
         
           <li>
+            <a href="/2023/05/15/try%20hack%20me-%20penetration%20tester/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/05/15/workshop%20pre1:%20survey%20on%20traffic/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/05/15/how%20to%20make%20face%20fat/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/05/10/%E9%81%93/">道</a>
+          </li>
+        
+          <li>
             <a href="/2023/05/05/dublin_remote_work/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2023/05/05/dublin%E5%8F%AF%E5%81%9A%E7%9A%84%E4%BA%8B%E6%83%85/">dublin可做的事情+ tcd设施调研</a>
-          </li>
-        
-          <li>
-            <a href="/2023/05/05/%E9%83%BD%E6%9F%8F%E6%9E%97%E7%A7%9F%E6%88%BF%E6%94%BB%E7%95%A5-%E7%8B%A0%E4%BA%BA%E7%89%88/">都柏林租房攻略</a>
-          </li>
-        
-          <li>
-            <a href="/2023/05/05/rl_envs_and_modeling/">rl_play</a>
-          </li>
-        
-          <li>
-            <a href="/2023/05/05/week%206%20share/">week6</a>
           </li>
         
       </ul>
